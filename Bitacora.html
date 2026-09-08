@@ -1,40 +1,100 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bitácora de Desarrollo - TP1</title>
-    <link rel="stylesheet" href="css/style.css">
+    <title>DevSquad // Bitácora de Desarrollo</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style/style.css">
 </head>
+
 <body>
-    <header>
-        <h1>Bitácora de Trabajo</h1>
-        <nav>
+    <canvas id="matrix-canvas" aria-hidden="true"></canvas>
+
+    <header class="site-header">
+        <a href="index.html" class="logo"><span>&gt;_</span> DEVSQUAD</a>
+        <button class="menu-toggle" id="menu-toggle" type="button" aria-label="Abrir menú">
+            <span></span><span></span><span></span>
+        </button>
+        <nav id="main-nav">
             <ul>
-                <li><a href="index.html">Inicio</a></li>
-                <li><a href="perfiles.html">Perfiles</a></li>
+                <li><a href="index.html">INICIO</a></li>
+                <li><a href="index.html#integrantes">EQUIPO</a></li>
+                <li><a href="perfil-1.html">INTEGRANTE 1</a></li>
+                <li><a href="perfil-2.html">INTEGRANTE 2</a></li>
+                <li><a href="perfil-3.html">INTEGRANTE 3</a></li>
+                <li><a href="bitacora.html" class="active-link">BITÁCORA</a></li>
             </ul>
         </nav>
+        <a href="index.html#contacto" class="header-button">CONÉCTATE</a>
     </header>
 
-    <main>
-        <section>
-            <h2>Registro del Proceso</h2>
-            <article>
-                <h3>Semana 1: Organización y Roles</h3>
-                <p>Acordamos utilizar GitHub, definimos la estructura de carpetas y establecimos los roles de desarrollo y diseño.</p>
-            </article>
-            <article>
-                <h3>Dificultades y Soluciones</h3>
-                <p>Tuvimos problemas con los breakpoints en pantallas de 400px, pero lo resolvimos ajustando las unidades flexibles en CSS.</p>
-            </article>
-        </section>
+    <main class="section">
+        <div class="section-heading">
+            <span class="section-number">05 // REGISTRO DE DESARROLLO</span>
+            <h2>// BITÁCORA DEL PROYECTO</h2>
+            <p>Evolución, decisiones técnicas y solución de problemas durante el desarrollo del TP1.</p>
+        </div>
+
+        <div class="bitacora-container">
+            <table class="bitacora-table">
+                <thead>
+                    <tr>
+                        <th>FECHA</th>
+                        <th>ACTIVIDAD / HITO</th>
+                        <th>ESTADO</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>12/09/2026</td>
+                        <td>Definición de temáticas, reparto de roles y estructura inicial del repositorio.</td>
+                        <td><span class="badge-status">COMPLETADO</span></td>
+                    </tr>
+                    <tr>
+                        <td>15/09/2026</td>
+                        <td>Diseño de paleta Cyber/Hacker neón y maquetación de la portada (index.html).</td>
+                        <td><span class="badge-status">COMPLETADO</span></td>
+                    </tr>
+                    <tr>
+                        <td>18/09/2026</td>
+                        <td>Implementación de botones de navegación global y páginas de perfiles individuales.</td>
+                        <td><span class="badge-status">COMPLETADO</span></td>
+                    </tr>
+                    <tr>
+                        <td>22/09/2026</td>
+                        <td>Desarrollo de interacciones en JS (Lluvia Matrix, terminal tipeadora, menú responsive).</td>
+                        <td><span class="badge-status">COMPLETADO</span></td>
+                    </tr>
+                    <tr>
+                        <td>25/09/2026</td>
+                        <td>Ajuste de Breakpoints (400px, 900px y 1200px) y validación del código.</td>
+                        <td><span class="badge-status">COMPLETADO</span></td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="detail-card margin-top">
+                <h3>// DECISIONES Y DIFICULTADES TÉCNICAS</h3>
+                <p class="description">
+                    <strong>1. Adaptabilidad Cyberpunk:</strong> Crear una estética hacker retro sin comprometer la legibilidad fue el mayor desafío. Lo resolvimos combinando fondos oscuros (`#030806`) con verde flúor (`#00ff66`) y tipografía monoespaciada JetBrains Mono.<br><br>
+                    <strong>2. Lluvia Matrix en Canvas:</strong> Para evitar ralentizaciones en móviles, optimizamos el cálculo del <code>requestAnimationFrame</code> del canvas para que sea fluido en cualquier dispositivo.<br><br>
+                    <strong>3. Uso de IA:</strong> Se utilizó IA para asistir en la estructuración del CSS responsivo y optimización de animaciones, siendo supervisado e integrado manualmente por el equipo.
+                </p>
+            </div>
+        </div>
     </main>
 
-    <footer>
-        <nav>
-            <a href="index.html">Volver al Inicio</a>
-        </nav>
+    <footer class="site-footer">
+        <div>&gt;_ DEVSQUAD</div>
+        <p>Desarrollo de Sistemas Web Front End</p>
+        <span>IFTS N.º 29 · 2026</span>
     </footer>
+
+    <script src="java/java.js"></script>
 </body>
+
 </html>

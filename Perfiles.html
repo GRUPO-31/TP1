@@ -1,52 +1,121 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Perfiles - Nombre del Equipo</title>
-    <link rel="stylesheet" href="css/style.css">
+    <title>DevSquad // Perfil Integrante 1</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style/style.css">
 </head>
+
 <body>
-    <header>
-        <h1>Perfiles del Equipo</h1>
-        <nav>
+    <canvas id="matrix-canvas" aria-hidden="true"></canvas>
+
+    <header class="site-header">
+        <a href="index.html" class="logo"><span>&gt;_</span> DEVSQUAD</a>
+        <button class="menu-toggle" id="menu-toggle" type="button" aria-label="Abrir menú">
+            <span></span><span></span><span></span>
+        </button>
+        <nav id="main-nav">
             <ul>
-                <li><a href="index.html">Volver al Inicio</a></li>
-                <li><a href="bitacora.html">Ir a Bitácora</a></li>
+                <li><a href="index.html">INICIO</a></li>
+                <li><a href="index.html#integrantes">EQUIPO</a></li>
+                <li><a href="perfil-1.html" class="active-link">INTEGRANTE 1</a></li>
+                <li><a href="perfil-2.html">INTEGRANTE 2</a></li>
+                <li><a href="perfil-3.html">INTEGRANTE 3</a></li>
+                <li><a href="bitacora.html">BITÁCORA</a></li>
             </ul>
         </nav>
+        <a href="index.html#contacto" class="header-button">CONÉCTATE</a>
     </header>
 
-    <main>
-        <article id="integrante1" class="tarjeta-perfil">
-            <img src="img/avatar1.png" alt="Avatar de Integrante 1">
-            <h2>Nombre Apellido</h2>
-            <p><strong>Ciudad:</strong> Buenos Aires</p>
-            <p><strong>Edad:</strong> 22 años</p>
-            
-            <h3>Habilidades</h3>
-            <ul>
-                <li>HTML5</li>
-                <li>CSS3</li>
-                <li>JavaScript</li>
-                <li>Git</li>
-            </ul>
+    <main class="section">
+        <div class="profile-layout">
+            <!-- Columna Izquierda: Avatar y Datos Básicos -->
+            <div class="profile-sidebar">
+                <div class="avatar-frame">
+                    <img src="https://lh3.googleusercontent.com/d/13US4rfOD4KHPhLHBK6zN7cgxaks_h8-b" alt="Foto de perfil">
+                </div>
+                <div class="profile-basic">
+                    <h2>INTEGRANTE 1</h2>
+                    <span class="role">FRONTEND SPECIALIST</span>
+                    <p class="meta-info">📍 Buenos Aires, Argentina | ⏳ 24 Años</p>
+                    <p class="bio">Me apasiona la tecnología y la resolución de problemas visuales en la web.</p>
+                </div>
+                <div class="quote-box">
+                    <p>"Convierte el café en código limpio."</p>
+                </div>
+            </div>
 
-            <h3>Favoritos</h3>
-            <p><strong>Películas:</strong> Matrix, Interstellar, Inception</p>
-            <p><strong>Discos:</strong> Random Access Memories, Discovery, Homework</p>
+            <!-- Columna Derecha: Habilidades, Gustos e Interactividad -->
+            <div class="profile-details">
+                <div class="detail-card">
+                    <h3>// HABILIDADES</h3>
+                    <div class="skills-list">
+                        <div class="skill-item">
+                            <span>HTML5 / CSS3 Grid</span>
+                            <div class="bar"><div class="fill" style="width: 90%;"></div></div>
+                        </div>
+                        <div class="skill-item">
+                            <span>JavaScript (ES6+)</span>
+                            <div class="bar"><div class="fill" style="width: 80%;"></div></div>
+                        </div>
+                        <div class="skill-item">
+                            <span>Git / GitHub</span>
+                            <div class="bar"><div class="fill" style="width: 85%;"></div></div>
+                        </div>
+                        <div class="skill-item">
+                            <span>Trabajo en equipo</span>
+                            <div class="bar"><div class="fill" style="width: 95%;"></div></div>
+                        </div>
+                    </div>
+                </div>
 
-            <button class="btn-perfil">Interactuar</button>
-            <p class="resultado-perfil"></p>
-        </article>
+                <div class="details-grid-2">
+                    <div class="detail-card">
+                        <h3>// 🎬 PELÍCULAS FAVORITAS</h3>
+                        <ul>
+                            <li>1. Matrix (1999)</li>
+                            <li>2. Blade Runner 2049</li>
+                            <li>3. Interstellar</li>
+                        </ul>
+                    </div>
+                    <div class="detail-card">
+                        <h3>// 🎵 DISCOS FAVORITOS</h3>
+                        <ul>
+                            <li>1. Random Access Memories - Daft Punk</li>
+                            <li>2. The Dark Side of the Moon - Pink Floyd</li>
+                            <li>3. CurrentS - Tame Impala</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Función Dinámica interactiva JS -->
+                <div class="detail-card interactive-zone">
+                    <h3>// CONSOLA INTERACTIVA DEL PERFIL</h3>
+                    <p>Haz clic para ejecutar el diagnóstico en tiempo real de esta estación:</p>
+                    <button id="btn-status" class="btn btn-primary">EJECUTAR DIAGNÓSTICO</button>
+                    <div id="status-output" class="status-box">Esperando comando_</div>
+                </div>
+
+                <div class="profile-nav-buttons">
+                    <a href="index.html#integrantes" class="btn btn-secondary">← VOLVER AL EQUIPO</a>
+                    <a href="perfil-2.html" class="btn btn-primary">SIGUIENTE INTEGRANTE →</a>
+                </div>
+            </div>
+        </div>
     </main>
 
-    <footer>
-        <nav>
-            <a href="index.html">Volver a Portada</a>
-        </nav>
+    <footer class="site-footer">
+        <div>&gt;_ DEVSQUAD</div>
+        <p>Desarrollo de Sistemas Web Front End</p>
+        <span>IFTS N.º 29 · 2026</span>
     </footer>
 
-    <script src="js/main.js"></script>
+    <script src="java/java.js"></script>
 </body>
+
 </html>

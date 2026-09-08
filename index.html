@@ -3,45 +3,434 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nombre del Equipo - Portada</title>
-    <link rel="stylesheet" href="css/style.css">
+    <title>DevSquad // Cyberpunk Core Architecture</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&family=JetBrains+Mono:wght@400;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style/style.css">
 </head>
 <body>
-    <header>
-        <h1>Nombre del Equipo</h1>
-        <p>Propósito del equipo: Desarrollar un sitio web colaborativo aplicando HTML, CSS y JavaScript.</p>
-        <nav>
+
+    <!-- Canvas para Fondo Rain Matrix -->
+    <canvas id="matrix-canvas"></canvas>
+
+    <!-- Barra de scroll progresivo -->
+    <div class="scroll-progress" id="scroll-progress"></div>
+
+    <!-- ================= HEADER ================= -->
+    <header class="site-header">
+        <a href="#hero" class="logo">DEVSQUAD<span>_CORE</span></a>
+        
+        <button class="menu-toggle" id="menu-toggle" aria-label="Abrir Menú">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+
+        <nav id="main-nav">
             <ul>
-                <li><a href="index.html">Inicio</a></li>
-                <li><a href="perfiles.html">Perfiles</a></li>
-                <li><a href="bitacora.html">Bitácora</a></li>
+                <li><a href="#hero" class="active-link">&gt; //INICIO</a></li>
+                <li><a href="#mision">&gt; //HOLONODE</a></li>
+                <li><a href="#equipo">&gt; //EQUIPO</a></li>
+                <li><a href="#bitacora">&gt; //BITÁCORA</a></li>
+                <li><a href="#contacto">&gt; //TERMINAL</a></li>
             </ul>
         </nav>
+
+        <a href="#contacto" class="header-button">CONECTAR</a>
     </header>
 
-    <main>
-        <section id="integrantes">
-            <h2>Integrantes del Equipo</h2>
-            <ul>
-                <li>
-                    <span>Integrante 1</span> - <a href="perfiles.html#integrante1">Ver Perfil</a>
-                </li>
-                <li>
-                    <span>Integrante 2</span> - <a href="perfiles.html#integrante2">Ver Perfil</a>
-                </li>
-            </ul>
-        </section>
-        
-        <section id="interaccion-portada">
-            <button id="btn-saludo">Saludar al equipo</button>
-            <p id="mensaje-portada"></p>
-        </section>
-    </main>
+    <!-- ================= HERO SECTION ================= -->
+    <section id="hero" class="hero">
+        <div class="hero-content">
+            <span class="terminal-label">[SYSTEM_ONLINE // PROTOCOL_V5]</span>
+            <h1>DEV_SQUAD</h1>
+            <h2>DESARROLLO WEB &amp; SISTEMAS DE ALTA DENSIDAD</h2>
+            <p>Construimos interfaces disruptivas, arquitecturas limpias y ecosistemas digitales avanzados. Convertimos código complejo en experiencias de usuario excepcionales.</p>
+            
+            <div class="hero-buttons">
+                <a href="#equipo" class="btn btn-primary">VER EQUIPO &gt;</a>
+                <a href="#mision" class="btn btn-secondary">INICIAR CORE</a>
+            </div>
+        </div>
 
-    <footer>
-        <p>&copy; 2026 - Desarrollo de Sistemas Web Front End</p>
+        <div class="hero-terminal-container">
+            <div class="hacker-badge">&gt; STATUS: ALL_SYSTEMS_OPTIMAL</div>
+            <div class="hero-terminal">
+                <div class="terminal-top">
+                    <span>bash - devshell@devsquad:~</span>
+                    <span>v5.0.2</span>
+                </div>
+                <div class="terminal-body" id="terminal-body">
+                    <p>&gt; initializing_core_modules...</p>
+                    <p>&gt; loading_neural_sync... <span class="terminal-success">[OK]</span></p>
+                    <p>&gt; mount_component: HoloCore_Matrix... <span class="terminal-success">[OK]</span></p>
+                    <p class="blink">&gt; ready_for_deployment_</p>
+                </div>
+            </div>
+
+            <div class="cyber-workflow">
+                <div class="wf-step">01 <span>DISEÑO</span></div>
+                <div class="wf-step">02 <span>CÓDIGO</span></div>
+                <div class="wf-step">03 <span>TESTING</span></div>
+                <div class="wf-step">04 <span>DEPLOY</span></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= SECCIÓN MISIÓN: HOLO-CORE MATRIX ================= -->
+    <section id="mision" class="section mission-futuristic">
+        <div class="cyber-frame">
+            <div class="corner-hud tl"></div>
+            <div class="corner-hud tr"></div>
+            <div class="corner-hud bl"></div>
+            <div class="corner-hud br"></div>
+
+            <div class="hud-top-bar">
+                <span class="hud-tag blink">[SYSTEM_OVERRIDE // RUNNING]</span>
+                <span class="hud-title-code">CORE_MISSION_PROTOCOL_v5.0</span>
+                <span class="hud-stats">NEURAL_SYNC: <strong class="pulse-green">99.9%</strong></span>
+            </div>
+
+            <div class="mission-holo-wrapper">
+                <div class="holo-reactor-container">
+                    <div class="holo-reactor">
+                        <div class="ring outer-ring"></div>
+                        <div class="ring middle-ring"></div>
+                        <div class="ring inner-ring"></div>
+                        <div class="core-glyph">&lt;DS&gt;</div>
+                    </div>
+                </div>
+
+                <div class="holo-display-panel">
+                    <div class="panel-header">
+                        <span class="scramble-text">// MANIFIESTO CORE</span>
+                        <div class="hud-status-badge">DIRECTIVA ACTIVA</div>
+                    </div>
+
+                    <div class="holo-screen" id="holo-screen">
+                        <div class="screen-scanline"></div>
+                        <h3 id="holo-title" class="glitch-title">&gt; [01] CÓDIGO SIN LÍMITES</h3>
+                        <p id="holo-desc">
+                            Forjamos arquitectura web moderna sin barreras técnicas. Convertimos abstracción matemática y diseño audaz en experiencias totalmente funcionales.
+                        </p>
+                    </div>
+
+                    <div class="directive-nodes">
+                        <button class="node-btn active" 
+                                data-title="&gt; [01] CÓDIGO SIN LÍMITES" 
+                                data-desc="Forjamos arquitectura web moderna sin barreras técnicas. Convertimos abstracción matemática y diseño audaz en experiencias totalmente funcionales.">
+                            <span class="node-code">01</span> EVOLUCIÓN
+                        </button>
+                        
+                        <button class="node-btn" 
+                                data-title="&gt; [02] SINERGIA NEURAL" 
+                                data-desc="Alineación táctica total. Cada integrante funciona como un subproceso especializado optimizando el rendimiento, la estética y la estabilidad del sistema.">
+                            <span class="node-code">02</span> SINERGIA
+                        </button>
+
+                        <button class="node-btn" 
+                                data-title="&gt; [03] IMPACTO DISRUPTIVO" 
+                                data-desc="No maquetamos webs comunes; construimos interfaces inmersivas de alto impacto visual y rendimiento puro que desafían lo convencional.">
+                            <span class="node-code">03</span> IMPACTO
+                        </button>
+
+                        <button class="node-btn" 
+                                data-title="&gt; [04] DESPLIEGUE FINAL" 
+                                data-desc="Cero errores, máxima velocidad y ejecución limpia. Entregamos plataformas robustas, responsivas y listas para escalar.">
+                            <span class="node-code">04</span> DEPLOY
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="hud-bottom-bar">
+                <div class="bar-meter"><div class="fill-meter"></div></div>
+                <span class="hud-footnote">&gt; DEVSQUAD_CORE // ALL SYSTEMS OPERATIONAL</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= SECCIÓN EQUIPO ================= -->
+    <section id="equipo" class="section team-futuristic">
+        <div class="cyber-frame">
+            <div class="corner-hud tl"></div>
+            <div class="corner-hud tr"></div>
+            <div class="corner-hud bl"></div>
+            <div class="corner-hud br"></div>
+
+            <div class="hud-top-bar">
+                <span class="hud-tag blink">[OPERATIVE_DATABASE // DEVSQUAD]</span>
+                <span class="hud-title-code">UNITS_DEPLOYED: 04</span>
+                <span class="hud-stats">SECURITY_CLEARANCE: <strong class="pulse-green">LEVEL_5</strong></span>
+            </div>
+
+            <div class="section-heading">
+                <span class="section-number">02. // UNIDADES DE DESARROLLO</span>
+                <h2>EQUIPO</h2>
+                <p>Especialistas capacitados para el despliegue de software de alta densidad.</p>
+            </div>
+
+            <div class="operatives-grid">
+                
+                <!-- INTEGRANTE 01: DIEGO -->
+                <article class="op-card">
+                    <div class="op-header">
+                        <span class="op-id">OP_01</span>
+                        <span class="op-status active">ONLINE</span>
+                    </div>
+
+                    <div class="op-avatar-wrapper">
+                        <div class="target-crosshair"></div>
+                        <div class="scanner-beam"></div>
+                        <img src="img/dev1.jpg" alt="Operativo Diego" class="op-avatar">
+                        <div class="avatar-hud-overlay">
+                            <span>SYNC: 100%</span>
+                            <span>LATENCY: 1ms</span>
+                        </div>
+                    </div>
+
+                    <div class="op-body">
+                        <h3 class="op-name">DIEGO</h3>
+                        <span class="op-role">&lt;LEAD_ARCHITECT /&gt;</span>
+                        <p class="op-desc">
+                            Especialista en lógica de backend, estructuras avanzadas y gestión de datos.
+                        </p>
+
+                        <div class="op-stats">
+                            <div class="stat-row">
+                                <span>BACKEND</span>
+                                <div class="stat-bar"><div class="stat-fill" style="width: 95%;"></div></div>
+                            </div>
+                            <div class="stat-row">
+                                <span>DATABASES</span>
+                                <div class="stat-bar"><div class="stat-fill" style="width: 90%;"></div></div>
+                            </div>
+                        </div>
+
+                        <div class="op-tech-stack">
+                            <span class="chip">NODE.JS</span>
+                            <span class="chip">SQL</span>
+                            <span class="chip">PYTHON</span>
+                        </div>
+                    </div>
+
+                    <a href="perfil.html" class="op-link-btn">
+                        <span>ENLAZAR_DOSSIER</span>
+                        <i class="btn-arrow">&gt;</i>
+                    </a>
+                </article>
+
+                <!-- INTEGRANTE 02: BRIAN -->
+                <article class="op-card">
+                    <div class="op-header">
+                        <span class="op-id">OP_02</span>
+                        <span class="op-status active">ONLINE</span>
+                    </div>
+
+                    <div class="op-avatar-wrapper">
+                        <div class="target-crosshair"></div>
+                        <div class="scanner-beam"></div>
+                        <img src="img/dev3.jpg" alt="Operativo Brian" class="op-avatar">
+                        <div class="avatar-hud-overlay">
+                            <span>SYNC: 98.2%</span>
+                            <span>LATENCY: 2ms</span>
+                        </div>
+                    </div>
+
+                    <div class="op-body">
+                        <h3 class="op-name">BRIAN</h3>
+                        <span class="op-role">&lt;FULLSTACK_DEV /&gt;</span>
+                        <p class="op-desc">
+                            Integrador de sistemas end-to-end, lógica de negocio y APIs REST eficientes.
+                        </p>
+
+                        <div class="op-stats">
+                            <div class="stat-row">
+                                <span>INTEGRACIÓN</span>
+                                <div class="stat-bar"><div class="stat-fill" style="width: 92%;"></div></div>
+                            </div>
+                            <div class="stat-row">
+                                <span>ESTRUCTURA</span>
+                                <div class="stat-bar"><div class="stat-fill" style="width: 88%;"></div></div>
+                            </div>
+                        </div>
+
+                        <div class="op-tech-stack">
+                            <span class="chip">EXPRESS</span>
+                            <span class="chip">JS_ES6</span>
+                            <span class="chip">GIT</span>
+                        </div>
+                    </div>
+
+                    <a href="perfil.html" class="op-link-btn">
+                        <span>ENLAZAR_DOSSIER</span>
+                        <i class="btn-arrow">&gt;</i>
+                    </a>
+                </article>
+
+                <!-- INTEGRANTE 03: SERGIO -->
+                <article class="op-card">
+                    <div class="op-header">
+                        <span class="op-id">OP_03</span>
+                        <span class="op-status active">ONLINE</span>
+                    </div>
+
+                    <div class="op-avatar-wrapper">
+                        <div class="target-crosshair"></div>
+                        <div class="scanner-beam"></div>
+                        <img src="img/dev4.jpg" alt="Operativo Sergio" class="op-avatar">
+                        <div class="avatar-hud-overlay">
+                            <span>SYNC: 96.5%</span>
+                            <span>LATENCY: 2ms</span>
+                        </div>
+                    </div>
+
+                    <div class="op-body">
+                        <h3 class="op-name">SERGIO</h3>
+                        <span class="op-role">&lt;QA_ENGINEER /&gt;</span>
+                        <p class="op-desc">
+                            Control de calidad estricto, depuración de errores y pruebas de stress del sistema.
+                        </p>
+
+                        <div class="op-stats">
+                            <div class="stat-row">
+                                <span>DEBUGGING</span>
+                                <div class="stat-bar"><div class="stat-fill" style="width: 96%;"></div></div>
+                            </div>
+                            <div class="stat-row">
+                                <span>TESTING</span>
+                                <div class="stat-bar"><div class="stat-fill" style="width: 89%;"></div></div>
+                            </div>
+                        </div>
+
+                        <div class="op-tech-stack">
+                            <span class="chip">JEST</span>
+                            <span class="chip">CYPRESS</span>
+                            <span class="chip">DOCS</span>
+                        </div>
+                    </div>
+
+                    <a href="perfil.html" class="op-link-btn">
+                        <span>ENLAZAR_DOSSIER</span>
+                        <i class="btn-arrow">&gt;</i>
+                    </a>
+                </article>
+
+                <!-- INTEGRANTE 04: CRISTIAN -->
+                <article class="op-card">
+                    <div class="op-header">
+                        <span class="op-id">OP_04</span>
+                        <span class="op-status active">ONLINE</span>
+                    </div>
+
+                    <div class="op-avatar-wrapper">
+                        <div class="target-crosshair"></div>
+                        <div class="scanner-beam"></div>
+                        <img src="img/dev5.jpg" alt="Operativo Cristian" class="op-avatar">
+                        <div class="avatar-hud-overlay">
+                            <span>SYNC: 97.1%</span>
+                            <span>LATENCY: 3ms</span>
+                        </div>
+                    </div>
+
+                    <div class="op-body">
+                        <h3 class="op-name">CRISTIAN</h3>
+                        <span class="op-role">&lt;SYS_OPTIMIZER /&gt;</span>
+                        <p class="op-desc">
+                            Optimización de tiempos de carga, administración de repositorios y despliegues.
+                        </p>
+
+                        <div class="op-stats">
+                            <div class="stat-row">
+                                <span>PERFORMANCE</span>
+                                <div class="stat-bar"><div class="stat-fill" style="width: 91%;"></div></div>
+                            </div>
+                            <div class="stat-row">
+                                <span>DEVOPS</span>
+                                <div class="stat-bar"><div class="stat-fill" style="width: 85%;"></div></div>
+                            </div>
+                        </div>
+
+                        <div class="op-tech-stack">
+                            <span class="chip">DEVOPS</span>
+                            <span class="chip">GITHUB</span>
+                            <span class="chip">WEBPACK</span>
+                        </div>
+                    </div>
+
+                    <a href="perfil.html" class="op-link-btn">
+                        <span>ENLAZAR_DOSSIER</span>
+                        <i class="btn-arrow">&gt;</i>
+                    </a>
+                </article>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= SECCIÓN BITÁCORA ================= -->
+    <section id="bitacora" class="section">
+        <div class="section-heading">
+            <span class="section-number">03. // REGISTRO DE ACTIVIDAD</span>
+            <h2>BITÁCORA DE DESPLIEGUE</h2>
+            <p>Hitos y modificaciones registradas en tiempo real.</p>
+        </div>
+
+        <table class="bitacora-table margin-top">
+            <thead>
+                <tr>
+                    <th>REGISTRO</th>
+                    <th>FECHA</th>
+                    <th>MÓDULO</th>
+                    <th>ESTADO</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>#LOG_001</td>
+                    <td>2026-03-01</td>
+                    <td>Arquitectura Base HUD &amp; Matrix Canvas</td>
+                    <td><span class="badge-status">COMPLETADO</span></td>
+                </tr>
+                <tr>
+                    <td>#LOG_002</td>
+                    <td>2026-03-04</td>
+                    <td>Integración de Reactor Holo-Core 3D</td>
+                    <td><span class="badge-status">COMPLETADO</span></td>
+                </tr>
+                <tr>
+                    <td>#LOG_003</td>
+                    <td>2026-03-08</td>
+                    <td>Ajuste Roster Cyberpunk (4 Operativos)</td>
+                    <td><span class="badge-status">DESPLEGADO</span></td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+
+    <!-- ================= SECCIÓN CONTACTO ================= -->
+    <section id="contacto" class="contact-section">
+        <div class="section-heading">
+            <span class="section-number">04. // CONEXIÓN DIRECTA</span>
+            <h2>ESTABLECER ENLACE TÁCTICO</h2>
+            <p>Canales abiertos para consultas y proyectos.</p>
+        </div>
+
+        <div class="contact-links">
+            <a href="https://github.com" target="_blank" title="GitHub">GH</a>
+            <a href="https://linkedin.com" target="_blank" title="LinkedIn">IN</a>
+            <a href="mailto:devsquad@core.com" title="Email">MAIL</a>
+        </div>
+    </section>
+
+    <!-- ================= FOOTER ================= -->
+    <footer class="site-footer">
+        <span>&copy; 2026 DEVSQUAD // ALL RIGHTS RESERVED</span>
+        <div>STATUS: SYSTEM_ONLINE</div>
     </footer>
 
-    <script src="js/main.js"></script>
+    <!-- JS Principal -->
+    <script src="java/java.js"></script>
 </body>
 </html>
