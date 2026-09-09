@@ -1,0 +1,281 @@
+/* =====================================================
+   ESTILOS ESPECÍFICOS DE PERFIL - DEVSQUAD CYBERPUNK
+   Complementa style.css sin modificar archivos existentes
+   ===================================================== */
+
+/* Layout general del perfil */
+.profile-layout {
+    display: grid;
+    grid-template-columns: 320px 1fr;
+    gap: 30px;
+    align-items: start;
+}
+
+/* Columna lateral: Avatar y Datos Básicos */
+.profile-sidebar {
+    background: var(--bg-card, rgba(4, 18, 12, 0.92));
+    border: 1px solid var(--border-dim, rgba(0, 255, 102, 0.25));
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    box-shadow: 0 0 25px rgba(0, 255, 102, 0.08);
+}
+
+.profile-sidebar::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, var(--green, #00ff66), transparent);
+}
+
+.avatar-frame {
+    position: relative;
+    width: 170px;
+    height: 170px;
+    margin-bottom: 20px;
+    border: 2px solid var(--green, #00ff66);
+    border-radius: 4px;
+    overflow: hidden;
+    background: #000;
+    box-shadow: 0 0 15px var(--green-glow, rgba(0, 255, 102, 0.3));
+}
+
+.avatar-frame img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: grayscale(30%) contrast(115%);
+    transition: filter 0.3s ease, transform 0.3s ease;
+}
+
+.avatar-frame:hover img {
+    filter: grayscale(0%) contrast(105%);
+    transform: scale(1.05);
+}
+
+.profile-basic h2 {
+    font-family: var(--font-code, "JetBrains Mono", monospace);
+    color: #ffffff;
+    font-size: 1.4rem;
+    letter-spacing: 1px;
+    margin-bottom: 5px;
+}
+
+.profile-basic .role {
+    display: inline-block;
+    color: var(--green, #00ff66);
+    font-family: var(--font-code, "JetBrains Mono", monospace);
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    margin-bottom: 12px;
+    text-shadow: 0 0 8px var(--green-glow, rgba(0, 255, 102, 0.4));
+}
+
+.profile-basic .meta-info {
+    font-size: 0.85rem;
+    color: var(--text-muted, #6b937b);
+    margin-bottom: 15px;
+    font-family: var(--font-main, "Inter", sans-serif);
+}
+
+.profile-basic .bio {
+    font-size: 0.85rem;
+    color: var(--text, #e0ffee);
+    line-height: 1.5;
+    margin-bottom: 20px;
+}
+
+.quote-box {
+    width: 100%;
+    background: rgba(0, 255, 102, 0.04);
+    border-left: 3px solid var(--green, #00ff66);
+    padding: 12px 15px;
+    font-style: italic;
+    font-size: 0.8rem;
+    color: var(--text-muted, #6b937b);
+    text-align: left;
+}
+
+/* Columna derecha: Detalles, Habilidades, Listas */
+.profile-details {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.detail-card {
+    background: var(--bg-card, rgba(4, 18, 12, 0.92));
+    border: 1px solid var(--border-dim, rgba(0, 255, 102, 0.25));
+    padding: 24px;
+    position: relative;
+    box-shadow: 0 0 20px rgba(0, 255, 102, 0.05);
+}
+
+.detail-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, var(--green, #00ff66), transparent);
+}
+
+.detail-card h3 {
+    font-family: var(--font-code, "JetBrains Mono", monospace);
+    color: var(--green, #00ff66);
+    font-size: 0.95rem;
+    letter-spacing: 0.5px;
+    margin-bottom: 18px;
+}
+
+/* Lista de Habilidades (Skills) */
+.skills-list {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.skill-item {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.skill-item span {
+    font-family: var(--font-code, "JetBrains Mono", monospace);
+    font-size: 0.75rem;
+    color: var(--text-muted, #6b937b);
+}
+
+.skill-item .bar {
+    width: 100%;
+    height: 6px;
+    background: rgba(0, 255, 102, 0.1);
+    border: 1px solid var(--border-dim, rgba(0, 255, 102, 0.25));
+    border-radius: 2px;
+    overflow: hidden;
+}
+
+.skill-item .bar .fill {
+    height: 100%;
+    background: var(--green, #00ff66);
+    box-shadow: 0 0 8px var(--green-glow, rgba(0, 255, 102, 0.4));
+    transition: width 0.6s ease;
+}
+
+/* Grilla de 2 columnas para Películas y Música */
+.details-grid-2 {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+}
+
+.detail-card ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.detail-card ul li {
+    font-size: 0.85rem;
+    color: var(--text, #e0ffee);
+    font-family: var(--font-main, "Inter", sans-serif);
+    padding-left: 4px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.detail-card ul li::before {
+    content: ">";
+    color: var(--green, #00ff66);
+    font-family: var(--font-code, "JetBrains Mono", monospace);
+    font-weight: 700;
+}
+
+/* Zona interactiva */
+.interactive-zone p {
+    font-size: 0.85rem;
+    color: var(--text-muted, #6b937b);
+    margin-bottom: 15px;
+}
+
+.status-box {
+    margin-top: 15px;
+    padding: 12px 15px;
+    background: #010a05;
+    border: 1px dashed var(--border-dim, rgba(0, 255, 102, 0.25));
+    font-family: var(--font-code, "JetBrains Mono", monospace);
+    font-size: 0.8rem;
+    color: var(--green, #00ff66);
+}
+
+/* Botones de navegación entre perfiles */
+.profile-nav-buttons {
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+    margin-top: 10px;
+}
+
+/* Botones Base */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px 20px;
+    font-family: var(--font-code, "JetBrains Mono", monospace);
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-decoration: none;
+    border: 1px solid var(--green, #00ff66);
+    cursor: pointer;
+    transition: all 0.25s ease;
+}
+
+.btn-primary {
+    background: var(--green, #00ff66);
+    color: #000;
+    box-shadow: 0 0 15px var(--green-glow, rgba(0, 255, 102, 0.4));
+}
+
+.btn-primary:hover {
+    background: transparent;
+    color: var(--green, #00ff66);
+}
+
+.btn-secondary {
+    background: transparent;
+    color: var(--green, #00ff66);
+}
+
+.btn-secondary:hover {
+    background: rgba(0, 255, 102, 0.1);
+    box-shadow: 0 0 10px var(--green-glow, rgba(0, 255, 102, 0.3));
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+    .profile-layout {
+        grid-template-columns: 1fr;
+    }
+    
+    .details-grid-2 {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 600px) {
+    .profile-nav-buttons {
+        flex-direction: column;
+    }
+}
