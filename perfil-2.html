@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DevSquad // Perfil - Cristian Villagra</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style/style.css">
+    <link rel="stylesheet" href="style/perfil.css">
+</head>
+
+<body>
+    <!-- Canvas Fondo Matrix -->
+    <canvas id="matrix-canvas" aria-hidden="true"></canvas>
+
+    <!-- Header de Navegación Global -->
+    <header class="site-header">
+        <a href="index.html" class="logo"><span>&gt;_</span> DEVSQUAD</a>
+        <button class="menu-toggle" id="menu-toggle" type="button" aria-label="Abrir menú">
+            <span></span><span></span><span></span>
+        </button>
+        <nav id="main-nav">
+            <ul>
+                <li><a href="index.html">INICIO</a></li>
+                <li><a href="index.html#integrantes">EQUIPO</a></li>
+                <li><a href="perfil-1.html" class="active-link">CRISTIAN</a></li>
+                <li><a href="perfil-2.html">INTEGRANTE 2</a></li>
+                <li><a href="perfil-3.html">INTEGRANTE 3</a></li>
+                <li><a href="Bitacora.html">BITÁCORA</a></li>
+            </ul>
+        </nav>
+        <a href="index.html#contacto" class="header-button">CONÉCTATE</a>
+    </header>
+
+    <!-- Sección Principal del Perfil -->
+    <main class="section">
+        <div class="profile-layout">
+            <!-- Columna Izquierda: Tarjeta Principal con Avatar y Datos Básicos -->
+            <aside class="profile-sidebar">
+                <div class="avatar-frame">
+                    <img src="https://via.placeholder.com/200/04120c/00ff66?text=C.+Villagra"
+                        alt="Foto de perfil de Cristian Villagra">
+                </div>
+                <div class="profile-basic">
+                    <h2>CRISTIAN VILLAGRA</h2>
+                    <span class="role">IA ENGINEER</span>
+                    <p class="meta-info">📍 Buenos Aires, Argentina | ⏳ 33 Años</p>
+                    <p class="bio">Apasionado por la creación de soluciones innovadoras mediante inteligencia
+                        artificial,
+                        automatización de procesos y desarrollo de sistemas inteligentes.</p>
+                </div>
+                <div class="quote-box">
+                    <p>"Convierte datos en inteligencia y procesos en soluciones automáticas."</p>
+                </div>
+            </aside>
+
+            <!-- Columna Derecha: Habilidades y Listas de Favoritos -->
+            <section class="profile-details">
+                <!-- 4 Habilidades (Skills) -->
+                <div class="detail-card">
+                    <h3>// HABILIDADES PRINCIPALES</h3>
+                    <div class="skills-list">
+                        <div class="skill-item">
+                            <span>Phyton</span>
+                            <div class="bar">
+                                <div class="fill" style="width: 90%;"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <span>Despliegue e integracion en la nube</span>
+                            <div class="bar">
+                                <div class="fill" style="width: 85%;"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <span>Automatización de Procesos</span>
+                            <div class="bar">
+                                <div class="fill" style="width: 80%;"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <span>Ingeniería de Datos para IA</span>
+                            <div class="bar">
+                                <div class="fill" style="width: 95%;"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 3 Películas y 3 Álbumes Favoritos -->
+                <div class="details-grid-2">
+                    <!-- 3 Películas Favoritas -->
+                    <div class="detail-card">
+                        <h3>// 🎬 PELÍCULAS FAVORITAS</h3>
+                        <ul>
+                            <li>Al filo del mañana (2014)</li>
+                            <li>Ex Machina (2014)</li>
+                            <li>El lobo de Wall Street (2013)</li>
+                        </ul>
+                    </div>
+
+                    <!-- 3 Álbumes Favoritos -->
+                    <div class="detail-card">
+                        <h3>// 🎵 ÁLBUMES FAVORITOS</h3>
+                        <ul>
+                            <li>Michel Jackson - Thriller</li>
+                            <li>Airbag - El club de la pelea</li>
+                            <li>Linkin Park - Hybrid Theory</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Consola Interactiva -->
+                <div class="detail-card interactive-zone">
+                    <h3>// CONSOLA INTERACTIVA DEL PERFIL</h3>
+                    <p>Haz clic para ejecutar el diagnóstico en tiempo real de esta estación de trabajo:</p>
+                    <button id="btn-status" class="btn btn-primary" type="button">EJECUTAR DIAGNÓSTICO</button>
+                    <div id="status-output" class="status-box">Sistema Cristian Villagra // Esperando comando_</div>
+                </div>
+
+                <!-- Navegación entre Integrantes -->
+                <div class="profile-nav-buttons">
+                    <a href="index.html#integrantes" class="btn btn-secondary">← VOLVER AL EQUIPO</a>
+                    <a href="perfil-2.html" class="btn btn-primary">SIGUIENTE INTEGRANTE →</a>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer Global -->
+    <footer class="site-footer">
+        <div>&gt;_ DEVSQUAD</div>
+        <p>Desarrollo de Sistemas Web Front End</p>
+        <span>IFTS N.º 29 · 2026</span>
+    </footer>
+
+    <script src="java/java.js"></script>
+    <script>
+        // Script interactivo para la consola de diagnóstico del perfil
+        const btnStatus = document.getElementById("btn-status");
+        const statusOutput = document.getElementById("status-output");
+        if (btnStatus && statusOutput) {
+            btnStatus.addEventListener("click", () => {
+                statusOutput.textContent = "> Ejecutando escaneo...";
+                setTimeout(() => {
+                    statusOutput.innerHTML = "> ESTADO: <span style='color: #00ff66;'>SISTEMA OPERATIVO Y SINCRONIZADO AL 100%</span> [FRONTEND OK]";
+                }, 600);
+            });
+        }
+    </script>
+</body>
+
+</html>
