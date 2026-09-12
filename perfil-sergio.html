@@ -47,7 +47,7 @@
         <nav id="main-nav">
             <ul>
                 <li><a href="index.html">INICIO</a></li>
-                <li><a href="index.html#integrantes">EQUIPO</a></li>
+                <li><a href="index.html#equipo">EQUIPO</a></li>
                 <li><a href="perfil-2.html">CRISTIAN</a></li>
                 <li><a href="perfil-sergio.html" class="active-link">SERGIO</a></li>
                 <li><a href="Bitacora.html">BITÁCORA</a></li>
@@ -221,9 +221,63 @@
 
     </footer>
 
+    <!-- JavaScript general del proyecto -->
+    <script src="java/java.js"></script> 
 
-    <!-- Script interactivo para la consola de diagnóstico del perfil-->
-    <script src="java/java.js"></script>
+    <!-- JavaScript interactivo del perfil -->
+    <script>
+
+        // Elementos de la consola QA
+        const btnQa = document.getElementById("btn-qa");
+        const qaOutput = document.getElementById("qa-output");
+
+        // Pruebas que se mostraran durante el diagnostico
+        const pruebas = [
+            "> Verificando estructura HTML... [OK]",
+            "> Analizando estilos CSS... [OK]",
+            "> Ejecutando prueba JavaScript... [OK]",
+            "> Buscando errores de interfaz... [OK]",
+            "> TEST FINALIZADO // SISTEMA ESTABLE"
+        ];
+
+        // Inicia el control de calidad al presionar el boton
+        if (btnQa && qaOutput) {
+
+            btnQa.addEventListener("click", () => {
+
+                let indice = 0;
+
+                btnQa.disabled = true;
+
+                qaOutput.innerHTML = "> QA_SCAN iniciado...<br>";
+
+                // Muestra una prueba cada medio segundo
+                const proceso = setInterval(() => {
+
+                    qaOutput.innerHTML += pruebas[indice] + "<br>";
+
+                    indice++;
+
+                    // Finaliza cuando se ejecutaron todas las pruebas
+                    if (indice === pruebas.length) {
+
+                        clearInterval(proceso);
+
+                        qaOutput.innerHTML +=
+                            "<span style='color:#00ff66;'>" +
+                            "> STATUS: QUALITY_CHECK_PASSED" +
+                            "</span>";
+
+                        btnQa.disabled = false;
+                    }
+
+                }, 500);
+
+            });
+
+        }
+
+    </script>
 
 </body>
 
