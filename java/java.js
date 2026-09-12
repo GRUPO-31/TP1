@@ -54,9 +54,14 @@ document.addEventListener("DOMContentLoaded", () => {
     const holoDesc = document.getElementById("holo-desc");
     const holoReactor = document.querySelector(".holo-reactor");
 
+    let typingInterval = 0;
+    let typingTimeout = 0;
+
     if (nodeBtns.length > 0 && holoTitle && holoDesc) {
         nodeBtns.forEach(btn => {
             btn.addEventListener("click", () => {
+                clearInterval(typingInterval);
+                clearTimeout(typingTimeout);
                 nodeBtns.forEach(b => b.classList.remove("active"));
                 btn.classList.add("active");
 
@@ -76,9 +81,9 @@ document.addEventListener("DOMContentLoaded", () => {
                 holoTitle.textContent = "> DESFRAGMENTANDO...";
                 holoDesc.textContent = "";
 
-                setTimeout(() => {
+                typingTimeout = setTimeout(() => {
                     holoTitle.textContent = newTitle;
-                    const typingInterval = setInterval(() => {
+                    typingInterval = setInterval(() => {
                         if (charIndex < newDesc.length) {
                             holoDesc.textContent += newDesc.charAt(charIndex);
                             charIndex++;
