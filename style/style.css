@@ -766,6 +766,13 @@ body::before {
 .badge-status { background: var(--green-dim); color: var(--green); border: 1px solid var(--green); padding: 2px 6px; font-size: 0.65rem; }
 .margin-top { margin-top: 30px; }
 
+/* Boton para acceder a la bitacora completa */
+.bitacora-link {
+    margin: 24px 0;
+    display: flex;
+    justify-content: center;
+}
+
 .contact-section { text-align: center; padding: 80px 20px; border-top: 1px solid var(--border-dim); }
 .contact-links { display: flex; justify-content: center; gap: 15px; margin-top: 30px; }
 
