@@ -199,7 +199,7 @@ document.addEventListener("DOMContentLoaded", () => {
         setTimeout(typeTerminalLine, 400);
     }
 
-    /* --- 10. EFECTO GLITCH DE DESENCRIPTADO EN EL TÍTULO "SINTAXIA" --- */
+    /* --- 10. EFECTO GLITCH DE DESENCRIPTADO EN EL TÍTULO --- */
     const mainTitle = document.getElementById("sintaxia-title");
     if (mainTitle) {
         const targetText = "SINTAXIA";
@@ -222,7 +222,7 @@ document.addEventListener("DOMContentLoaded", () => {
     /* --- 11. SCROLL GLITCH REVEAL (INTERSECTION OBSERVER) --- */
     const revealElements = document.querySelectorAll('.section, .contact-section');
     revealElements.forEach(el => {
-        if(el.id !== 'hero') { // Evitamos ocultar la cabecera principal al inicio
+        if(el.id !== 'hero') { 
             el.classList.add('glitch-hidden');
         }
     });
@@ -234,9 +234,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const revealOnScroll = new IntersectionObserver(function(entries, observer) {
         entries.forEach(entry => {
-            if (!entry.isIntersecting) {
-                return; 
-            } else {
+            if (!entry.isIntersecting) { return; } 
+            else {
                 entry.target.classList.remove('glitch-hidden');
                 entry.target.classList.add('glitch-active');
                 observer.unobserve(entry.target);
@@ -245,9 +244,47 @@ document.addEventListener("DOMContentLoaded", () => {
     }, revealOptions);
 
     revealElements.forEach(el => {
-        if(el.id !== 'hero') {
-            revealOnScroll.observe(el);
+        if(el.id !== 'hero') { revealOnScroll.observe(el); }
+    });
+
+    /* --- 12. PARALLAX Y HEADER DINÁMICO AL HACER SCROLL --- */
+    const header = document.querySelector(".site-header");
+    const heroContent = document.querySelector(".hero-content");
+    const heroTerminal = document.querySelector(".hero-terminal-container");
+    const scrollIndicator = document.getElementById("scroll-indicator");
+
+    window.addEventListener("scroll", () => {
+        const scrollY = window.scrollY;
+
+        // Oscurecer y darle sombra a la barra de arriba
+        if (scrollY > 50) {
+            header.style.background = "rgba(2, 10, 7, 0.98)";
+            header.style.boxShadow = "0 4px 20px rgba(0, 255, 102, 0.15)";
+        } else {
+            header.style.background = "rgba(2, 10, 7, 0.95)";
+            header.style.boxShadow = "none";
+        }
+
+        // Efecto profundidad/Parallax para el inicio
+        if (heroContent && heroTerminal) {
+            heroContent.style.transform = `translateY(${scrollY * 0.35}px)`;
+            heroContent.style.opacity = 1 - (scrollY / 400);
+
+            heroTerminal.style.transform = `translateY(${scrollY * 0.15}px)`;
+            heroTerminal.style.opacity = 1 - (scrollY / 500);
+        }
+        
+        // Esconder el mouse indicator cuando bajas
+        if (scrollIndicator) {
+            scrollIndicator.style.opacity = 1 - (scrollY / 200);
         }
     });
 
-});git 
+    // Clic en el mouse indicator baja automáticamente a la misión
+    if (scrollIndicator) {
+        scrollIndicator.addEventListener("click", () => {
+            document.querySelector("#mision").scrollIntoView({ behavior: "smooth" });
+        });
+    }
+
+});
