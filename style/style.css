@@ -25,6 +25,8 @@
 
 html {
     scroll-behavior: smooth;
+    overflow-x: hidden;
+    scroll-padding-top: 70px;
 }
 
 body {
@@ -34,9 +36,31 @@ body {
     font-family: var(--font-main);
     overflow-x: hidden;
     position: relative;
+    padding-top: 70px;
 }
 
-/* Efecto Scanlines CRT */
+/* ================= SCROLLBAR CYBERPUNK ================= */
+::-webkit-scrollbar {
+    width: 6px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--bg-card);
+    border-left: 1px solid var(--border-dim);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--green);
+    border-radius: 3px;
+    box-shadow: 0 0 10px var(--green-glow);
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #fff;
+    box-shadow: 0 0 15px var(--green);
+}
+
+/* ================= EFECTOS BASE ================= */
 body::after {
     content: "";
     position: fixed;
@@ -52,7 +76,6 @@ body::after {
     );
 }
 
-/* Grilla HUD de Fondo */
 body::before {
     content: "";
     position: fixed;
@@ -76,7 +99,6 @@ body::before {
     pointer-events: none;
 }
 
-/* Barra de progreso de scroll */
 .scroll-progress {
     position: fixed;
     top: 0;
@@ -89,8 +111,10 @@ body::before {
 
 /* ================= HEADER ================= */
 .site-header {
-    position: sticky;
+    position: fixed;
     top: 0;
+    left: 0;
+    width: 100%;
     z-index: 1000;
     height: 70px;
     display: flex;
@@ -263,7 +287,6 @@ body::before {
     background: var(--green-dim);
 }
 
-/* Hero Terminal & Workflow */
 .hero-terminal-container {
     width: 380px;
     display: flex;
@@ -367,7 +390,7 @@ body::before {
     margin-top: 10px;
 }
 
-/* ================= ESTACIÓN HOLOGRÁFICA (HOLO-CORE) ================= */
+/* ================= ESTACIÓN HOLOGRÁFICA (MANIFIESTO CORE) ================= */
 .cyber-frame {
     position: relative;
     background: rgba(2, 12, 7, 0.92);
@@ -375,6 +398,12 @@ body::before {
     padding: 30px;
     box-shadow: 0 0 35px rgba(0, 255, 102, 0.15);
     backdrop-filter: blur(10px);
+}
+
+.mission-futuristic .cyber-frame {
+    background: linear-gradient(135deg, rgba(2, 16, 9, 0.95), rgba(1, 8, 4, 0.98));
+    border: 1px solid var(--green);
+    box-shadow: 0 0 50px rgba(0, 255, 102, 0.18), inset 0 0 30px rgba(0, 255, 102, 0.05);
 }
 
 .corner-hud {
@@ -439,6 +468,7 @@ body::before {
 .holo-reactor-container {
     position: relative;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     height: 260px;
@@ -465,8 +495,7 @@ body::before {
 
 .middle-ring {
     inset: 20px;
-    border: 2px solid var(--cyan);
-    border-dasharray: 10;
+    border: 2px dashed var(--cyan);
     box-shadow: 0 0 15px rgba(0, 229, 255, 0.4);
     transform: rotateX(65deg) rotateY(20deg);
     animation: spinCounterClockwise 6s infinite linear;
@@ -493,6 +522,17 @@ body::before {
     color: var(--green);
     text-shadow: 0 0 10px var(--green);
     box-shadow: 0 0 20px var(--green-glow);
+}
+
+.reactor-status-text {
+    position: absolute;
+    bottom: 5px;
+    font-family: var(--font-code);
+    font-size: 0.65rem;
+    color: var(--green);
+    text-shadow: 0 0 8px var(--green);
+    letter-spacing: 2px;
+    animation: hudBlink 1s infinite alternate;
 }
 
 .holo-display-panel {
@@ -526,8 +566,9 @@ body::before {
 
 .holo-screen {
     position: relative;
-    background: #010a05;
+    background: radial-gradient(circle at center, #02140a 0%, #000502 100%);
     border: 1px solid var(--green);
+    border-left: 3px solid var(--green);
     padding: 20px;
     min-height: 110px;
     box-shadow: inset 0 0 15px rgba(0, 255, 102, 0.15);
@@ -584,19 +625,25 @@ body::before {
     margin-bottom: 3px;
 }
 
-.node-btn:hover, .node-btn.active {
-    background: var(--green);
-    color: #000;
+.node-btn:hover {
+    background: var(--green-dim);
+    color: var(--green);
     border-color: var(--green);
-    box-shadow: 0 0 15px var(--green-glow);
 }
 
-.node-btn:hover .node-code, .node-btn.active .node-code { color: #000; }
+.node-btn.active {
+    background: var(--green) !important;
+    color: #000 !important;
+    border-color: var(--green);
+    box-shadow: 0 0 20px var(--green), inset 0 0 10px rgba(255, 255, 255, 0.5);
+    transform: translateY(-2px);
+}
+
+.node-btn.active .node-code { color: #000; }
 
 /* ================= SECCIÓN EQUIPO ================= */
 .team-futuristic .section-heading { margin-bottom: 35px; }
 
-/* Grilla optimizada para 4 integrantes (2x2 en Desktop) */
 .operatives-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -641,9 +688,70 @@ body::before {
     margin-bottom: 15px;
     padding-bottom: 8px;
     border-bottom: 1px dashed var(--border-dim);
+    gap: 10px;
 }
 
 .op-id { color: var(--green); font-weight: 800; letter-spacing: 1px; }
+
+/* Contenedor de insignias (GitHub + Web Personal) */
+.op-badges-container {
+    display: flex;
+    gap: 6px;
+}
+
+.op-github-badge, .op-web-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 3px;
+    padding: 2px 6px;
+    font-family: var(--font-code);
+    font-size: 0.6rem;
+    text-decoration: none;
+    letter-spacing: 0.5px;
+    transition: all 0.3s ease;
+}
+
+/* Insignia GitHub (Verde neón) */
+.op-github-badge {
+    background: rgba(0, 255, 102, 0.05);
+    border: 1px dashed var(--green);
+    color: var(--green);
+    animation: githubPulse 2s infinite;
+}
+.op-github-badge .git-icon { font-weight: 800; color: var(--cyan); }
+.op-github-badge:hover {
+    background: var(--green);
+    color: #000;
+    box-shadow: 0 0 10px var(--green);
+    border-style: solid;
+}
+.op-github-badge:hover .git-icon { color: #000; }
+
+/* Insignia Web Personal (Cian eléctrico) */
+.op-web-badge {
+    background: rgba(0, 229, 255, 0.05);
+    border: 1px dashed var(--cyan);
+    color: var(--cyan);
+    animation: webPulse 2s infinite;
+}
+.op-web-badge .web-icon { font-weight: 800; color: var(--green); }
+.op-web-badge:hover {
+    background: var(--cyan);
+    color: #000;
+    box-shadow: 0 0 10px var(--cyan);
+    border-style: solid;
+}
+.op-web-badge:hover .web-icon { color: #000; }
+
+@keyframes githubPulse {
+    0%, 100% { border-color: rgba(0, 255, 102, 0.4); box-shadow: 0 0 4px rgba(0, 255, 102, 0.1); }
+    50% { border-color: var(--green); box-shadow: 0 0 10px rgba(0, 255, 102, 0.4); }
+}
+
+@keyframes webPulse {
+    0%, 100% { border-color: rgba(0, 229, 255, 0.4); box-shadow: 0 0 4px rgba(0, 229, 255, 0.1); }
+    50% { border-color: var(--cyan); box-shadow: 0 0 10px rgba(0, 229, 255, 0.4); }
+}
 
 .op-status { padding: 2px 6px; font-size: 0.6rem; border-radius: 2px; }
 .op-status.active { background: var(--green-dim); color: var(--green); border: 1px solid var(--green); }
@@ -766,13 +874,6 @@ body::before {
 .badge-status { background: var(--green-dim); color: var(--green); border: 1px solid var(--green); padding: 2px 6px; font-size: 0.65rem; }
 .margin-top { margin-top: 30px; }
 
-/* Boton para acceder a la bitacora completa */
-.bitacora-link {
-    margin: 24px 0;
-    display: flex;
-    justify-content: center;
-}
-
 .contact-section { text-align: center; padding: 80px 20px; border-top: 1px solid var(--border-dim); }
 .contact-links { display: flex; justify-content: center; gap: 15px; margin-top: 30px; }
 
@@ -802,6 +903,85 @@ body::before {
     animation: ripple-out 0.5s linear forwards; z-index: 9999;
 }
 
+/* ================= MODAL DE PERFILES (VENTANA FLOTANTE) ================= */
+.cyber-modal {
+    display: none; 
+    position: fixed;
+    inset: 0;
+    z-index: 10000;
+    background: rgba(0, 0, 0, 0.88);
+    backdrop-filter: blur(8px);
+    align-items: center;
+    justify-content: center;
+    padding: 15px;
+}
+
+.cyber-modal.active {
+    display: flex;
+    animation: fadeIn 0.3s ease-out forwards;
+}
+
+.modal-content {
+    position: relative;
+    width: 100%;
+    max-width: 1050px;
+    height: 94vh;
+    background: var(--bg-card);
+    border: 1px solid var(--green);
+    box-shadow: 0 0 40px rgba(0, 255, 102, 0.25);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden; 
+}
+
+.close-btn {
+    position: absolute;
+    top: 12px;
+    right: 15px;
+    background: #000;
+    color: var(--green);
+    border: 1px dashed var(--green);
+    padding: 6px 12px;
+    font-family: var(--font-code);
+    font-size: 0.75rem;
+    font-weight: bold;
+    cursor: pointer;
+    z-index: 100;
+    transition: 0.3s;
+}
+
+.close-btn:hover {
+    background: var(--green);
+    color: #000;
+    box-shadow: 0 0 15px var(--green-glow);
+}
+
+#modal-frame {
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    border: none;
+}
+
+/* ================= TRUCO: ADAPTACIÓN DENTRO DEL IFRAME ================= */
+html.in-iframe .site-header,
+html.in-iframe .site-footer,
+html.in-iframe .profile-nav-buttons,
+html.in-iframe #matrix-canvas {
+    display: none !important;
+}
+
+html.in-iframe body {
+    background: var(--bg);
+    overflow-y: auto !important;
+    padding-top: 0 !important;
+}
+
+html.in-iframe .section {
+    padding: 25px 20px !important;
+    max-width: 100% !important;
+}
+
 /* ================= KEYFRAMES ================= */
 @keyframes spinClockwise { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
 @keyframes spinCounterClockwise { 0% { transform: rotate(360deg); } 100% { transform: rotate(0deg); } }
@@ -810,13 +990,77 @@ body::before {
 @keyframes hudBlink { 0%, 100% { opacity: 1; } 50% { opacity: 0.3; } }
 @keyframes meterPulse { 0%, 100% { width: 40%; } 50% { width: 90%; } }
 @keyframes ripple-out { to { width: 80px; height: 80px; opacity: 0; } }
+@keyframes fadeIn {
+    from { opacity: 0; transform: scale(0.98); }
+    to { opacity: 1; transform: scale(1); }
+}
 
-/* ================= MEDIA QUERIES ================= */
-@media (max-width: 850px) {
-    .operatives-grid { grid-template-columns: 1fr; }
-    .mission-holo-wrapper { grid-template-columns: 1fr; }
-    .hero { flex-direction: column; align-items: flex-start; }
-    .hero-terminal-container { width: 100%; }
+/* =====================================================
+   BREAKPOINTS OBLIGATORIOS (1200px, 900px, 400px)
+   ===================================================== */
+
+/* 1. Pantallas grandes (1200px en adelante) */
+@media (min-width: 1200px) {
+    .section {
+        max-width: 1150px;
+    }
+}
+
+/* 2. Tablets y dispositivos medianos (hasta 900px) */
+@media (max-width: 900px) {
+    .hero {
+        flex-direction: column;
+        padding: 40px 5%;
+        text-align: center;
+    }
+    .hero-content {
+        max-width: 100%;
+    }
+    .hero-buttons {
+        justify-content: center;
+    }
+    .hero-terminal-container {
+        width: 100%;
+    }
+    .mission-holo-wrapper {
+        grid-template-columns: 1fr;
+    }
+    .operatives-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+    }
+}
+
+/* 3. Celulares y pantallas compactas (hasta 400px) */
+@media (max-width: 400px) {
+    body {
+        padding-top: 60px;
+    }
+    .site-header {
+        height: 60px;
+        padding: 0 15px;
+    }
+    .logo {
+        font-size: 0.95rem;
+    }
+    .operatives-grid {
+        grid-template-columns: 1fr;
+    }
+    .cyber-frame {
+        padding: 15px;
+    }
+    .hero h1 {
+        font-size: 2.3rem;
+    }
+    .hero h2 {
+        font-size: 0.95rem;
+    }
+    .directive-nodes {
+        grid-template-columns: 1fr 1fr;
+    }
+    p, span, h3, a {
+        word-break: break-word;
+    }
 }
 
 @media (max-width: 600px) {

@@ -217,6 +217,7 @@
     font-family: var(--font-code, "JetBrains Mono", monospace);
     font-size: 0.8rem;
     color: var(--green, #00ff66);
+    word-break: break-word;
 }
 
 /* Botones de navegación entre perfiles */
@@ -263,10 +264,23 @@
     box-shadow: 0 0 10px var(--green-glow, rgba(0, 255, 102, 0.3));
 }
 
-/* Responsive */
+/* =====================================================
+   BREAKPOINTS OBLIGATORIOS (1200px, 900px, 400px)
+   ===================================================== */
+
+/* 1. Pantallas grandes (1200px en adelante) */
+@media (min-width: 1200px) {
+    .profile-layout {
+        max-width: 1150px;
+        margin: 0 auto;
+    }
+}
+
+/* 2. Tablets y dispositivos medianos (hasta 900px) */
 @media (max-width: 900px) {
     .profile-layout {
         grid-template-columns: 1fr;
+        gap: 20px;
     }
     
     .details-grid-2 {
@@ -274,8 +288,33 @@
     }
 }
 
-@media (max-width: 600px) {
+/* 3. Celulares y pantallas compactas (hasta 400px) */
+@media (max-width: 400px) {
+    .profile-sidebar,
+    .detail-card {
+        padding: 15px;
+    }
+
+    .avatar-frame {
+        width: 130px;
+        height: 130px;
+    }
+
+    .profile-basic h2 {
+        font-size: 1.15rem;
+    }
+
     .profile-nav-buttons {
         flex-direction: column;
+    }
+
+    .btn {
+        width: 100%;
+        padding: 10px 15px;
+    }
+
+    /* Evitar desbordes de texto */
+    p, span, h3, a, li {
+        word-break: break-word;
     }
 }

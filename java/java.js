@@ -148,4 +148,42 @@ document.addEventListener("DOMContentLoaded", () => {
         }, 500);
     });
 
+    /* --- 7. DETECCIÓN DE IFRAME PARA OCULTAR MENÚS EN PERFILES --- */
+    if (window.self !== window.top) {
+        document.documentElement.classList.add('in-iframe');
+    }
+
+    /* --- 8. LÓGICA DEL MODAL DE PERFILES EN PORTADA --- */
+    const modal = document.getElementById("profile-modal");
+    const modalFrame = document.getElementById("modal-frame");
+    const closeModalBtn = document.getElementById("close-modal");
+    const triggerButtons = document.querySelectorAll(".modal-trigger");
+
+    if (modal && modalFrame && closeModalBtn) {
+        // Abrir modal
+        triggerButtons.forEach(btn => {
+            btn.addEventListener("click", (e) => {
+                e.preventDefault(); 
+                const targetUrl = btn.getAttribute("href");
+                modalFrame.src = targetUrl; 
+                modal.classList.add("active"); 
+                document.body.style.overflow = "hidden"; // Bloquea scroll del fondo
+            });
+        });
+
+        // Cerrar modal
+        closeModalBtn.addEventListener("click", () => {
+            modal.classList.remove("active");
+            setTimeout(() => { modalFrame.src = ""; }, 300); // Limpia iframe tras animacion
+            document.body.style.overflow = "auto";
+        });
+
+        // Cerrar al hacer clic en el fondo negro
+        modal.addEventListener("click", (e) => {
+            if (e.target === modal) {
+                closeModalBtn.click();
+            }
+        });
+    }
+
 });

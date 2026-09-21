@@ -9,7 +9,6 @@
     <link rel="icon" type="image/x-icon" href="img/favicon.ico">
     <meta name="description" content="Perfil profesional de Diego Rodriguez - Lead Architect en DevSquad.">
 
-    <!-- Fuentes utilizadas en el proyecto -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
@@ -17,26 +16,20 @@
         href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700;800&display=swap"
         rel="stylesheet">
 
-    <!-- Estilos generales y estilos de perfiles -->
     <link rel="stylesheet" href="style/style.css">
     <link rel="stylesheet" href="style/perfil.css">
 </head>
 
 <body>
 
-    <!-- Fondo animado Matrix -->
     <canvas id="matrix-canvas" aria-hidden="true"></canvas>
 
-
-    <!-- Navegacion principal -->
     <header class="site-header">
-
         <a href="index.html" class="logo">
             <span>&gt;_</span> DEVSQUAD
         </a>
 
         <button class="menu-toggle" id="menu-toggle" type="button" aria-label="Abrir menu">
-
             <span></span>
             <span></span>
             <span></span>
@@ -56,33 +49,24 @@
         <a href="index.html#contacto" class="header-button">CONÉCTATE</a>
     </header>
 
-    <!-- Contenido principal del perfil -->
     <main class="section">
-
         <div class="profile-layout">
 
-            <!-- Tarjeta con informacion personal -->
             <aside class="profile-sidebar">
-
                 <div class="avatar-frame">
                     <img src="img/diego.jpg" alt="Foto de perfil de Diego Rodriguez">
                 </div>
 
                 <div class="profile-basic">
-
                     <h2>DIEGO RODRIGUEZ</h2>
-
                     <span class="role">LEAD_ARCHITECT </span>
-
                     <p class="meta-info">
                         📍 Buenos Aires, Argentina | ⏳ 46 Años
                     </p>
-
                     <p class="bio">
                         Enfocado en asegurar la calidad del software mediante pruebas, detección de errores
                         y mejora continua, buscando desarrollar sistemas confiables, funcionales y eficientes.
                     </p>
-
                 </div>
 
                 <div class="quote-box">
@@ -91,7 +75,17 @@
                     </p>
                 </div>
 
-                <div class="social-links">
+                <!-- Insignias interactivas (GitHub + Web Personal) -->
+                <div class="profile-badges-container" style="display: flex; gap: 8px; margin-top: 15px;">
+                    <a href="https://github.com/diegojrodriguez" target="_blank" class="op-github-badge">
+                        <span class="git-icon">&gt;</span> GH
+                    </a>
+                    <a href="#" target="_blank" class="op-web-badge">
+                        <span class="web-icon">#</span> WEB
+                    </a>
+                </div>
+
+                <div class="social-links" style="margin-top: 10px;">
                     <a href="https://github.com/diegojrodriguez" target="_blank" rel="noopener noreferrer"
                         class="btn-social">
                         <span>[GH]</span> GitHub
@@ -101,78 +95,57 @@
                         <span>[IN]</span> LinkedIn
                     </a>
                 </div>
-
             </aside>
 
-
-
-
-            <!-- Informacion tecnica del perfil -->
             <section class="profile-details">
+                <div class="detail-card">
+                    <h3>// HABILIDADES PRINCIPALES</h3>
+                    <div class="skills-list">
+                        <div class="skill-item">
+                            <span>C# / .NET &amp; Backend Services</span>
+                            <div class="bar">
+                                <div class="fill" style="width: 85%;"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <span>SQL Server &amp; Bases de Datos Relacionales</span>
+                            <div class="bar">
+                                <div class="fill" style="width: 90%;"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <span>Python / APIs &amp; Automatización</span>
+                            <div class="bar">
+                                <div class="fill" style="width: 80%;"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <span>HTML5, CSS3 &amp; JavaScript</span>
+                            <div class="bar">
+                                <div class="fill" style="width: 75%;"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
-                <!-- Habilidades principales -->
-<div class="detail-card">
-    <h3>// HABILIDADES PRINCIPALES</h3>
-
-    <div class="skills-list">
-        <div class="skill-item">
-            <span>C# / .NET &amp; Backend Services</span>
-            <div class="bar">
-                <div class="fill" style="width: 85%;"></div>
-            </div>
-        </div>
-
-        <div class="skill-item">
-            <span>SQL Server &amp; Bases de Datos Relacionales</span>
-            <div class="bar">
-                <div class="fill" style="width: 90%;"></div>
-            </div>
-        </div>
-
-        <div class="skill-item">
-            <span>Python / APIs &amp; Automatización</span>
-            <div class="bar">
-                <div class="fill" style="width: 80%;"></div>
-            </div>
-        </div>
-
-        <div class="skill-item">
-            <span>HTML5, CSS3 &amp; JavaScript</span>
-            <div class="bar">
-                <div class="fill" style="width: 75%;"></div>
-            </div>
-        </div>
-    </div>
-</div>
-
-                <!-- Peliculas y albumes favoritos -->
                 <div class="details-grid-2">
-
                     <div class="detail-card">
-
                         <h3>// 🎬 PELÍCULAS FAVORITAS</h3>
-
                         <ul>
                             <li>Back to the Future (1985)</li>
                             <li>El Efecto Mariposa (2004)</li>
                             <li>Terminator (1984)</li>
                         </ul>
-
                     </div>
 
-
                     <div class="detail-card">
-
                         <h3>// 🎵 ÁLBUMES FAVORITOS</h3>
-
                         <ul>
                             <li>A 2000 - Rodrigo </li>
                             <li>La Leyenda Continua - Rodrigo </li>
                             <li>Q' Lokura / Ulises Bueno / Dale Q' Va</li>
                         </ul>
-
                     </div>
-
                 </div>
 
                 <div class="detail-card">
@@ -180,134 +153,70 @@
                     <div class="projects-grid">
                         <div class="project-item">
                             <h4>Sistema de Gestión & Picking</h4>
-                            <p>Arquitectura cliente-servidor con escaneo continuo de datos y sincronización de stock.
-                            </p>
+                            <p>Arquitectura cliente-servidor con escaneo continuo de datos y sincronización de stock.</p>
                             <span class="tech-tag">C#</span>
                             <span class="tech-tag">SQL</span>
                             <span class="tech-tag">API REST</span>
                         </div>
                         <div class="project-item">
                             <h4>Suite de Pruebas Automatizadas QA</h4>
-                            <p>Scripts de pruebas de integración y validación de integridad para bases de datos
-                                transaccionales.</p>
+                            <p>Scripts de pruebas de integración y validación de integridad para bases de datos transaccionales.</p>
                             <span class="tech-tag">Unit Testing</span>
                             <span class="tech-tag">CI/CD</span>
                         </div>
                     </div>
                 </div>
 
-
-                <!-- Consola interactiva del perfil -->
                 <div class="detail-card interactive-zone">
-
                     <h3>// CONTROL DE CALIDAD DEL SISTEMA</h3>
-
-                    <p>
-                        Ejecuta una serie de pruebas para comprobar el estado
-                        de esta estación de trabajo.
-                    </p>
-
-                    <button id="btn-qa" class="btn btn-primary" type="button">
-                        INICIAR TEST QA
-                    </button>
-
-                    <div id="qa-output" class="status-box">
-                        QA_TERMINAL // Esperando ejecucion_
-                    </div>
-
+                    <p>Ejecuta una serie de pruebas para comprobar el estado de esta estación de trabajo.</p>
+                    <button id="btn-qa" class="btn btn-primary" type="button">INICIAR TEST QA</button>
+                    <div id="qa-output" class="status-box">QA_TERMINAL // Esperando ejecucion_</div>
                 </div>
 
-
-                <!-- Navegacion entre perfiles -->
                 <div class="profile-nav-buttons">
-
-                    <a href="index.html#equipo" class="btn btn-secondary">
-                        ← VOLVER AL EQUIPO
-                    </a>
-
-                    <a href="perfil-brian.html" class="btn btn-primary">
-                        SIGUIENTE INTEGRANTE →
-                    </a>
-
+                    <a href="index.html#equipo" class="btn btn-secondary">← VOLVER AL EQUIPO</a>
+                    <a href="perfil-sergio.html" class="btn btn-primary">SIGUIENTE INTEGRANTE →</a>
                 </div>
-
             </section>
-
         </div>
-
     </main>
 
-
-    <!-- Pie de pagina -->
     <footer class="site-footer">
-
         <div>&gt;_ DEVSQUAD</div>
-
         <p>Desarrollo de Sistemas Web Front End</p>
-
         <span>IFTS N.º 29 · 2026</span>
-
     </footer>
 
-    <!-- JavaScript general del proyecto -->
     <script src="java/java.js"></script>
-
-    <!-- JavaScript interactivo del perfil -->
     <script>
-
-        // Elementos de la consola QA
         const btnQa = document.getElementById("btn-qa");
         const qaOutput = document.getElementById("qa-output");
-        
-        // Pruebas que se mostraran durante el diagnostico
         const pruebas = [
             "> Validando integridad de datos... [OK]",
             "> Comprobando rendimiento del sistema... [OK]",
             "> Verificando compatibilidad de navegadores... [OK]",
             "> Analizando seguridad de la aplicación... [OK]",
             "> Ejecutando pruebas de carga... [OK]",
-
         ];
-
-        // Inicia el control de calidad al presionar el boton
         if (btnQa && qaOutput) {
-
             btnQa.addEventListener("click", () => {
-
                 let indice = 0;
-
                 btnQa.disabled = true;
-
                 qaOutput.innerHTML = "> QA_SCAN iniciado...<br>";
-
-                // Muestra una prueba cada medio segundo
                 const proceso = setInterval(() => {
-
                     qaOutput.innerHTML += pruebas[indice] + "<br>";
                     qaOutput.scrollTop = qaOutput.scrollHeight;
                     indice++;
-
-                    // Finaliza cuando se ejecutaron todas las pruebas
                     if (indice === pruebas.length) {
-
                         clearInterval(proceso);
-
-                        qaOutput.innerHTML +=
-                            "<span style='color:#00ff66;'>" +
-                            "> STATUS: QUALITY_CHECK_PASSED" +
-                            "</span>";
-
+                        qaOutput.innerHTML += "<span style='color:#00ff66;'>> STATUS: QUALITY_CHECK_PASSED</span>";
                         btnQa.disabled = false;
                     }
-
                 }, 500);
-
             });
-
         }
-
     </script>
-
 </body>
 
 </html>

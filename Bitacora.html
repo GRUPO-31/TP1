@@ -14,32 +14,39 @@
 <body>
     <canvas id="matrix-canvas" aria-hidden="true"></canvas>
 
+    <!-- Barra de scroll progresivo -->
+    <div class="scroll-progress" id="scroll-progress"></div>
+
+    <!-- Header Global -->
     <header class="site-header">
-        <a href="index.html" class="logo"><span>&gt;_</span> DEVSQUAD</a>
+        <a href="index.html" class="logo">DEVSQUAD<span>_CORE</span></a>
         <button class="menu-toggle" id="menu-toggle" type="button" aria-label="Abrir menú">
             <span></span><span></span><span></span>
         </button>
         <nav id="main-nav">
             <ul>
-                <li><a href="index.html">INICIO</a></li>
-                <li><a href="index.html#integrantes">EQUIPO</a></li>
-                <li><a href="perfil-2.html">CRISTIAN</a></li>
-                <li><a href="perfil-sergio.html">SERGIO</a></li>  
-                <li><a href="perfil-diego.html">DIEGO</a></li>              
-                <li><a href="bitacora.html" class="active-link">BITÁCORA</a></li>
+                <li><a href="index.html">&gt; //INICIO</a></li>
+                <li><a href="index.html#mision">&gt; //MISIÓN</a></li>
+                <li><a href="index.html#equipo">&gt; //EQUIPO</a></li>
+                <li><a href="bitacora.html" class="active-link">&gt; //BITÁCORA</a></li>
+                <li><a href="index.html#contacto">&gt; //CONTACTO</a></li>
             </ul>
         </nav>
-        <a href="index.html#contacto" class="header-button">CONÉCTATE</a>
+        <a href="index.html#contacto" class="header-button">CONECTAR</a>
     </header>
 
+    <!-- Contenido de la Bitácora -->
     <main class="section">
-        <div class="section-heading">
-            <span class="section-number">05 // REGISTRO DE DESARROLLO</span>
-            <h2>// BITÁCORA DEL PROYECTO</h2>
-            <p>Evolución, decisiones técnicas y solución de problemas durante el desarrollo del TP1.</p>
-        </div>
+        <div class="cyber-frame">
+            <div class="corner-hud tl"></div><div class="corner-hud tr"></div>
+            <div class="corner-hud bl"></div><div class="corner-hud br"></div>
 
-        <div class="bitacora-container">
+            <div class="section-heading" style="margin-bottom: 25px;">
+                <span class="section-number">03. // REGISTRO DE DESARROLLO</span>
+                <h2>// BITÁCORA DEL PROYECTO</h2>
+                <p>Evolución, decisiones técnicas y solución de problemas durante el desarrollo del sistema.</p>
+            </div>
+
             <table class="bitacora-table">
                 <thead>
                     <tr>
@@ -50,28 +57,33 @@
                 </thead>
                 <tbody>
                     <tr>
-                        <td>12/09/2026</td>
-                        <td>Definición de temáticas, reparto de roles y estructura inicial del repositorio.</td>
+                        <td>07/09/2026</td>
+                        <td>Definición inicial del proyecto TP1, asignación de roles operativos e implementación base del efecto de lluvia Matrix en Canvas y maquetación inicial.</td>
                         <td><span class="badge-status">COMPLETADO</span></td>
                     </tr>
                     <tr>
-                        <td>15/09/2026</td>
-                        <td>Diseño de paleta Cyber/Hacker neón y maquetación de la portada (index.html).</td>
+                        <td>11/09/2026</td>
+                        <td>Maquetación de la portada (`index.html`) con efectos de scanlines CRT, grilla HUD de fondo y tipografías monoespaciadas.</td>
+                        <td><span class="badge-status">COMPLETADO</span></td>
+                    </tr>
+                    <tr>
+                        <td>11/09/2026</td>
+                        <td><strong>[Reunión de Sincronización - Viernes 19:00]:</strong> Análisis de requerimientos para la estructura de la landing page y selección de la paleta estética (verde neón y cian sobre fondo oscuro).</td>
+                        <td><span class="badge-status">COMPLETADO</span></td>
+                    </tr>
+                    <tr>
+                        <td>14/09/2026</td>
+                        <td>Estructuración de los perfiles individuales de los operativos y diseño del componente "Manifiesto Core".</td>
                         <td><span class="badge-status">COMPLETADO</span></td>
                     </tr>
                     <tr>
                         <td>18/09/2026</td>
-                        <td>Implementación de botones de navegación global y páginas de perfiles individuales.</td>
+                        <td><strong>[Reunión de Sincronización - Viernes 19:00]:</strong> Revisión de interacciones JavaScript: terminal tipeadora interactiva y menú responsive.</td>
                         <td><span class="badge-status">COMPLETADO</span></td>
                     </tr>
                     <tr>
-                        <td>22/09/2026</td>
-                        <td>Desarrollo de interacciones en JS (Lluvia Matrix, terminal tipeadora, menú responsive).</td>
-                        <td><span class="badge-status">COMPLETADO</span></td>
-                    </tr>
-                    <tr>
-                        <td>25/09/2026</td>
-                        <td>Ajuste de Breakpoints (400px, 900px y 1200px) y validación del código.</td>
+                        <td>21/09/2026</td>
+                        <td>Integración de ventanas modales tipo iframe para perfiles flotantes, estandarización de hojas de estilo (`style.css` y `perfil.css`) e incorporación de insignias interactivas (GitHub y Web Personal).</td>
                         <td><span class="badge-status">COMPLETADO</span></td>
                     </tr>
                 </tbody>
@@ -80,18 +92,18 @@
             <div class="detail-card margin-top">
                 <h3>// DECISIONES Y DIFICULTADES TÉCNICAS</h3>
                 <p class="description">
-                    <strong>1. Adaptabilidad Cyberpunk:</strong> Crear una estética hacker retro sin comprometer la legibilidad fue el mayor desafío. Lo resolvimos combinando fondos oscuros (`#030806`) con verde flúor (`#00ff66`) y tipografía monoespaciada JetBrains Mono.<br><br>
-                    <strong>2. Lluvia Matrix en Canvas:</strong> Para evitar ralentizaciones en móviles, optimizamos el cálculo del <code>requestAnimationFrame</code> del canvas para que sea fluido en cualquier dispositivo.<br><br>
-                    <strong>3. Uso de IA:</strong> Se utilizó IA para asistir en la estructuración del CSS responsivo y optimización de animaciones, siendo supervisado e integrado manualmente por el equipo.
+                    <strong>1. Estética Cyberpunk y Legibilidad:</strong> Mantener una interfaz de tipo terminal/hacker sin descuidar la claridad visual representó un reto inicial. Se resolvió aplicando tipografías monoespaciadas (<i>JetBrains Mono</i>), efectos de desfragmentación y barras de carga dinámicas.<br><br>
+                    <strong>2. Comportamiento del Menú y Modales:</strong> Al fijar la barra de navegación superior (<code>position: fixed</code>), surgieron conflictos de solapamiento con los anclajes y los iframes de perfiles. Se solucionó incorporando un control estricto de clases condicionales y un scrollbar personalizado verde neón que evita saltos visuales.<br><br>
+                    <strong>3. Sincronización del Equipo:</strong> Las reuniones fijadas cada viernes a las 19:00 permitieron auditar el código de forma modular, unificar criterios de diseño en las tarjetas de operativos y asegurar la correcta compatibilidad de los repositorios independientes antes del deploy.
                 </p>
             </div>
         </div>
     </main>
 
+    <!-- Footer Global -->
     <footer class="site-footer">
-        <div>&gt;_ DEVSQUAD</div>
-        <p>Desarrollo de Sistemas Web Front End</p>
-        <span>IFTS N.º 29 · 2026</span>
+        <span>&copy; 2026 DEVSQUAD // ALL RIGHTS RESERVED</span>
+        <div>STATUS: SYSTEM_ONLINE</div>
     </footer>
 
     <script src="java/java.js"></script>
