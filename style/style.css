@@ -64,7 +64,7 @@ body::before { content: ""; position: fixed; inset: 0; z-index: -1; pointer-even
 }
 
 /* =====================================================
-   NAV HOLOGRÁFICO BIOMECÁNICO (CON ALMA Y CREATIVIDAD PURA)
+   NAV HOLOGRÁFICO BIOMECÁNICO
    ===================================================== */
 .site-header nav {
     flex: 1;
@@ -103,7 +103,6 @@ body::before { content: ""; position: fixed; inset: 0; z-index: -1; pointer-even
     letter-spacing: 1.2px;
 }
 
-/* Indicador de código limpio sin dobles barras */
 .nav-cyber-link span {
     color: var(--cyan);
     font-size: 0.6rem;
@@ -112,7 +111,6 @@ body::before { content: ""; position: fixed; inset: 0; z-index: -1; pointer-even
     transition: 0.3s;
 }
 
-/* HAZ DE LUZ LÁSER SUPERIOR FLOTANTE */
 .nav-cyber-link::before {
     content: "";
     position: absolute;
@@ -125,7 +123,6 @@ body::before { content: ""; position: fixed; inset: 0; z-index: -1; pointer-even
     transition: opacity 0.3s ease;
 }
 
-/* EFECTO MODO DIOS: Expansión orgánica con alma, brillo envolvente y pulso magnético */
 .nav-cyber-link:hover {
     color: #fff;
     background: linear-gradient(135deg, rgba(0, 255, 102, 0.2), rgba(0, 229, 255, 0.1));
@@ -144,7 +141,6 @@ body::before { content: ""; position: fixed; inset: 0; z-index: -1; pointer-even
     text-shadow: 0 0 10px var(--green);
 }
 
-/* BARRIDO DE ENERGÍA INFERIOR ORGÁNICO */
 .nav-cyber-link::after {
     content: "";
     position: absolute;
@@ -165,12 +161,11 @@ body::before { content: ""; position: fixed; inset: 0; z-index: -1; pointer-even
     left: 5%;
 }
 
-/* Botón Hamburguesa para Mobile con estilo propio */
 .menu-toggle { display: none; background: transparent; border: 1px solid var(--green); border-radius: 8px; padding: 8px; cursor: pointer; }
 .menu-toggle span { display: block; width: 22px; height: 2px; margin: 4px; background: var(--green); box-shadow: 0 0 6px var(--green); }
 
 /* =====================================================
-   RESTO DE COMPONENTES DEL SISTEMA (INTACTOS)
+   RESTO DE COMPONENTES
    ===================================================== */
 .hero { min-height: calc(100vh - 85px); display: flex; align-items: center; justify-content: space-between; padding: 60px 8%; gap: 40px; border-bottom: 1px solid var(--border-dim); position: relative; }
 .hero-content { max-width: 600px; will-change: transform, opacity, filter; transform: translateZ(0); }
@@ -257,12 +252,7 @@ body::before { content: ""; position: fixed; inset: 0; z-index: -1; pointer-even
 .op-id { color: var(--green); font-weight: 800; letter-spacing: 1px; }
 
 .op-badges-container { display: flex; gap: 6px; }
-.op-github-badge, .op-web-badge { display: inline-flex; align-items: center; gap: 3px; padding: 2px 6px; font-family: var(--font-code); font-size: 0.6rem; text-decoration: none; transition: all 0.3s ease; }
-.op-github-badge { background: rgba(0, 255, 102, 0.05); border: 1px dashed var(--green); color: var(--green); }
-.op-github-badge .git-icon { font-weight: 800; color: var(--cyan); }
-.op-github-badge:hover { background: var(--green); color: #000; box-shadow: 0 0 10px var(--green); border-style: solid; }
-.op-github-badge:hover .git-icon { color: #000; }
-.op-web-badge { background: rgba(0, 229, 255, 0.05); border: 1px dashed var(--cyan); color: var(--cyan); }
+.op-web-badge { display: inline-flex; align-items: center; gap: 3px; padding: 2px 6px; font-family: var(--font-code); font-size: 0.6rem; text-decoration: none; transition: all 0.3s ease; background: rgba(0, 229, 255, 0.05); border: 1px dashed var(--cyan); color: var(--cyan); }
 .op-web-badge .web-icon { font-weight: 800; color: var(--green); }
 .op-web-badge:hover { background: var(--cyan); color: #000; box-shadow: 0 0 10px var(--cyan); border-style: solid; }
 .op-web-badge:hover .web-icon { color: #000; }
@@ -270,7 +260,7 @@ body::before { content: ""; position: fixed; inset: 0; z-index: -1; pointer-even
 .op-status { padding: 2px 6px; font-size: 0.6rem; border-radius: 2px; }
 .op-status.active { background: var(--green-dim); color: var(--green); border: 1px solid var(--green); }
 
-.op-avatar-wrapper { position: relative; width: 100%; aspect-ratio: 4 / 3; overflow: hidden; border: 1px solid var(--border-dim); background: #000; }
+.op-avatar-wrapper { position: relative; width: 100%; aspect-ratio: 4 / 3; overflow: hidden; border: 1px solid var(--border-dim); background: #000; cursor: pointer; }
 .op-avatar { width: 100%; height: 100%; object-fit: contain; object-position: center; filter: grayscale(80%) contrast(130%) brightness(0.9); transition: all 0.4s ease; }
 .op-card:hover .op-avatar { filter: grayscale(0%) contrast(110%) brightness(1); transform: scale(1.04); }
 
@@ -307,44 +297,81 @@ body::before { content: ""; position: fixed; inset: 0; z-index: -1; pointer-even
 .badge-status { background: var(--green-dim); color: var(--green); border: 1px solid var(--green); padding: 2px 6px; font-size: 0.65rem; }
 .margin-top { margin-top: 30px; }
 
+/* =====================================================
+   SECCIÓN DE CONTACTO - MODO DIOS (TACTICAL LINK)
+   ===================================================== */
 .contact-section { text-align: center; padding: 80px 20px; border-top: 1px solid var(--border-dim); }
-.contact-links { display: flex; justify-content: center; gap: 15px; margin-top: 30px; }
+.contact-god-mode {
+    background: radial-gradient(circle at center, rgba(0, 255, 102, 0.08) 0%, rgba(2, 8, 5, 0.95) 100%);
+    border: 1px solid var(--green);
+    box-shadow: 0 0 40px rgba(0, 255, 102, 0.25), inset 0 0 20px rgba(0, 255, 102, 0.08);
+}
 
-/* Estilos corregidos y optimizados para el botón de GitHub en Contacto */
-.contact-section .op-github-badge {
+.tactical-terminal-box {
+    position: relative;
+    background: rgba(0, 10, 5, 0.85);
+    border: 1px dashed var(--green);
+    padding: 30px;
+    margin: 20px auto;
+    max-width: 650px;
+    overflow: hidden;
+    box-shadow: inset 0 0 15px rgba(0, 255, 102, 0.1);
+}
+
+.terminal-scan-line {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: var(--cyan);
+    box-shadow: 0 0 10px var(--cyan);
+    animation: tacticalScan 3s infinite linear;
+}
+
+.terminal-output-text {
+    font-family: var(--font-code);
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    line-height: 1.6;
+    margin-bottom: 20px;
+    text-shadow: 0 0 5px rgba(0, 255, 102, 0.2);
+}
+
+.tactical-btn {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    gap: 10px;
-    padding: 12px 25px;
+    gap: 12px;
+    padding: 15px 35px;
     font-family: var(--font-code);
-    font-size: 0.85rem;
-    font-weight: 700;
-    text-decoration: none;
-    background: rgba(0, 255, 102, 0.05);
-    border: 1px dashed var(--green);
-    color: var(--green);
-    transition: all 0.3s ease;
-    letter-spacing: 1px;
-}
-
-.contact-section .op-github-badge .git-icon {
+    font-size: 0.9rem;
     font-weight: 800;
-    color: var(--cyan);
-    font-size: 1rem;
-    text-shadow: 0 0 8px var(--cyan);
+    text-decoration: none;
+    background: rgba(0, 255, 102, 0.1);
+    border: 2px solid var(--green);
+    color: var(--green);
+    letter-spacing: 2px;
+    position: relative;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    box-shadow: 0 0 15px rgba(0, 255, 102, 0.2);
 }
 
-.contact-section .op-github-badge:hover {
+.tactical-btn .git-icon {
+    font-size: 1.2rem;
+    color: var(--cyan);
+    text-shadow: 0 0 10px var(--cyan);
+}
+
+.tactical-btn:hover {
     background: var(--green);
     color: #000;
-    box-shadow: 0 0 20px var(--green);
-    border-style: solid;
     border-color: #fff;
-    transform: translateY(-3px);
+    box-shadow: 0 0 35px var(--green), inset 0 0 15px rgba(255, 255, 255, 0.5);
+    transform: translateY(-4px) scale(1.03);
 }
 
-.contact-section .op-github-badge:hover .git-icon {
+.tactical-btn:hover .git-icon {
     color: #000;
     text-shadow: none;
 }
@@ -427,88 +454,29 @@ html.in-iframe .section { padding: 25px 20px !important; max-width: 100% !import
 @keyframes hudBlink { 0%, 100% { opacity: 1; } 50% { opacity: 0.3; } }
 @keyframes meterPulse { 0%, 100% { width: 40%; } 50% { width: 90%; } }
 @keyframes ripple-out { to { width: 80px; height: 80px; opacity: 0; } }
+@keyframes tacticalScan { 0% { top: 0%; opacity: 0.8; } 50% { opacity: 1; } 100% { top: 100%; opacity: 0.8; } }
 
 @keyframes borderEnergyFlow {
-    0% {
-        border-color: var(--green);
-        box-shadow: 0 0 30px rgba(0, 255, 102, 0.4), inset 0 0 20px rgba(0, 255, 102, 0.2);
-    }
-    33% {
-        border-color: var(--cyan);
-        box-shadow: 0 0 50px rgba(0, 229, 255, 0.6), inset 0 0 35px rgba(0, 229, 255, 0.3);
-    }
-    66% {
-        border-color: #00ffcc;
-        box-shadow: 0 0 60px rgba(0, 255, 204, 0.7), inset 0 0 40px rgba(0, 255, 204, 0.4);
-    }
-    100% {
-        border-color: var(--green);
-        box-shadow: 0 0 30px rgba(0, 255, 102, 0.4), inset 0 0 20px rgba(0, 255, 102, 0.2);
-    }
+    0% { border-color: var(--green); box-shadow: 0 0 30px rgba(0, 255, 102, 0.4), inset 0 0 20px rgba(0, 255, 102, 0.2); }
+    33% { border-color: var(--cyan); box-shadow: 0 0 50px rgba(0, 229, 255, 0.6), inset 0 0 35px rgba(0, 229, 255, 0.3); }
+    66% { border-color: #00ffcc; box-shadow: 0 0 60px rgba(0, 255, 204, 0.7), inset 0 0 40px rgba(0, 255, 204, 0.4); }
+    100% { border-color: var(--green); box-shadow: 0 0 30px rgba(0, 255, 102, 0.4), inset 0 0 20px rgba(0, 255, 102, 0.2); }
 }
 
 @keyframes staticNoiseOpen {
-    0% {
-        transform: scale(0.001, 0.001) skewX(85deg) rotateZ(180deg);
-        filter: drop-shadow(0 0 150px #ff0055) invert(100%) blur(40px) brightness(5);
-        opacity: 0;
-        background: #ffffff;
-    }
-    15% {
-        transform: scale(1.6, 0.005) skewX(-75deg) rotateZ(-90deg);
-        filter: drop-shadow(0 0 100px #00e5ff) contrast(500%) saturate(400%);
-        opacity: 0.8;
-        background: var(--cyan);
-    }
-    35% {
-        transform: scale(0.3, 1.4) skewX(45deg) rotateZ(20deg);
-        filter: drop-shadow(0 0 80px #ff0055) hue-rotate(270deg) blur(10px);
-        opacity: 0.6;
-        background: #000;
-    }
-    55% {
-        transform: scale(1.2, 0.8) skewX(-20deg) rotateZ(-10deg);
-        filter: drop-shadow(0 0 50px #00ff66) contrast(300%);
-        opacity: 0.9;
-        background: var(--green-dim);
-    }
-    80% {
-        transform: scale(0.98, 1.02) skewX(5deg) rotateZ(2deg);
-        filter: drop-shadow(0 0 30px #00ff66) contrast(150%);
-        opacity: 1;
-        background: var(--bg-card);
-    }
-    100% {
-        transform: scale(1, 1) skewX(0deg) rotateZ(0deg);
-        filter: drop-shadow(0 0 35px rgba(0, 255, 102, 0.4)) blur(0);
-        opacity: 1;
-        background: var(--bg-card);
-    }
+    0% { transform: scale(0.001, 0.001) skewX(85deg) rotateZ(180deg); filter: drop-shadow(0 0 150px #ff0055) invert(100%) blur(40px) brightness(5); opacity: 0; background: #ffffff; }
+    15% { transform: scale(1.6, 0.005) skewX(-75deg) rotateZ(-90deg); filter: drop-shadow(0 0 100px #00e5ff) contrast(500%) saturate(400%); opacity: 0.8; background: var(--cyan); }
+    35% { transform: scale(0.3, 1.4) skewX(45deg) rotateZ(20deg); filter: drop-shadow(0 0 80px #ff0055) hue-rotate(270deg) blur(10px); opacity: 0.6; background: #000; }
+    55% { transform: scale(1.2, 0.8) skewX(-20deg) rotateZ(-10deg); filter: drop-shadow(0 0 50px #00ff66) contrast(300%); opacity: 0.9; background: var(--green-dim); }
+    80% { transform: scale(0.98, 1.02) skewX(5deg) rotateZ(2deg); filter: drop-shadow(0 0 30px #00ff66) contrast(150%); opacity: 1; background: var(--bg-card); }
+    100% { transform: scale(1, 1) skewX(0deg) rotateZ(0deg); filter: drop-shadow(0 0 35px rgba(0, 255, 102, 0.4)) blur(0); opacity: 1; background: var(--bg-card); }
 }
 
 @keyframes staticNoiseClose {
-    0% {
-        transform: scale(1, 1) skewX(0deg) rotateZ(0deg);
-        filter: blur(0);
-        opacity: 1;
-    }
-    30% {
-        transform: scale(1.4, 0.01) skewX(-60deg) rotateZ(60deg);
-        filter: drop-shadow(0 0 100px #00e5ff) contrast(500%);
-        background: var(--cyan);
-        opacity: 0.7;
-    }
-    60% {
-        transform: scale(0.2, 1.2) skewX(40deg);
-        filter: drop-shadow(0 0 80px #ff0055) blur(15px);
-        background: #000;
-        opacity: 0.4;
-    }
-    100% {
-        transform: scale(0.001, 0.001) skewX(85deg) rotateZ(-180deg);
-        filter: drop-shadow(0 0 150px #ff0055) invert(100%) blur(40px) brightness(5);
-        opacity: 0;
-    }
+    0% { transform: scale(1, 1) skewX(0deg) rotateZ(0deg); filter: blur(0); opacity: 1; }
+    30% { transform: scale(1.4, 0.01) skewX(-60deg) rotateZ(60deg); filter: drop-shadow(0 0 100px #00e5ff) contrast(500%); background: var(--cyan); opacity: 0.7; }
+    60% { transform: scale(0.2, 1.2) skewX(40deg); filter: drop-shadow(0 0 80px #ff0055) blur(15px); background: #000; opacity: 0.4; }
+    100% { transform: scale(0.001, 0.001) skewX(85deg) rotateZ(-180deg); filter: drop-shadow(0 0 150px #ff0055) invert(100%) blur(40px) brightness(5); opacity: 0; }
 }
 
 @media (min-width: 1200px) { .section { max-width: 1150px; } }
