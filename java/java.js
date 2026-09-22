@@ -1,12 +1,11 @@
 document.addEventListener("DOMContentLoaded", () => {
 
-    /* --- 1. RAIN MATRIX BACKGROUND --- */
     const canvas = document.getElementById("matrix-canvas");
     if (canvas) {
         const ctx = canvas.getContext("2d");
         let width = (canvas.width = window.innerWidth);
         let height = (canvas.height = window.innerHeight);
-        const chars = "01100101 01110110 01110011 01110001 01110101 01100001 01100100 Sintaxia<>//";
+        const chars = "01100101 01110110 01110011 01110001 01110101 01100001 01100100 Sintaxia";
         const fontSize = 14;
         const columns = Math.floor(width / fontSize);
         const drops = Array(columns).fill(1);
@@ -26,23 +25,21 @@ document.addEventListener("DOMContentLoaded", () => {
                 drops[i]++;
             }
         }
-        setInterval(drawMatrix, 33);
+        setInterval(drawMatrix, 40);
         window.addEventListener("resize", () => {
             width = canvas.width = window.innerWidth;
             height = canvas.height = window.innerHeight;
-        });
+        }, { passive: true });
     }
 
-    /* --- 2. BARRA DE PROGRESO DE SCROLL --- */
     const progressBar = document.getElementById("scroll-progress");
     window.addEventListener("scroll", () => {
         if (!progressBar) return;
         const totalHeight = document.documentElement.scrollHeight - window.innerHeight;
         const progress = (window.scrollY / totalHeight) * 100;
         progressBar.style.width = `${progress}%`;
-    });
+    }, { passive: true });
 
-    /* --- 3. CONTROLADOR HOLO-CORE MATRIX (DIRECTIVAS) --- */
     const nodeBtns = document.querySelectorAll(".node-btn");
     const holoTitle = document.getElementById("holo-title");
     const holoDesc = document.getElementById("holo-desc");
@@ -85,8 +82,7 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 
-    /* --- 4. EFECTO GLITCH CYBERPUNK EN NOMBRES --- */
-    const letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789<>_//";
+    const letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789<>_";
     document.querySelectorAll(".op-name").forEach(element => {
         element.addEventListener("mouseover", event => {
             let iteration = 0;
@@ -108,7 +104,6 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     });
 
-    /* --- 5. MENÚ MOBILE RESPONSIVO --- */
     const menuToggle = document.getElementById("menu-toggle");
     const mainNav = document.getElementById("main-nav");
     if (menuToggle && mainNav) {
@@ -117,7 +112,6 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 
-    /* --- 6. PULSO AL HACER CLIC (RIPPLE EFFECT) --- */
     document.addEventListener("click", (e) => {
         const ripple = document.createElement("div");
         ripple.className = "click-ripple";
@@ -127,12 +121,10 @@ document.addEventListener("DOMContentLoaded", () => {
         setTimeout(() => { ripple.remove(); }, 500);
     });
 
-    /* --- 7. DETECCIÓN DE IFRAME PARA PERFILES --- */
     if (window.self !== window.top) {
         document.documentElement.classList.add('in-iframe');
     }
 
-    /* --- 8. LÓGICA DEL MODAL DE PERFILES EN PORTADA --- */
     const modal = document.getElementById("profile-modal");
     const modalFrame = document.getElementById("modal-frame");
     const closeModalBtn = document.getElementById("close-modal");
@@ -143,22 +135,34 @@ document.addEventListener("DOMContentLoaded", () => {
             btn.addEventListener("click", (e) => {
                 e.preventDefault(); 
                 const targetUrl = btn.getAttribute("href");
-                modalFrame.src = targetUrl; 
+                
+                modal.classList.remove("closing"); 
                 modal.classList.add("active"); 
                 document.body.style.overflow = "hidden";
+
+                setTimeout(() => {
+                    modalFrame.src = targetUrl; 
+                }, 350);
             });
         });
-        closeModalBtn.addEventListener("click", () => {
-            modal.classList.remove("active");
-            setTimeout(() => { modalFrame.src = ""; }, 300);
-            document.body.style.overflow = "auto";
-        });
+        
+        const closeModal = () => {
+            modal.classList.add("closing"); 
+            
+            setTimeout(() => {
+                modal.classList.remove("active");
+                modal.classList.remove("closing");
+                modalFrame.src = ""; 
+                document.body.style.overflow = "auto";
+            }, 450); 
+        };
+
+        closeModalBtn.addEventListener("click", closeModal);
         modal.addEventListener("click", (e) => {
-            if (e.target === modal) { closeModalBtn.click(); }
+            if (e.target === modal) { closeModal(); }
         });
     }
 
-    /* --- 9. TERMINAL SINTAXIA (TEXTOS ORIENTADOS A DESARROLLO WEB) --- */
     const terminalBody = document.getElementById("terminal-body");
     if (terminalBody) {
         terminalBody.innerHTML = ""; 
@@ -199,7 +203,6 @@ document.addEventListener("DOMContentLoaded", () => {
         setTimeout(typeTerminalLine, 400);
     }
 
-    /* --- 10. EFECTO GLITCH DE DESENCRIPTADO EN EL TÍTULO --- */
     const mainTitle = document.getElementById("sintaxia-title");
     if (mainTitle) {
         const targetText = "SINTAXIA";
@@ -219,7 +222,6 @@ document.addEventListener("DOMContentLoaded", () => {
         mainTitle.addEventListener("mouseover", runGlitchEffect);
     }
 
-    /* --- 11. SCROLL GLITCH REVEAL (INTERSECTION OBSERVER) --- */
     const revealElements = document.querySelectorAll('.section, .contact-section');
     revealElements.forEach(el => {
         if(el.id !== 'hero') { 
@@ -247,16 +249,17 @@ document.addEventListener("DOMContentLoaded", () => {
         if(el.id !== 'hero') { revealOnScroll.observe(el); }
     });
 
-    /* --- 12. PARALLAX Y HEADER DINÁMICO AL HACER SCROLL --- */
     const header = document.querySelector(".site-header");
     const heroContent = document.querySelector(".hero-content");
     const heroTerminal = document.querySelector(".hero-terminal-container");
     const scrollIndicator = document.getElementById("scroll-indicator");
 
-    window.addEventListener("scroll", () => {
-        const scrollY = window.scrollY;
+    let latestScrollY = 0;
+    let ticking = false;
 
-        // Oscurecer y darle sombra a la barra de arriba
+    function updateParserEffects() {
+        const scrollY = latestScrollY;
+
         if (scrollY > 50) {
             header.style.background = "rgba(2, 10, 7, 0.98)";
             header.style.boxShadow = "0 4px 20px rgba(0, 255, 102, 0.15)";
@@ -265,26 +268,45 @@ document.addEventListener("DOMContentLoaded", () => {
             header.style.boxShadow = "none";
         }
 
-        // Efecto profundidad/Parallax para el inicio
         if (heroContent && heroTerminal) {
-            heroContent.style.transform = `translateY(${scrollY * 0.35}px)`;
-            heroContent.style.opacity = 1 - (scrollY / 400);
+            let blurAmount = Math.min(scrollY * 0.015, 8); 
+            let skewAmount = Math.min(scrollY * 0.02, 5);  
 
-            heroTerminal.style.transform = `translateY(${scrollY * 0.15}px)`;
+            heroContent.style.transform = `translateY(${scrollY * 0.35}px) skewY(${skewAmount}deg)`;
+            heroContent.style.opacity = 1 - (scrollY / 400);
+            heroContent.style.filter = `blur(${blurAmount}px)`;
+
+            heroTerminal.style.transform = `translateY(${scrollY * 0.15}px) skewY(${skewAmount * -1}deg)`;
             heroTerminal.style.opacity = 1 - (scrollY / 500);
+            heroTerminal.style.filter = `blur(${blurAmount * 0.8}px)`;
         }
         
-        // Esconder el mouse indicator cuando bajas
         if (scrollIndicator) {
             scrollIndicator.style.opacity = 1 - (scrollY / 200);
         }
-    });
 
-    // Clic en el mouse indicator baja automáticamente a la misión
+        ticking = false;
+    }
+
+    window.addEventListener("scroll", () => {
+        latestScrollY = window.scrollY;
+        if (!ticking) {
+            window.requestAnimationFrame(updateParserEffects);
+            ticking = true;
+        }
+    }, { passive: true });
+
     if (scrollIndicator) {
         scrollIndicator.addEventListener("click", () => {
             document.querySelector("#mision").scrollIntoView({ behavior: "smooth" });
         });
     }
+
+    document.querySelectorAll('.site-header nav a').forEach(anchor => {
+        anchor.addEventListener('click', () => {
+            const mainNav = document.getElementById("main-nav");
+            if (mainNav) mainNav.classList.remove("activo");
+        });
+    });
 
 });
