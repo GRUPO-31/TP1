@@ -4,81 +4,55 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DevSquad // Perfil - Sergio Vargas</title>
-
+    <title>Sintaxia // Perfil - Sergio Vargas</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-    <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700;800&display=swap"
-        rel="stylesheet">
-
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style/style.css">
     <link rel="stylesheet" href="style/perfil.css">
 </head>
 
 <body>
-
     <canvas id="matrix-canvas" aria-hidden="true"></canvas>
 
     <header class="site-header">
-        <a href="index.html" class="logo">
-            <span>&gt;_</span> DEVSQUAD
-        </a>
-
-        <button class="menu-toggle" id="menu-toggle" type="button" aria-label="Abrir menu">
-            <span></span>
-            <span></span>
-            <span></span>
+        <a href="index.html" class="logo">SINTAXIA<span>_CORE</span></a>
+        <button class="menu-toggle" id="menu-toggle" type="button" aria-label="Abrir menú">
+            <span></span><span></span><span></span>
         </button>
-
         <nav id="main-nav">
             <ul>
-                <li><a href="index.html">INICIO</a></li>
-                <li><a href="index.html#equipo">EQUIPO</a></li>
-                <li><a href="perfi-brian.html" >BRIAN</a></li>
-                <li><a href="perfil-cristian.html">CRISTIAN</a></li>
-                <li><a href="perfil-sergio.html" class="active-link">SERGIO</a></li>
-                <li><a href="perfil-diego.html">DIEGO</a></li>
-                <li><a href="Bitacora.html">BITÁCORA</a></li>
+                <li><a href="index.html" class="nav-cyber-link"><span>01</span> INICIO</a></li>
+                <li><a href="index.html#mision" class="nav-cyber-link"><span>02</span> MISIÓN</a></li>
+                <li><a href="index.html#equipo" class="nav-cyber-link"><span>03</span> EQUIPO</a></li>
+                <li><a href="bitacora.html" class="nav-cyber-link"><span>04</span> BITÁCORA</a></li>
+                <li><a href="index.html#contacto" class="nav-cyber-link"><span>05</span> CONTACTO</a></li>
             </ul>
         </nav>
-
-        <a href="index.html#contacto" class="header-button">CONÉCTATE</a>
     </header>
 
     <main class="section">
         <div class="profile-layout">
-
             <aside class="profile-sidebar">
                 <div class="avatar-frame">
                     <img src="img/Sergio.png" alt="Foto de perfil de Sergio Vargas">
                 </div>
-
                 <div class="profile-basic">
                     <h2>SERGIO VARGAS</h2>
                     <span class="role">QA ENGINEER</span>
-                    <p class="meta-info">
-                        📍 Buenos Aires, Argentina | ⏳ 33 Años
-                    </p>
-                    <p class="bio">
-                         Especializado en el diseño, desarrollo e integración de sistemas críticos y aplicaciones cliente-servidor. Enfocado en la consistencia de datos, arquitectura backend robusta y aseguramiento de calidad mediante pruebas, optimización continua y diagnóstico de fallos.
-                    </p>
+                    <p class="meta-info">📍 Buenos Aires, Argentina | ⏳ 33 Años</p>
+                    <p class="bio">Especializado en el diseño, desarrollo e integración de sistemas críticos y aplicaciones cliente-servidor. Enfocado en la consistencia de datos, arquitectura backend robusta y aseguramiento de calidad mediante pruebas, optimización continua y diagnóstico de fallos.</p>
                 </div>
-
                 <div class="quote-box">
-                    <p>
-                        "Un sistema robusto no es el que nunca falla, sino el que está diseñado para garantizar la integridad de cada dato en cualquier escenario."
-                    </p>
+                    <p>"Un sistema robusto no es el que nunca falla, sino el que está diseñado para garantizar la integridad de cada dato en cualquier escenario."</p>
                 </div>
-
-                <!-- Insignias interactivas (GitHub + Web Personal) -->
                 <div class="profile-badges-container" style="display: flex; gap: 8px; margin-top: 15px;">
-                    <a href="https://github.com" target="_blank" class="op-github-badge">
-                        <span class="git-icon">&gt;</span> GH
+                    <a href="https://github.com/SergioVargas101/pfo1-landing-portfolio" target="_blank" class="op-github-badge" style="display: inline-flex; align-items: center; padding: 6px 10px; border: 1px solid var(--green); background: rgba(0,255,102,0.1); color: var(--green); text-decoration: none; font-family: 'JetBrains Mono', monospace; font-size: 12px; transition: all 0.3s ease;">
+                        <svg viewBox="0 0 24 24" style="width: 14px; height: 14px; fill: currentColor; vertical-align: middle; margin-right: 4px;"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                        GH
                     </a>
-                    <a href="#" target="_blank" class="op-web-badge">
-                        <span class="web-icon">#</span> WEB
+                    <a href="https://pfo1-landing-portfolio-gamma.vercel.app/" target="_blank" class="op-web-badge" style="display: inline-flex; align-items: center; padding: 6px 10px; border: 1px solid var(--cyan); background: rgba(0,229,255,0.1); color: var(--cyan); text-decoration: none; font-family: 'JetBrains Mono', monospace; font-size: 12px; transition: all 0.3s ease;">
+                        <span class="web-icon" style="margin-right: 4px;">#</span> WEB
                     </a>
                 </div>
             </aside>
@@ -89,30 +63,19 @@
                     <div class="skills-list">
                         <div class="skill-item">
                             <span>HTML y CSS</span>
-                            <div class="bar">
-                                <div class="fill" style="width: 80%;"></div>
-                            </div>
+                            <div class="bar"><div class="fill" style="width: 80%;"></div></div>
                         </div>
-
                         <div class="skill-item">
                             <span>JavaScript</span>
-                            <div class="bar">
-                                <div class="fill" style="width: 65%;"></div>
-                            </div>
+                            <div class="bar"><div class="fill" style="width: 65%;"></div></div>
                         </div>
-
                         <div class="skill-item">
                             <span>C# / .NET</span>
-                            <div class="bar">
-                                <div class="fill" style="width: 75%;"></div>
-                            </div>
+                            <div class="bar"><div class="fill" style="width: 75%;"></div></div>
                         </div>
-
                         <div class="skill-item">
                             <span>MySQL</span>
-                            <div class="bar">
-                                <div class="fill" style="width: 75%;"></div>
-                            </div>
+                            <div class="bar"><div class="fill" style="width: 75%;"></div></div>
                         </div>
                     </div>
                 </div>
@@ -126,12 +89,11 @@
                             <li>Matrix (1999)</li>
                         </ul>
                     </div>
-
                     <div class="detail-card">
                         <h3>// 🎵 ÁLBUMES FAVORITOS</h3>
                         <ul>
-                            <li>Linkin Park - Meteora </li>
-                            <li>Soda Stereo - Sueño Stereo </li>
+                            <li>Linkin Park - Meteora</li>
+                            <li>Soda Stereo - Sueño Stereo</li>
                             <li>Maroon 5 - Red Pill Blues</li>
                         </ul>
                     </div>
@@ -143,22 +105,16 @@
                     <button id="btn-qa" class="btn btn-primary" type="button">INICIAR TEST QA</button>
                     <div id="qa-output" class="status-box">QA_TERMINAL // Esperando ejecucion_</div>
                 </div>
-
-                <div class="profile-nav-buttons">
-                    <a href="index.html#equipo" class="btn btn-secondary">← VOLVER AL EQUIPO</a>
-                    <a href="perfil-diego.html" class="btn btn-primary">SIGUIENTE INTEGRANTE →</a>
-                </div>
             </section>
         </div>
     </main>
 
     <footer class="site-footer">
-        <div>&gt;_ DEVSQUAD</div>
-        <p>Desarrollo de Sistemas Web Front End</p>
-        <span>IFTS N.º 29 · 2026</span>
+        <span>&copy; 2026 SINTAXIA // ALL RIGHTS RESERVED</span>
+        <div>STATUS: SYSTEM_ONLINE</div>
     </footer>
 
-    <script src="java/java.js"></script> 
+    <script src="java/java.js"></script>
     <script>
         const btnQa = document.getElementById("btn-qa");
         const qaOutput = document.getElementById("qa-output");
@@ -187,5 +143,4 @@
         }
     </script>
 </body>
-
 </html>

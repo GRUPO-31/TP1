@@ -1,10 +1,11 @@
+```html
 <!DOCTYPE html>
 <html lang="es">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sintaxia // Bitácora de Desarrollo</title>
+    <title>Sintaxia - Bitácora de Desarrollo</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700;800&display=swap" rel="stylesheet">
@@ -12,108 +13,235 @@
 </head>
 
 <body>
+
     <canvas id="matrix-canvas" aria-hidden="true"></canvas>
     <div class="scroll-progress" id="scroll-progress"></div>
 
     <!-- Header Global -->
     <header class="site-header">
         <a href="index.html" class="logo">SINTAXIA<span>_CORE</span></a>
+
         <button class="menu-toggle" id="menu-toggle" type="button" aria-label="Abrir menú">
-            <span></span><span></span><span></span>
+            <span></span>
+            <span></span>
+            <span></span>
         </button>
+
         <nav id="main-nav">
             <ul>
-                <li><a href="index.html" class="nav-cyber-link"><span>01</span> INICIO</a></li>
-                <li><a href="index.html#mision" class="nav-cyber-link"><span>02</span> MISIÓN</a></li>
-                <li><a href="index.html#equipo" class="nav-cyber-link"><span>03</span> EQUIPO</a></li>
-                <li><a href="bitacora.html" class="nav-cyber-link" style="background: rgba(0, 255, 102, 0.12); border-color: var(--green);"><span>04</span> BITÁCORA</a></li>
-                <li><a href="index.html#contacto" class="nav-cyber-link"><span>05</span> CONTACTO</a></li>
+                <li>
+                    <a href="index.html" class="nav-cyber-link">
+                        <span>01</span> INICIO
+                    </a>
+                </li>
+
+                <li>
+                    <a href="index.html#mision" class="nav-cyber-link">
+                        <span>02</span> MISIÓN
+                    </a>
+                </li>
+
+                <li>
+                    <a href="index.html#equipo" class="nav-cyber-link">
+                        <span>03</span> EQUIPO
+                    </a>
+                </li>
+
+                <li>
+                    <a href="bitacora.html"
+                       class="nav-cyber-link"
+                       style="background: rgba(0, 255, 102, 0.12); border-color: var(--green);">
+                        <span>04</span> BITÁCORA
+                    </a>
+                </li>
+
+                <li>
+                    <a href="index.html#contacto" class="nav-cyber-link">
+                        <span>05</span> CONTACTO
+                    </a>
+                </li>
             </ul>
         </nav>
     </header>
 
     <!-- Contenido de la Bitácora -->
     <main class="section">
+
         <div class="cyber-frame">
-            <div class="corner-hud tl"></div><div class="corner-hud tr"></div>
-            <div class="corner-hud bl"></div><div class="corner-hud br"></div>
+
+            <div class="corner-hud tl"></div>
+            <div class="corner-hud tr"></div>
+            <div class="corner-hud bl"></div>
+            <div class="corner-hud br"></div>
 
             <div class="section-heading" style="margin-bottom: 25px;">
-                <span class="section-number">03. REGISTRO DE DESARROLLO</span>
-                <h2>BITÁCORA DEL PROYECTO</h2>
-                <p>Evolución, decisiones técnicas y solución de problemas durante el desarrollo del sistema.</p>
+
+                <span class="section-number">
+                    04. REGISTRO DE DESARROLLO TÉCNICO
+                </span>
+
+                <h2>
+                    BITÁCORA DEL SISTEMA // SINTAXIA
+                </h2>
+
+                <p>
+                    Memoria operativa de decisiones arquitectónicas,
+                    resolución de incidencias y evolución de interfaces.
+                </p>
+
             </div>
 
             <div class="table-responsive-wrapper">
+
                 <table class="bitacora-table">
+
                     <thead>
                         <tr>
-                            <th style="width: 25%;">FECHA</th>
-                            <th style="width: 60%;">ACTIVIDAD / HITO</th>
+                            <th style="width: 20%;">FECHA</th>
+                            <th style="width: 65%;">HITO TÉCNICO / ACTIVIDAD DE EQUIPO</th>
                             <th style="width: 15%;">ESTADO</th>
                         </tr>
                     </thead>
+
                     <tbody>
+
                         <tr>
                             <td>07/09/2026</td>
-                            <td>Definición inicial del trabajo práctico, asignación de roles y primera prueba del efecto Matrix en el fondo y maquetación general.</td>
-                            <td><span class="badge-status">OK</span></td>
+
+                            <td>
+                                <strong>Planificación y Arquitectura:</strong>
+                                Acuerdo de roles, distribución de tareas y diseño conceptual
+                                de la estética cyberpunk. Primera prueba piloto del fondo
+                                dinámico con efecto Matrix en Canvas.
+                            </td>
+
+                            <td>
+                                <span class="badge-status">OK</span>
+                            </td>
                         </tr>
+
                         <tr>
                             <td>11/09/2026</td>
-                            <td>Diseño y maquetación de la página principal (`index.html`), integrando la grilla visual, tipografías y efectos de pantalla.</td>
-                            <td><span class="badge-status">OK</span></td>
+
+                            <td>
+                                <strong>Maquetación Base (`index.html`):</strong>
+                                Construcción de la estructura HTML semántica y aplicación
+                                de la grilla principal con CSS modular y variables de diseño.
+                            </td>
+
+                            <td>
+                                <span class="badge-status">OK</span>
+                            </td>
                         </tr>
-                        <tr>
-                            <td>11/09/2026</td>
-                            <td><strong>[Reunión]:</strong> Definición de los requerimientos de la página y elección de la paleta de colores verde neón y cian.</td>
-                            <td><span class="badge-status">OK</span></td>
-                        </tr>
+
                         <tr>
                             <td>14/09/2026</td>
-                            <td>Creación de los perfiles individuales para cada integrante del equipo y diseño del manifiesto principal.</td>
-                            <td><span class="badge-status">OK</span></td>
+
+                            <td>
+                                <strong>Desarrollo de Perfiles Individuales:</strong>
+                                Creación de las tarjetas modulares para cada integrante
+                                (`perfil-*.html`), unificando tipografías
+                                (<i>Inter</i> y <i>JetBrains Mono</i>) y barras de habilidades
+                                con CSS.
+                            </td>
+
+                            <td>
+                                <span class="badge-status">OK</span>
+                            </td>
                         </tr>
+
                         <tr>
                             <td>18/09/2026</td>
-                            <td><strong>[Reunión]:</strong> Pruebas y ajustes de los scripts en JavaScript para la terminal interactiva y el menú adaptable.</td>
-                            <td><span class="badge-status">OK</span></td>
+
+                            <td>
+                                <strong>Interactividad JavaScript:</strong>
+                                Implementación de la terminal interactiva con efecto de
+                                escritura (boot sequence) y los paneles holográficos
+                                de directivas.
+                            </td>
+
+                            <td>
+                                <span class="badge-status">OK</span>
+                            </td>
                         </tr>
+
                         <tr>
                             <td>21/09/2026</td>
-                            <td>Implementación de las ventanas modales con iframes para mostrar las tarjetas personales de forma fluida.</td>
-                            <td><span class="badge-status">OK</span></td>
+
+                            <td>
+                                <strong>Sistema de Modales e Iframes:</strong>
+                                Desarrollo del mecanismo de apertura fluida para las tarjetas
+                                de los operativos mediante ventanas flotantes y efectos
+                                de estática visual.
+                            </td>
+
+                            <td>
+                                <span class="badge-status">OK</span>
+                            </td>
                         </tr>
+
                         <tr>
                             <td>21/09/2026</td>
-                            <td><strong>[Incidencia Git]:</strong> Corrección de errores por diferencias entre mayúsculas y minúsculas en los nombres de archivos para el despliegue en Vercel.</td>
-                            <td><span class="badge-status">FIX</span></td>
+
+                            <td>
+                                <strong>Incidencia Git / Vercel:</strong>
+                                Detección de errores de carga en producción por diferencias
+                                de mayúsculas y minúsculas en las rutas de archivos.
+                                <em>Solución:</em> Unificación estricta de nomenclatura
+                                (ej. `perfil-brian.html`).
+                            </td>
+
+                            <td>
+                                <span class="badge-status">FIX</span>
+                            </td>
                         </tr>
+
                         <tr>
                             <td>22/09/2026</td>
-                            <td>Actualización y rediseño de la barra de navegación y la sección de contacto, simplificando los accesos directos al repositorio de GitHub.</td>
-                            <td><span class="badge-status">OK</span></td>
+
+                            <td>
+                                <strong>Optimización y Breakpoints:</strong>
+                                Verificación exhaustiva de la adaptabilidad en pantallas
+                                de 400px, 900px y 1200px, asegurando la correcta fluidez
+                                sin desbordes de texto.
+                            </td>
+
+                            <td>
+                                <span class="badge-status">OK</span>
+                            </td>
                         </tr>
+
                     </tbody>
+
                 </table>
+
             </div>
 
-            <div class="detail-card margin-top">
-                <h3>DECISIONES Y DIFICULTADES TÉCNICAS</h3>
+           <div class="detail-card margin-top">
+                <h3>// DECISIONES, DIFICULTADES Y CAMBIOS DEL PROYECTO</h3>
                 <p class="description">
-                    <strong>1. Estética y Legibilidad:</strong> Lograr una estética de tipo terminal sin afectar la lectura de la página fue un desafío que resolvimos usando la fuente <i>JetBrains Mono</i> y contrastes adecuados.<br><br>
-                    <strong>2. Comportamiento del Menú y Modales:</strong> Con la barra de navegación fija, ajustamos los contenedores y los iframes para evitar saltos molestos en la pantalla al navegar.<br><br>
-                    <strong>3. Trabajo en Equipo y Control de Versiones:</strong> Las reuniones constantes ayudaron a mantener el código organizado y facilitaron la subida y pruebas del proyecto en la plataforma Vercel.
+                    <strong>1. Decisiones de Diseño y Arquitectura:</strong> Para lograr una atmósfera inmersiva tipo cyberpunk sin comprometer la accesibilidad web, se optó por una paleta de tonos oscuros con acentos en verde neón y cian, combinando la fuente limpia <i>Inter</i> en bloques de lectura con <i>JetBrains Mono</i> para componentes de tipo terminal.<br><br>
+                    <strong>2. Dificultades y Cambios en la Navegación:</strong> Ante la exigencia de evitar la dependencia del botón "Atrás" del navegador, se rediseñó el flujo original: en lugar de obligar a saltar entre páginas externas para cada perfil, se implementó un sistema avanzado de modales flotantes mediante <i>iframes</i> accesibles directamente desde la portada. Esto se complementó con un menú de navegación fijo superior con anclajes rápidos.<br><br>
+                    <strong>3. Gestión de Cambios y Resolución de Conflictos:</strong> Durante las pruebas previas al despliegue en Vercel, surgieron discrepancias tipográficas en las rutas de los archivos (mayúsculas y minúsculas). Esto impulsó un cambio organizativo en el control de versiones, estableciendo una nomenclatura estricta con minúsculas y guiones en todo el repositorio para garantizar la estabilidad en producción.
                 </p>
             </div>
-        </div>
+
     </main>
 
     <footer class="site-footer">
-        <span>&copy; 2026 SINTAXIA // ALL RIGHTS RESERVED</span>
-        <div>STATUS: SYSTEM_ONLINE</div>
+
+        <span>
+            &copy; 2026 SINTAXIA // ALL RIGHTS RESERVED
+        </span>
+
+        <div>
+            STATUS: SYSTEM_ONLINE
+        </div>
+
     </footer>
 
     <script src="java/java.js"></script>
+
 </body>
+
 </html>
