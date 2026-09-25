@@ -24,10 +24,6 @@ https://github.com/GRUPO-31/TP1
 
 GitHub: https://github.com/diegojrodriguez
 
-### Carlos — Developer
-
-GitHub: [Reemplazar con enlace real]
-
 ### Brian — Fullstack Developer
 
 GitHub: https://github.com/brianlavandera3
