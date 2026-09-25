@@ -273,11 +273,11 @@ document.addEventListener("DOMContentLoaded", () => {
             let skewAmount = Math.min(scrollY * 0.02, 5);  
 
             heroContent.style.transform = `translateY(${scrollY * 0.35}px) skewY(${skewAmount}deg)`;
-            heroContent.style.opacity = 1 - (scrollY / 400);
+            heroContent.style.opacity = Math.max(0.15, 1 - (scrollY / 400));
             heroContent.style.filter = `blur(${blurAmount}px)`;
 
             heroTerminal.style.transform = `translateY(${scrollY * 0.15}px) skewY(${skewAmount * -1}deg)`;
-            heroTerminal.style.opacity = 1 - (scrollY / 500);
+            heroTerminal.style.opacity = Math.max(0.15, 1 - (scrollY / 500));
             heroTerminal.style.filter = `blur(${blurAmount * 0.8}px)`;
         }
         

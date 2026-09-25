@@ -1,11 +1,10 @@
-```html
 <!DOCTYPE html>
 <html lang="es">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sintaxia - Bitácora de Desarrollo</title>
+    <title>Sintaxia</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700;800&display=swap" rel="stylesheet">
@@ -19,7 +18,7 @@
 
     <!-- Header Global -->
     <header class="site-header">
-        <a href="index.html" class="logo">SINTAXIA<span>_CORE</span></a>
+        <a href="index.html" class="logo">SINTAXIA</a>
 
         <button class="menu-toggle" id="menu-toggle" type="button" aria-label="Abrir menú">
             <span></span>
@@ -211,6 +210,19 @@
                             </td>
                         </tr>
 
+                        <tr>
+                            <td>23/09/2026</td>
+
+                            <td>
+                                <strong>Efectos Visuales Avanzados:</strong>
+                                Implementación de animaciones de scroll (parallax, desenfoque y transparencia) en la portada. Desarrollo de efectos de interferencia (glitch) para el revelado de secciones y encriptación de texto en las tarjetas personales.
+                            </td>
+
+                            <td>
+                                <span class="badge-status">OK</span>
+                            </td>
+                        </tr>
+
                     </tbody>
 
                 </table>
@@ -221,8 +233,12 @@
                 <h3>// DECISIONES, DIFICULTADES Y CAMBIOS DEL PROYECTO</h3>
                 <p class="description">
                     <strong>1. Decisiones de Diseño y Arquitectura:</strong> Para lograr una atmósfera inmersiva tipo cyberpunk sin comprometer la accesibilidad web, se optó por una paleta de tonos oscuros con acentos en verde neón y cian, combinando la fuente limpia <i>Inter</i> en bloques de lectura con <i>JetBrains Mono</i> para componentes de tipo terminal.<br><br>
+                    
                     <strong>2. Dificultades y Cambios en la Navegación:</strong> Ante la exigencia de evitar la dependencia del botón "Atrás" del navegador, se rediseñó el flujo original: en lugar de obligar a saltar entre páginas externas para cada perfil, se implementó un sistema avanzado de modales flotantes mediante <i>iframes</i> accesibles directamente desde la portada. Esto se complementó con un menú de navegación fijo superior con anclajes rápidos.<br><br>
-                    <strong>3. Gestión de Cambios y Resolución de Conflictos:</strong> Durante las pruebas previas al despliegue en Vercel, surgieron discrepancias tipográficas en las rutas de los archivos (mayúsculas y minúsculas). Esto impulsó un cambio organizativo en el control de versiones, estableciendo una nomenclatura estricta con minúsculas y guiones en todo el repositorio para garantizar la estabilidad en producción.
+                    
+                    <strong>3. Gestión de Cambios y Resolución de Conflictos:</strong> Durante las pruebas previas al despliegue en Vercel, surgieron discrepancias tipográficas en las rutas de los archivos (mayúsculas y minúsculas). Esto impulsó un cambio organizativo en el control de versiones, estableciendo una nomenclatura estricta con minúsculas y guiones en todo el repositorio para garantizar la estabilidad en producción.<br><br>
+                    
+                    <strong>4. Interactividad y Experiencia de Usuario (Efectos Glitch y Scroll):</strong> Para reforzar la identidad inmersiva del proyecto, se desarrollaron efectos visuales específicos en JavaScript y CSS. El comportamiento del <i>scroll</i> en la portada se modificó para crear un efecto de profundidad (parallax) que aumenta la transparencia y el desenfoque a medida que el usuario baja en la página. Adicionalmente, se programaron animaciones de 'glitch' (interferencia o temblor estático) tanto en la aparición de las secciones al hacer scroll, como en los títulos de las tarjetas de los integrantes (encriptación de texto). Estas tarjetas personales operan como módulos de datos con sus propias consolas de diagnóstico, integrando el diseño técnico de manera coherente.
                 </p>
             </div>
 

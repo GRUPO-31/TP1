@@ -1,240 +1,181 @@
 # 🧬 SINTAXIA // CYBERPUNK CORE ARCHITECTURE
 
-**TP1 — Desarrollo de Sistemas Web Front-End**
-**IFTS N.º 29 — 2026**
+Plataforma web de alta densidad visual e interfaces inmersivas, desarrollada como trabajo práctico para la materia **Desarrollo de Sistemas Web Front-End** del **IFTS N.º 29**.
+
+El proyecto emula un sistema operativo futurista mediante **HTML, CSS y JavaScript interactivo**, combinando animaciones, efectos visuales, terminales, Canvas e interfaces inspiradas en sistemas HUD.
+
+---
 
 ## 🔗 Enlaces del Proyecto
 
 ### 🚀 Despliegue en Producción
 
-**Sitio web:**
 https://tp-1-self.vercel.app/
 
 ### 📦 Repositorio del Grupo
 
-**GitHub:**
 https://github.com/GRUPO-31/TP1
-
-### 👥 Perfiles de los Integrantes
-
-**Diego Rodriguez — Lead Architect**
-GitHub: https://github.com/diegojrodriguez
-
-**Brian — Fullstack Developer**
-GitHub: https://github.com/brianlavandera3
-
-**Sergio Vargas — QA Engineer**
-GitHub: https://github.com/SergioVargas101
-
-**Cristian Villagra — IA Engineer**
-GitHub: https://github.com/Crrisst
 
 ---
 
-SINTAXIA es una plataforma web de alta densidad visual e interfaces inmersivas, desarrollada como trabajo práctico para la materia **Desarrollo de Sistemas Web Front-End**.
+## 👥 Integrantes del Equipo
 
-El proyecto combina HTML5, CSS3 y JavaScript ES6+ con una estética inspirada en interfaces cyberpunk, terminales digitales, sistemas HUD y experiencias interactivas.
+### Diego Rodriguez — Lead Architect
+
+GitHub: https://github.com/diegojrodriguez
+
+### Carlos — Developer
+
+GitHub: [Reemplazar con enlace real]
+
+### Brian — Fullstack Developer
+
+GitHub: https://github.com/brianlavandera3
+
+### Sergio Vargas — QA Engineer
+
+GitHub: https://github.com/SergioVargas101
+
+### Cristian Villagra — IA Engineer
+
+GitHub: https://github.com/Crrisst
 
 ---
 
 ## 🛠️ Tecnologías Utilizadas
 
-### HTML5 Semántico
-
-Estructuración mediante etiquetas semánticas, orientada a la accesibilidad, organización del contenido y cumplimiento de estándares web.
-
-### CSS3 Modular
-
-* Variables CSS personalizadas.
-* Animaciones mediante `@keyframes`.
-* Diseño responsive mediante `media queries`.
-* Efectos visuales inspirados en interfaces cyberpunk y HUD.
-* Paneles translúcidos y efectos de neón.
-* Diseño adaptable a diferentes resoluciones.
-
-### JavaScript ES6+
-
-* Manipulación dinámica del DOM.
-* Efectos gráficos mediante Canvas.
-* Terminales de comandos.
-* Secuencias de arranque.
-* Efectos de tipeo.
-* Gestión de ventanas modales.
-* Carga de perfiles mediante `iframe`.
-* Diagnósticos interactivos.
-* Transiciones y efectos dinámicos.
-
-### Vercel
-
-Plataforma utilizada para el despliegue del proyecto e integración continua en producción.
+* **HTML5 Semántico:** estructuración del contenido, modales y accesibilidad.
+* **CSS3 Modular:** variables nativas, Flexbox/Grid, animaciones mediante `@keyframes` y diseño responsive.
+* **JavaScript ES6+:** manipulación del DOM, lógica de terminales, Canvas API y `Intersection Observer`.
+* **Vercel:** despliegue y alojamiento del proyecto en la nube.
 
 ---
 
-# 📂 Estructura del Proyecto
+## 📂 Estructura de Archivos y Carpetas
 
-* `img/` — Imágenes y recursos visuales.
-* `java/` — Scripts JavaScript.
-* `style/` — Hojas de estilo CSS.
-* `index.html` — Página principal.
-* `bitacora.html` — Bitácora del proyecto.
-* `perfil-brian.html` — Perfil de Brian.
-* `perfil-cristian.html` — Perfil de Cristian.
-* `perfil-diego.html` — Perfil de Diego.
-* `perfil-sergio.html` — Perfil de Sergio.
-* `README.md` — Documentación del proyecto.
+```text
+TP1/
+├── img/                 # Imágenes, avatares y capturas de pantalla.
+├── java/
+│   └── java.js          # Lógica interactiva global y por perfil.
+├── style/
+│   ├── perfil.css       # Estilos específicos de los perfiles.
+│   └── style.css        # Estilos globales, portada y animaciones.
+├── index.html           # Portada principal y manifiesto.
+├── bitacora.html        # Registro cronológico del desarrollo técnico.
+├── perfil-brian.html    # Perfil individual de Brian.
+├── perfil-cristian.html # Perfil individual de Cristian.
+├── perfil-diego.html    # Perfil individual de Diego.
+├── perfil-sergio.html   # Perfil individual de Sergio.
+└── README.md            # Documentación del proyecto.
+```
 
 ---
 
-# 🎨 Guía de Estilos
+## 🎨 Guía de Estilos
 
-## Paleta de Colores
+### Paleta de Colores
 
 * **Fondo principal:** `#030806`
-* **Tarjetas y contenedores:** `rgba(4, 18, 12, 0.92)`
-* **Verde neón principal:** `#00ff66`
+* **Contenedores y tarjetas:** `rgba(4, 18, 12, 0.92)`
+* **Verde neón primario:** `#00ff66`
 * **Cian secundario:** `#00e5ff`
 * **Texto general:** `#e0ffee`
 * **Texto atenuado:** `#6b937b`
 
-## Tipografías
+### Tipografías
 
-**Inter:** utilizada para el cuerpo general del sitio.
+* **Inter:** utilizada para bloques de texto y lectura general.
+* **JetBrains Mono:** tipografía monoespaciada utilizada para emular código, terminales, botones y datos numéricos.
 
-**JetBrains Mono:** utilizada para código, terminales, HUDs e interfaces técnicas.
+### Iconografía
 
-## Iconografía e Indicadores
+La interfaz prescinde de librerías externas de iconos. En su lugar, se utilizan caracteres tipográficos formateados mediante CSS para simular interfaces HUD.
 
-La interfaz utiliza elementos visuales inspirados en sistemas de terminal y paneles HUD.
-
-* `#` para identificación de perfiles y enlaces.
-* `>` para comandos e interacciones técnicas.
-* Efectos de neón y glitch para reforzar la identidad cyberpunk.
-* Bordes y paneles translúcidos para representar interfaces futuristas.
+* `#` para botones y enlaces web.
+* `>` para emular líneas de comandos en las terminales.
 
 ---
 
-# ⚡ Funcionalidades JavaScript
+# ⚡ Funciones JavaScript y Capturas
 
-## Portada — `index.html`
+> Las capturas utilizadas en esta sección deben encontrarse dentro de la carpeta `img/` para que puedan visualizarse correctamente en GitHub.
 
-### 🌧️ Lluvia Digital Matrix
+## 1. Portada: Fondo Matrix y Terminal de Inicio
 
-Se implementó un efecto de **lluvia digital mediante Canvas**, utilizando caracteres binarios y hexadecimales que aparecen en cascada sobre el fondo.
+Al cargar la web, se ejecuta un efecto visual de caracteres cayendo en cascada mediante la API `<canvas>`.
 
-El efecto utiliza transparencias y velocidades variables para generar una ambientación inspirada en interfaces digitales.
-
-### 💻 Terminal de Arranque — Boot Sequence
-
-Al cargar la página se ejecuta una secuencia simulada de inicio del sistema.
-
-La terminal muestra progresivamente diferentes estados, simulando:
-
-* Inicialización del sistema.
-* Carga de módulos.
-* Verificación de componentes.
-* Sincronización del equipo.
-* Activación de la interfaz principal.
-
-### 🧠 Panel Holográfico de Directivas
-
-El panel permite interactuar con diferentes nodos del manifiesto.
-
-Al seleccionar una directiva:
-
-1. Se actualiza dinámicamente el título.
-2. Se modifica el contenido mostrado.
-3. Se ejecuta un efecto de tipeo.
-4. Se genera una transición visual entre estados.
-
-### 🪟 Modales Flotantes con `iframe`
-
-Las tarjetas de los integrantes permiten acceder a sus perfiles individuales.
-
-Al seleccionar un integrante:
-
-* Se abre una ventana modal.
-* Se carga su perfil mediante `iframe`.
-* Se aplican efectos visuales de estática y glitch.
-* El usuario puede cerrar la ventana y regresar a la interfaz principal.
+Simultáneamente, una consola simula el proceso de arranque (**Boot Sequence**) escribiendo líneas de texto dinámicamente.
 
 ---
 
-# 👤 Perfiles Individuales
+## 2. Portada: Modales Flotantes con Iframes
 
-Cada integrante posee una página de perfil independiente:
+Las tarjetas del equipo permiten abrir los perfiles individuales mediante un `<iframe>` contenido dentro de una ventana modal.
 
-* `perfil-brian.html`
-* `perfil-cristian.html`
-* `perfil-diego.html`
-* `perfil-sergio.html`
+Al abrir un perfil se aplican efectos visuales mediante CSS, incluyendo una transición de tipo *glitch*.
 
-Los perfiles mantienen la misma identidad visual del proyecto y presentan información específica de cada integrante.
+---
 
-## 🔧 Consola de Diagnóstico
+## 3. Portada: Navegación Holográfica y Efectos de Scroll
 
-Cada perfil incorpora una funcionalidad interactiva de diagnóstico.
+El desplazamiento hacia abajo genera efectos de desenfoque, transparencia y movimiento (*parallax*) en el encabezado.
 
-Dependiendo del perfil, el botón puede aparecer como:
+A medida que aparecen las diferentes secciones, un **Intersection Observer** detecta su entrada en pantalla y activa una animación de aparición con estética de interferencia digital.
 
-`EJECUTAR DIAGNÓSTICO`
+---
 
-o
+## 4. Perfiles: Consolas de Diagnóstico QA
+
+Cada tarjeta de perfil cuenta con una función dinámica individual.
+
+Al presionar el botón interactivo de diagnóstico, por ejemplo:
 
 `INICIAR TEST QA`
 
-Al ejecutarlo se presenta una secuencia automatizada de verificaciones que simula diferentes procesos del sistema:
+el script desactiva temporalmente el botón y renderiza una secuencia automatizada de mensajes de validación.
 
-* Integridad de datos.
-* Validación frontend.
-* Pruebas de estrés.
-* Verificación de componentes.
-* Estado general del sistema.
-
-Los resultados se muestran dinámicamente dentro de la interfaz.
-
----
-
-# 📡 Estado del Proyecto
-
-**HTML:** ONLINE
-**CSS:** ONLINE
-**JAVASCRIPT:** ONLINE
-**CANVAS:** ONLINE
-**INTERFACE:** ONLINE
-**TEAM SYNC:** ONLINE
-
-> SINTAXIA CORE INITIALIZED
-> ALL SYSTEMS OPERATIONAL
+La consola informa progresivamente el estado técnico del operativo correspondiente al perfil.
 
 ---
 
 # 🤖 Uso de Asistencia de Inteligencia Artificial y Autoría
 
-De acuerdo con los requisitos transversales del trabajo práctico, se documenta el uso de herramientas de inteligencia artificial como apoyo técnico y creativo durante el desarrollo del proyecto.
+De acuerdo con los requisitos del trabajo práctico, se documenta el uso de herramientas de inteligencia artificial como apoyo técnico durante el desarrollo del proyecto.
 
-## Herramientas y Modelos Utilizados
+### Herramientas y Modelos Utilizados
 
-Se utilizó **Google Gemini**, en su versión avanzada y gratuita, como asistente técnico para la estructuración lógica de scripts en JavaScript, efectos de Canvas, terminales, manejo de `iframe` y modales, además de la optimización de selectores CSS en diferentes `breakpoints`.
+Se utilizó el modelo **Google Gemini** mediante su **plan gratuito** como herramienta de asistencia técnica.
 
-## Asistencia en Código y Debugging
+### Asistencia Recibida
 
-La IA colaboró como herramienta de apoyo durante:
+La inteligencia artificial funcionó como apoyo en diferentes aspectos del desarrollo, principalmente:
 
-* Depuración de errores de rutas relativas.
-* Preparación del proyecto para el despliegue en Vercel.
-* Maquetación de las tablas de la bitácora.
-* Organización modular de las hojas de estilo `style.css` y `perfil.css`.
-* Resolución de problemas puntuales de JavaScript y CSS.
+* Configuración y lógica del efecto Canvas.
+* Secuencias de `setTimeout` utilizadas en la terminal.
+* Control del `Intersection Observer`.
+* Resolución de problemas de JavaScript.
+* Debugging de rutas y nomenclatura de archivos.
+* Organización y ajuste del CSS modular.
+* Preparación del proyecto para el despliegue.
 
-## Experiencia Previa y Criterio del Equipo
+### Experiencia Previa
 
-El equipo cuenta con conocimientos en desarrollo web adquiridos durante la formación académica en **IFTS N.º 29**.
+El equipo posee experiencia técnica académica en maquetación y desarrollo de interfaces web, adquirida durante la formación como estudiantes de desarrollo de software en el **IFTS N.º 29**.
 
-Las sugerencias generadas mediante IA fueron revisadas, probadas y adaptadas por los integrantes del equipo. El código utilizado fue comprendido y modificado según las necesidades funcionales y visuales del proyecto.
+### Recursos Visuales
 
-## Recursos Visuales y Avatares
+Las fotografías utilizadas en los perfiles corresponden a imágenes de los integrantes del equipo.
 
-Las imágenes y avatares utilizados provienen de registros propios y recursos seleccionados bajo licencias abiertas, manteniendo la coherencia estética de la plataforma.
+Las imágenes fueron ajustadas mediante filtros CSS, principalmente escala de grises y contraste, desarrollados manualmente para mantener una estética visual cyberpunk uniforme.
+
+No se utilizaron generadores de imágenes mediante prompts para los avatares.
+
+### Criterio de Autoría
+
+Todo código sugerido mediante herramientas de inteligencia artificial fue examinado, probado y modificado por los integrantes del equipo.
+
+Las implementaciones fueron adaptadas a los requerimientos del proyecto, incluyendo ajustes en los umbrales matemáticos del scroll, velocidades de renderizado y comportamiento de las diferentes interacciones para garantizar que el resultado final respondiera a las decisiones de diseño del grupo.
 
 ---
 
@@ -242,10 +183,5 @@ Las imágenes y avatares utilizados provienen de registros propios y recursos se
 
 **SINTAXIA** representa una interfaz experimental que combina **desarrollo web, interacción dinámica y estética cyberpunk** para construir una experiencia digital inmersiva.
 
-El proyecto busca integrar los conocimientos adquiridos en **HTML5, CSS3 y JavaScript**, aplicándolos en una interfaz que prioriza tanto la funcionalidad como la identidad visual.
+El proyecto integra los conocimientos adquiridos en **HTML5, CSS3 y JavaScript**, aplicándolos en una interfaz que busca combinar funcionalidad, interacción e identidad visual.
 
----
-
-> **SINTAXIA CORE INITIALIZED**
-> **ALL SYSTEMS OPERATIONAL**
-git 
