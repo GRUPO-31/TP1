@@ -164,9 +164,7 @@ body::before { content: ""; position: fixed; inset: 0; z-index: -1; pointer-even
 .menu-toggle { display: none; background: transparent; border: 1px solid var(--green); border-radius: 8px; padding: 8px; cursor: pointer; }
 .menu-toggle span { display: block; width: 22px; height: 2px; margin: 4px; background: var(--green); box-shadow: 0 0 6px var(--green); }
 
-/* =====================================================
-   RESTO DE COMPONENTES
-   ===================================================== */
+
 .hero { min-height: calc(100vh - 85px); display: flex; align-items: center; justify-content: space-between; padding: 60px 8%; gap: 40px; border-bottom: 1px solid var(--border-dim); position: relative; }
 .hero-content { max-width: 600px; will-change: transform, opacity, filter; transform: translateZ(0); }
 .hero-terminal-container { width: 380px; display: flex; flex-direction: column; gap: 15px; will-change: transform, opacity, filter; transform: translateZ(0); }
@@ -504,7 +502,25 @@ html.in-iframe .section { padding: 25px 20px !important; max-width: 100% !import
     .site-header nav { display: none; position: absolute; top: 85px; left: 0; width: 100%; background: rgba(2, 8, 5, 0.98); border-bottom: 2px solid var(--green); box-shadow: 0 20px 40px rgba(0, 255, 102, 0.3); }
     .site-header nav.activo { display: flex; }
     .site-header nav ul { flex-direction: column; width: 100%; padding: 20px; gap: 10px; background: rgba(2, 14, 8, 0.96); border-radius: 12px; }
-    .nav-cyber-link { width: 100%; justify-content: flex-start; padding: 12px 15px; border-left: 3px solid var(--cyan); }
+    
+    .nav-cyber-link { 
+        width: 100%; 
+        justify-content: flex-start; 
+        padding: 12px 15px; 
+        border-left: 3px solid var(--cyan); 
+    }
+    
+    /* EFECTO LUMÍNICO Y DE COLOR AL HACER HOVER/ACTIVE EN MÓVIL */
+    .nav-cyber-link:hover,
+    .nav-cyber-link:active,
+    .nav-cyber-link:focus {
+        color: #fff;
+        background: linear-gradient(135deg, rgba(0, 255, 102, 0.25), rgba(0, 229, 255, 0.15));
+        border-color: var(--green);
+        box-shadow: 0 0 25px rgba(0, 255, 102, 0.35), inset 0 0 10px rgba(0, 255, 102, 0.2);
+        transform: translateX(4px);
+    }
+
     .menu-toggle { display: block; }
     .cyber-frame { padding: 12px !important; }
     .bitacora-table th, .bitacora-table td { padding: 8px 10px; font-size: 0.7rem; }

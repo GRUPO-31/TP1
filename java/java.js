@@ -1,5 +1,13 @@
 document.addEventListener("DOMContentLoaded", () => {
 
+    // PREVENCIÓN: Forzar que el inicio (Hero) nunca desaparezca
+    const heroSection = document.getElementById("hero") || document.querySelector(".hero");
+    if (heroSection) {
+        heroSection.style.opacity = "1";
+        heroSection.style.visibility = "visible";
+        heroSection.style.filter = "none";
+    }
+
     const canvas = document.getElementById("matrix-canvas");
     if (canvas) {
         const ctx = canvas.getContext("2d");
@@ -250,9 +258,8 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     const header = document.querySelector(".site-header");
-    const heroContent = document.querySelector(".hero-content");
-    const heroTerminal = document.querySelector(".hero-terminal-container");
     const scrollIndicator = document.getElementById("scroll-indicator");
+    let indicatorHidden = false;
 
     let latestScrollY = 0;
     let ticking = false;
@@ -268,21 +275,11 @@ document.addEventListener("DOMContentLoaded", () => {
             header.style.boxShadow = "none";
         }
 
-        if (heroContent && heroTerminal) {
-            let blurAmount = Math.min(scrollY * 0.015, 8); 
-            let skewAmount = Math.min(scrollY * 0.02, 5);  
-
-            heroContent.style.transform = `translateY(${scrollY * 0.35}px) skewY(${skewAmount}deg)`;
-            heroContent.style.opacity = Math.max(0.15, 1 - (scrollY / 400));
-            heroContent.style.filter = `blur(${blurAmount}px)`;
-
-            heroTerminal.style.transform = `translateY(${scrollY * 0.15}px) skewY(${skewAmount * -1}deg)`;
-            heroTerminal.style.opacity = Math.max(0.15, 1 - (scrollY / 500));
-            heroTerminal.style.filter = `blur(${blurAmount * 0.8}px)`;
-        }
-        
-        if (scrollIndicator) {
-            scrollIndicator.style.opacity = 1 - (scrollY / 200);
+        if (scrollIndicator && scrollY > 30 && !indicatorHidden) {
+            indicatorHidden = true;
+            scrollIndicator.style.opacity = "0";
+            scrollIndicator.style.visibility = "hidden";
+            scrollIndicator.style.transition = "opacity 0.5s ease, visibility 0.5s ease";
         }
 
         ticking = false;
@@ -308,5 +305,60 @@ document.addEventListener("DOMContentLoaded", () => {
             if (mainNav) mainNav.classList.remove("activo");
         });
     });
+
+    // ==========================================
+    // CONSOLAS INTERACTIVAS DE PERFILES (CENTRALIZADO)
+    // ==========================================
+    const btnStatus = document.getElementById("btn-status");
+    const statusOutput = document.getElementById("status-output");
+    if (btnStatus && statusOutput) {
+        const isCristian = window.location.pathname.includes("cristian");
+        btnStatus.addEventListener("click", () => {
+            btnStatus.disabled = true;
+            statusOutput.textContent = isCristian ? "> Ejecutando escaneo..." : "> Compilando app frontend, conectando APIs e IA...";
+            setTimeout(() => {
+                const successMsg = isCristian 
+                    ? "> ESTADO: <span style='color: #00ff66;'>SISTEMA OPERATIVO Y SINCRONIZADO AL 100%</span> [FRONTEND OK]"
+                    : "> ESTADO: <span style='color: #00ff66;'>ENTORNO FULLSTACK DESPLEGADO AL 100%</span> [BUILD SUCCESS]";
+                statusOutput.innerHTML = successMsg;
+                btnStatus.disabled = false;
+            }, 600);
+        });
+    }
+
+    const btnQa = document.getElementById("btn-qa");
+    const qaOutput = document.getElementById("qa-output");
+    if (btnQa && qaOutput) {
+        const isDiego = window.location.pathname.includes("diego");
+        const pruebas = isDiego ? [
+            "> Validando integridad de datos... [OK]",
+            "> Comprobando rendimiento del sistema... [OK]",
+            "> Verificando compatibilidad de navegadores... [OK]",
+            "> Analizando seguridad de la aplicación... [OK]",
+            "> Ejecutando pruebas de carga... [OK]"
+        ] : [
+            "> Verificando estructura HTML... [OK]",
+            "> Analizando estilos CSS... [OK]",
+            "> Ejecutando prueba JavaScript... [OK]",
+            "> Buscando errores de interfaz... [OK]",
+            "> TEST FINALIZADO // SISTEMA ESTABLE"
+        ];
+        
+        btnQa.addEventListener("click", () => {
+            let indice = 0;
+            btnQa.disabled = true;
+            qaOutput.innerHTML = "> QA_SCAN iniciado...<br>";
+            const proceso = setInterval(() => {
+                qaOutput.innerHTML += pruebas[indice] + "<br>";
+                qaOutput.scrollTop = qaOutput.scrollHeight;
+                indice++;
+                if (indice === pruebas.length) {
+                    clearInterval(proceso);
+                    qaOutput.innerHTML += "<span style='color:#00ff66;'>> STATUS: QUALITY_CHECK_PASSED</span>";
+                    btnQa.disabled = false;
+                }
+            }, 500);
+        });
+    }
 
 });

@@ -1,4 +1,4 @@
-# 🧬 SINTAXIA // CYBERPUNK CORE ARCHITECTURE
+# 🧬 SINTAXIA
 
 Plataforma web de alta densidad visual e interfaces inmersivas, desarrollada como trabajo práctico para la materia **Desarrollo de Sistemas Web Front-End** del **IFTS N.º 29**.
 
