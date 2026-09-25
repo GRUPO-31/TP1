@@ -1,24 +1,39 @@
-# SINTAXIA // CYBERPUNK CORE ARCHITECTURE (TP1)
+# 🧬 SINTAXIA // CYBERPUNK CORE ARCHITECTURE
 
-Plataforma web de alta densidad visual e interfaces inmersivas desarrollada como trabajo práctico para la materia **Desarrollo de Sistemas Web Front-End** — **IFTS N.º 29, 2026**.
+**TP1 — Desarrollo de Sistemas Web Front-End**
+**IFTS N.º 29 — 2026**
+
+## 🔗 Enlaces del Proyecto
+
+### 🚀 Despliegue en Producción
+
+**Sitio web:**
+https://tp-1-self.vercel.app/
+
+### 📦 Repositorio del Grupo
+
+**GitHub:**
+https://github.com/GRUPO-31/TP1
+
+### 👥 Perfiles de los Integrantes
+
+**Diego Rodriguez — Lead Architect**
+GitHub: https://github.com/diegojrodriguez
+
+**Brian — Fullstack Developer**
+GitHub: https://github.com/brianlavandera3
+
+**Sergio Vargas — QA Engineer**
+GitHub: https://github.com/SergioVargas101
+
+**Cristian Villagra — IA Engineer**
+GitHub: https://github.com/Crrisst
 
 ---
 
-## 👥 Integrantes del Equipo
+SINTAXIA es una plataforma web de alta densidad visual e interfaces inmersivas, desarrollada como trabajo práctico para la materia **Desarrollo de Sistemas Web Front-End**.
 
-* **Diego Rodriguez** — Lead Architect
-  [GitHub Profile](https://github.com/diegojrodriguez)
-
-* **Brian** — Fullstack Developer
-  [GitHub Profile](https://github.com)
-
-* **Sergio Vargas** — QA Engineer
-  [GitHub Profile](https://github.com)
-
-* **Cristian Villagra** — IA Engineer
-  [GitHub Profile](https://github.com)
-
-> Los enlaces de GitHub de Brian, Sergio y Cristian deben reemplazarse por sus perfiles reales.
+El proyecto combina HTML5, CSS3 y JavaScript ES6+ con una estética inspirada en interfaces cyberpunk, terminales digitales, sistemas HUD y experiencias interactivas.
 
 ---
 
@@ -26,7 +41,7 @@ Plataforma web de alta densidad visual e interfaces inmersivas desarrollada como
 
 ### HTML5 Semántico
 
-Estructuración limpia mediante etiquetas semánticas, orientada a la accesibilidad y al cumplimiento de estándares web.
+Estructuración mediante etiquetas semánticas, orientada a la accesibilidad, organización del contenido y cumplimiento de estándares web.
 
 ### CSS3 Modular
 
@@ -34,17 +49,20 @@ Estructuración limpia mediante etiquetas semánticas, orientada a la accesibili
 * Animaciones mediante `@keyframes`.
 * Diseño responsive mediante `media queries`.
 * Efectos visuales inspirados en interfaces cyberpunk y HUD.
+* Paneles translúcidos y efectos de neón.
+* Diseño adaptable a diferentes resoluciones.
 
 ### JavaScript ES6+
 
 * Manipulación dinámica del DOM.
-* Efectos mediante Canvas.
+* Efectos gráficos mediante Canvas.
 * Terminales de comandos.
 * Secuencias de arranque.
 * Efectos de tipeo.
-* Gestión de modales.
+* Gestión de ventanas modales.
 * Carga de perfiles mediante `iframe`.
 * Diagnósticos interactivos.
+* Transiciones y efectos dinámicos.
 
 ### Vercel
 
@@ -52,35 +70,24 @@ Plataforma utilizada para el despliegue del proyecto e integración continua en 
 
 ---
 
-## 📂 Estructura del Proyecto
+# 📂 Estructura del Proyecto
 
-```text
-TP1/
-├── img/
-│   ├── brian.png
-│   ├── cristian.jpg
-│   ├── diego.jpg
-│   ├── Sergio.png
-│   └── ...
-├── java/
-│   └── java.js
-├── style/
-│   ├── perfil.css
-│   └── style.css
-├── bitacora.html
-├── index.html
-├── perfil-brian.html
-├── perfil-cristian.html
-├── perfil-diego.html
-├── perfil-sergio.html
-└── README.md
-```
+* `img/` — Imágenes y recursos visuales.
+* `java/` — Scripts JavaScript.
+* `style/` — Hojas de estilo CSS.
+* `index.html` — Página principal.
+* `bitacora.html` — Bitácora del proyecto.
+* `perfil-brian.html` — Perfil de Brian.
+* `perfil-cristian.html` — Perfil de Cristian.
+* `perfil-diego.html` — Perfil de Diego.
+* `perfil-sergio.html` — Perfil de Sergio.
+* `README.md` — Documentación del proyecto.
 
 ---
 
-## 🎨 Guía de Estilos
+# 🎨 Guía de Estilos
 
-### Paleta de Colores
+## Paleta de Colores
 
 * **Fondo principal:** `#030806`
 * **Tarjetas y contenedores:** `rgba(4, 18, 12, 0.92)`
@@ -89,12 +96,13 @@ TP1/
 * **Texto general:** `#e0ffee`
 * **Texto atenuado:** `#6b937b`
 
-### Tipografías
+## Tipografías
 
-* **Inter:** utilizada para el cuerpo general del sitio.
-* **JetBrains Mono:** utilizada para código, terminales, HUDs e interfaces técnicas.
+**Inter:** utilizada para el cuerpo general del sitio.
 
-### Iconografía e Indicadores
+**JetBrains Mono:** utilizada para código, terminales, HUDs e interfaces técnicas.
+
+## Iconografía e Indicadores
 
 La interfaz utiliza elementos visuales inspirados en sistemas de terminal y paneles HUD.
 
@@ -107,7 +115,7 @@ La interfaz utiliza elementos visuales inspirados en sistemas de terminal y pane
 
 # ⚡ Funcionalidades JavaScript
 
-## 1. Portada — `index.html`
+## Portada — `index.html`
 
 ### 🌧️ Lluvia Digital Matrix
 
@@ -155,23 +163,24 @@ Al seleccionar un integrante:
 
 Cada integrante posee una página de perfil independiente:
 
-```text
-perfil-brian.html
-perfil-cristian.html
-perfil-diego.html
-perfil-sergio.html
-```
+* `perfil-brian.html`
+* `perfil-cristian.html`
+* `perfil-diego.html`
+* `perfil-sergio.html`
 
 Los perfiles mantienen la misma identidad visual del proyecto y presentan información específica de cada integrante.
 
-### 🔧 Consola de Diagnóstico
+## 🔧 Consola de Diagnóstico
 
 Cada perfil incorpora una funcionalidad interactiva de diagnóstico.
 
 Dependiendo del perfil, el botón puede aparecer como:
 
-* `EJECUTAR DIAGNÓSTICO`
-* `INICIAR TEST QA`
+`EJECUTAR DIAGNÓSTICO`
+
+o
+
+`INICIAR TEST QA`
 
 Al ejecutarlo se presenta una secuencia automatizada de verificaciones que simula diferentes procesos del sistema:
 
@@ -185,74 +194,58 @@ Los resultados se muestran dinámicamente dentro de la interfaz.
 
 ---
 
-# 🚀 Despliegue en Producción
-
-El proyecto se encuentra preparado para ser desplegado mediante **Vercel**.
-
-**URL de producción:**
-
-https://tu-proyecto.vercel.app
-
-> Reemplazar la URL anterior por el enlace definitivo del proyecto.
-
----
-
-# 🔮 Próximos Pasos
-
-### 🗄️ Integración de Base de Datos
-
-Integración de una base de datos relacional para almacenar las bitácoras de cambios en tiempo real.
-
-### 🔐 Sistema de Autenticación
-
-Incorporación de un sistema de inicio de sesión simulado mediante diferentes niveles de autorización.
-
-```text
-Security Clearance Level
-
-LEVEL 01 — USER
-LEVEL 02 — MEMBER
-LEVEL 03 — ADMIN
-LEVEL 04 — ROOT
-```
-
-### 📱 Optimización Mobile
-
-Optimización del rendimiento y de la experiencia de usuario para dispositivos móviles de menor gama.
-
----
-
 # 📡 Estado del Proyecto
 
-```text
-[SYSTEM STATUS]
-
-HTML .............. ONLINE
-CSS ............... ONLINE
-JAVASCRIPT ........ ONLINE
-CANVAS ............ ONLINE
-INTERFACE ......... ONLINE
-TEAM SYNC ......... ONLINE
+**HTML:** ONLINE
+**CSS:** ONLINE
+**JAVASCRIPT:** ONLINE
+**CANVAS:** ONLINE
+**INTERFACE:** ONLINE
+**TEAM SYNC:** ONLINE
 
 > SINTAXIA CORE INITIALIZED
 > ALL SYSTEMS OPERATIONAL
-```
 
 ---
 
-## 🤖 Uso de Asistencia de Inteligencia Artificial y Autoría
+# 🤖 Uso de Asistencia de Inteligencia Artificial y Autoría
 
-De acuerdo con los requisitos transversales del trabajo práctico, se documenta el uso de herramientas de IA como apoyo técnico y creativo durante el desarrollo del proyecto:
+De acuerdo con los requisitos transversales del trabajo práctico, se documenta el uso de herramientas de inteligencia artificial como apoyo técnico y creativo durante el desarrollo del proyecto.
 
-* **Herramientas y Modelos Utilizados:** Se utilizó Google Gemini (versión avanzada y gratuita) como asistente técnico para la estructuración lógica de scripts en JavaScript (efectos de Canvas, terminal y manejo de iframes modales) y la optimización de selectores CSS en los breakpoints.
-* **Asistencia en Código y Debugging:** La IA colaboró en la depuración de errores de rutas relativas para el despliegue en Vercel, la maquetación de las tablas de la bitácora y la estructura modular de las hojas de estilo (`style.css` y `perfil.css`).
-* **Experiencia Previa y Criterio del Equipo:** El equipo cuenta con conocimientos en desarrollo web académico (IFTS N.º 29). Ningún bloque de código fue incorporado de forma automatizada sin previa comprensión; todo fue probado, adaptado y reescrito bajo criterio propio para ajustarse a la identidad visual cyberpunk ideada por los integrantes.
-* **Recursos Visuales y Avatares:** Las imágenes y avatares utilizados provienen de registros propios y recursos seleccionados bajo licencias abiertas, manteniendo la coherencia estética de la plataforma.
+## Herramientas y Modelos Utilizados
 
-## 🧬 SINTAXIA
+Se utilizó **Google Gemini**, en su versión avanzada y gratuita, como asistente técnico para la estructuración lógica de scripts en JavaScript, efectos de Canvas, terminales, manejo de `iframe` y modales, además de la optimización de selectores CSS en diferentes `breakpoints`.
 
-**SINTAXIA** representa una interfaz experimental que combina desarrollo web, interacción dinámica y estética cyberpunk para construir una experiencia digital inmersiva.
+## Asistencia en Código y Debugging
 
-```text
-CONNECT // BUILD // EVOLVE
-```
+La IA colaboró como herramienta de apoyo durante:
+
+* Depuración de errores de rutas relativas.
+* Preparación del proyecto para el despliegue en Vercel.
+* Maquetación de las tablas de la bitácora.
+* Organización modular de las hojas de estilo `style.css` y `perfil.css`.
+* Resolución de problemas puntuales de JavaScript y CSS.
+
+## Experiencia Previa y Criterio del Equipo
+
+El equipo cuenta con conocimientos en desarrollo web adquiridos durante la formación académica en **IFTS N.º 29**.
+
+Las sugerencias generadas mediante IA fueron revisadas, probadas y adaptadas por los integrantes del equipo. El código utilizado fue comprendido y modificado según las necesidades funcionales y visuales del proyecto.
+
+## Recursos Visuales y Avatares
+
+Las imágenes y avatares utilizados provienen de registros propios y recursos seleccionados bajo licencias abiertas, manteniendo la coherencia estética de la plataforma.
+
+---
+
+# 🧬 SINTAXIA
+
+**SINTAXIA** representa una interfaz experimental que combina **desarrollo web, interacción dinámica y estética cyberpunk** para construir una experiencia digital inmersiva.
+
+El proyecto busca integrar los conocimientos adquiridos en **HTML5, CSS3 y JavaScript**, aplicándolos en una interfaz que prioriza tanto la funcionalidad como la identidad visual.
+
+---
+
+> **SINTAXIA CORE INITIALIZED**
+> **ALL SYSTEMS OPERATIONAL**
+git 
