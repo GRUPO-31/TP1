@@ -15,8 +15,8 @@ document.addEventListener("DOMContentLoaded", () => {
         let height = (canvas.height = window.innerHeight);
         const chars = "01100101 01110110 01110011 01110001 01110101 01100001 01100100 Sintaxia";
         const fontSize = 14;
-        const columns = Math.floor(width / fontSize);
-        const drops = Array(columns).fill(1);
+        let columns = Math.floor(width / fontSize);
+        let drops = Array(columns).fill(1);
 
         function drawMatrix() {
             ctx.fillStyle = "rgba(3, 8, 6, 0.08)";
@@ -34,9 +34,13 @@ document.addEventListener("DOMContentLoaded", () => {
             }
         }
         setInterval(drawMatrix, 40);
+        
+        // CORREGIDO: Redimensionamiento y zoom adaptativo sin romper el Matrix
         window.addEventListener("resize", () => {
             width = canvas.width = window.innerWidth;
             height = canvas.height = window.innerHeight;
+            columns = Math.floor(width / fontSize);
+            drops = Array(columns).fill(1);
         }, { passive: true });
     }
 
