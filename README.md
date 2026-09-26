@@ -20,19 +20,19 @@ https://github.com/GRUPO-31/TP1
 
 ## 👥 Integrantes del Equipo
 
-### Diego Rodriguez — Lead Architect
+### Diego Rodriguez
 
 GitHub: https://github.com/diegojrodriguez
 
-### Brian — Fullstack Developer
+### Brian 
 
 GitHub: https://github.com/brianlavandera3
 
-### Sergio Vargas — QA Engineer
+### Sergio Vargas
 
 GitHub: https://github.com/SergioVargas101
 
-### Cristian Villagra — IA Engineer
+### Cristian Villagra 
 
 GitHub: https://github.com/Crrisst
 
@@ -164,8 +164,6 @@ El equipo posee experiencia técnica académica en maquetación y desarrollo de 
 Las fotografías utilizadas en los perfiles corresponden a imágenes de los integrantes del equipo.
 
 Las imágenes fueron ajustadas mediante filtros CSS, principalmente escala de grises y contraste, desarrollados manualmente para mantener una estética visual cyberpunk uniforme.
-
-No se utilizaron generadores de imágenes mediante prompts para los avatares.
 
 ### Criterio de Autoría
 
