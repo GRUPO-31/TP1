@@ -93,10 +93,6 @@ La interfaz prescinde de librerías externas de iconos. En su lugar, se utilizan
 
 > **Nota sobre las capturas:** Las imágenes se encuentran guardadas dentro de la carpeta `img/` del repositorio para visualizarse correctamente en GitHub.
 
-# ⚡ Funciones JavaScript y Capturas
-
-> **Nota sobre las capturas:** Las imágenes se encuentran guardadas dentro de la carpeta `img/` del repositorio para visualizarse correctamente en GitHub.
-
 ## 1. Portada: Fondo Matrix y Terminal de Inicio
 
 Al cargar la web, se ejecuta un efecto visual de caracteres cayendo en cascada mediante la API `<canvas>` y una consola simula el arranque dinámicamente.
