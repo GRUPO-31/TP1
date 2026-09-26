@@ -24,7 +24,7 @@ https://github.com/GRUPO-31/TP1
 
 GitHub: https://github.com/diegojrodriguez
 
-### Brian 
+### Brian
 
 GitHub: https://github.com/brianlavandera3
 
@@ -32,7 +32,7 @@ GitHub: https://github.com/brianlavandera3
 
 GitHub: https://github.com/SergioVargas101
 
-### Cristian Villagra 
+### Cristian Villagra
 
 GitHub: https://github.com/Crrisst
 
@@ -51,7 +51,7 @@ GitHub: https://github.com/Crrisst
 
 ```text
 TP1/
-├── img/                 # Imágenes, avatares y capturas de pantalla.
+├── img/                 # Imágenes, avatares modificados y capturas de pantalla.
 ├── java/
 │   └── java.js          # Lógica interactiva global y por perfil.
 ├── style/
@@ -65,8 +65,6 @@ TP1/
 ├── perfil-sergio.html   # Perfil individual de Sergio.
 └── README.md            # Documentación del proyecto.
 ```
-
----
 
 ## 🎨 Guía de Estilos
 
@@ -91,91 +89,70 @@ La interfaz prescinde de librerías externas de iconos. En su lugar, se utilizan
 * `#` para botones y enlaces web.
 * `>` para emular líneas de comandos en las terminales.
 
----
-
 # ⚡ Funciones JavaScript y Capturas
 
-> Las capturas utilizadas en esta sección deben encontrarse dentro de la carpeta `img/` para que puedan visualizarse correctamente en GitHub.
+> **Nota sobre las capturas:** Las imágenes se encuentran guardadas dentro de la carpeta `img/` del repositorio para visualizarse correctamente en GitHub.
 
-## 1. Portada: Fondo Matrix y Terminal de Inicio
+## ⚡ Funciones JavaScript y Capturas
 
-Al cargar la web, se ejecuta un efecto visual de caracteres cayendo en cascada mediante la API `<canvas>`.
+> **Nota sobre las capturas:** Las imágenes se encuentran guardadas dentro de la carpeta `img/` del repositorio para visualizarse correctamente en GitHub.
 
-Simultáneamente, una consola simula el proceso de arranque (**Boot Sequence**) escribiendo líneas de texto dinámicamente.
+### 1. Portada: Fondo Matrix y Terminal de Inicio
 
----
+Al cargar la web, se ejecuta un efecto visual de caracteres cayendo en cascada mediante la API `<canvas>` y una consola simula el arranque dinámicamente.
 
-## 2. Portada: Modales Flotantes con Iframes
+![Captura de la portada](URL_DE_LA_IMAGEN)
 
-Las tarjetas del equipo permiten abrir los perfiles individuales mediante un `<iframe>` contenido dentro de una ventana modal.
+### 2. Sección del Equipo y Modales Flotantes
 
-Al abrir un perfil se aplican efectos visuales mediante CSS, incluyendo una transición de tipo *glitch*.
+Las tarjetas del equipo permiten abrir los perfiles individuales mediante un `<iframe>` contenido en una ventana modal con transiciones *glitch*.
 
----
+![Captura de los modales](URL_DE_LA_IMAGEN)
 
-## 3. Portada: Navegación Holográfica y Efectos de Scroll
+### 3. Tarjetas Personales
 
-El desplazamiento hacia abajo genera efectos de desenfoque, transparencia y movimiento (*parallax*) en el encabezado.
+Vista detallada de los perfiles interactivos accesibles desde la portada del sistema.
 
-A medida que aparecen las diferentes secciones, un **Intersection Observer** detecta su entrada en pantalla y activa una animación de aparición con estética de interferencia digital.
+![Captura de los perfiles](URL_DE_LA_IMAGEN)
 
----
+### 4. Bitácora del Sistema
 
-## 4. Perfiles: Consolas de Diagnóstico QA
+Registro cronológico detallado de las decisiones técnicas e incidencias resueltas durante el desarrollo.
 
-Cada tarjeta de perfil cuenta con una función dinámica individual.
+![Captura de la bitácora](URL_DE_LA_IMAGEN)
 
-Al presionar el botón interactivo de diagnóstico, por ejemplo:
+### 5. Diseño Adaptativo y Responsive
 
-`INICIAR TEST QA`
+El sitio se adapta de forma fluida a diferentes dispositivos, garantizando el funcionamiento en los breakpoints de 400 px, 900 px y 1200 px.
 
-el script desactiva temporalmente el botón y renderiza una secuencia automatizada de mensajes de validación.
-
-La consola informa progresivamente el estado técnico del operativo correspondiente al perfil.
-
----
-
+![Captura del diseño responsive](URL_DE_LA_IMAGEN)
 # 🤖 Uso de Asistencia de Inteligencia Artificial y Autoría
 
-De acuerdo con los requisitos del trabajo práctico, se documenta el uso de herramientas de inteligencia artificial como apoyo técnico durante el desarrollo del proyecto.
+Durante el desarrollo de este trabajo práctico, integramos la inteligencia artificial como una herramienta de apoyo técnico y consulta para resolver desafíos puntuales de código y optimización.
 
-### Herramientas y Modelos Utilizados
+### Herramientas, Modelos y Experiencia
 
-Se utilizó el modelo **Google Gemini** mediante su **plan gratuito** como herramienta de asistencia técnica.
+Trabajamos principalmente con **Google Gemini (plan gratuito)** como asistente de desarrollo. Como equipo, nos estamos formando como desarrolladores de software en el **IFTS N.º 29**, por lo que contamos con una base técnica académica en maquetación y estructura web que nos permitió guiar, interpretar y adaptar las sugerencias de la IA de forma crítica.
 
-### Asistencia Recibida
+### Aporte de la Inteligencia Artificial
 
-La inteligencia artificial funcionó como apoyo en diferentes aspectos del desarrollo, principalmente:
+Utilizamos el asistente de manera complementaria en tareas específicas como:
 
-* Configuración y lógica del efecto Canvas.
-* Secuencias de `setTimeout` utilizadas en la terminal.
-* Control del `Intersection Observer`.
-* Resolución de problemas de JavaScript.
-* Debugging de rutas y nomenclatura de archivos.
-* Organización y ajuste del CSS modular.
-* Preparación del proyecto para el despliegue.
+* Consultas sobre la lógica matemática y renderizado del efecto Canvas en bucle.
+* Estructuración de temporizadores (`setTimeout` / `setInterval`) para la secuencia de arranque de la terminal.
+* Depuración de errores en el comportamiento del `Intersection Observer`.
+* Resolución de pequeños conflictos de sintaxis en JavaScript y organización modular de las hojas de estilo CSS.
 
-### Experiencia Previa
+### Criterio sobre los Recursos Visuales y Fotografías
 
-El equipo posee experiencia técnica académica en maquetación y desarrollo de interfaces web, adquirida durante la formación como estudiantes de desarrollo de software en el **IFTS N.º 29**.
-
-### Recursos Visuales
-
-Las fotografías utilizadas en los perfiles corresponden a imágenes de los integrantes del equipo.
-
-Las imágenes fueron ajustadas mediante filtros CSS, principalmente escala de grises y contraste, desarrollados manualmente para mantener una estética visual cyberpunk uniforme.
+Las fotografías de los integrantes del equipo utilizadas en las tarjetas de presentación fueron **modificadas y estilizadas digitalmente mediante herramientas de inteligencia artificial** para integrarlas con la estética cyberpunk del sitio, aplicando posteriormente filtros manuales de escala de grises y contraste en CSS.
 
 ### Criterio de Autoría
 
-Todo código sugerido mediante herramientas de inteligencia artificial fue examinado, probado y modificado por los integrantes del equipo.
-
-Las implementaciones fueron adaptadas a los requerimientos del proyecto, incluyendo ajustes en los umbrales matemáticos del scroll, velocidades de renderizado y comportamiento de las diferentes interacciones para garantizar que el resultado final respondiera a las decisiones de diseño del grupo.
-
----
+Ningún fragmento de código fue incorporado de manera automática. Todo resultado o sugerencia generada por la IA fue analizado, probado, modificado e integrado manualmente por nosotros para asegurarnos de que respondiera de manera coherente a la arquitectura y diseño general del proyecto.
 
 # 🧬 SINTAXIA
 
 **SINTAXIA** representa una interfaz experimental que combina **desarrollo web, interacción dinámica y estética cyberpunk** para construir una experiencia digital inmersiva.
 
 El proyecto integra los conocimientos adquiridos en **HTML5, CSS3 y JavaScript**, aplicándolos en una interfaz que busca combinar funcionalidad, interacción e identidad visual.
-
