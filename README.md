@@ -97,43 +97,43 @@ La interfaz prescinde de librerías externas de iconos. En su lugar, se utilizan
 
 Al cargar la web, se ejecuta un efecto visual de caracteres cayendo en cascada mediante la API `<canvas>` y una consola simula el arranque dinámicamente.
 
-![Captura de la portada](https://raw.githubusercontent.com/GRUPO-31/TP1/4491d865e96d1df154fe223b274859cc693656ea/img/inicio.png)
+![Captura de la portada](img/inicio.png)
 
 ## 2. Sección del Equipo y Modales Flotantes
 
 Las tarjetas del equipo permiten abrir los perfiles individuales mediante un `<iframe>` contenido en una ventana modal con transiciones *glitch*.
 
-![Captura de los modales](https://raw.githubusercontent.com/GRUPO-31/TP1/4491d865e96d1df154fe223b274859cc693656ea/img/equipo.png)
+![Captura de los modales](img/equipo.png)
 
 ## 3. Tarjetas Personales
 
 Vista detallada de los perfiles interactivos accesibles desde la portada del sistema.
 
-![Captura de los perfiles](https://raw.githubusercontent.com/GRUPO-31/TP1/4491d865e96d1df154fe223b274859cc693656ea/img/tarjetas%20personales.png)
+![Captura de los perfiles](img/tarjetas%20personales.png)
 
 ## 4. Bitácora del Sistema
 
 Registro cronológico detallado de las decisiones técnicas e incidencias resueltas durante el desarrollo.
 
-![Captura de la bitácora](https://raw.githubusercontent.com/GRUPO-31/TP1/4491d865e96d1df154fe223b274859cc693656ea/img/bitacora.png)
+![Captura de la bitácora](img/bitacora.png)
 
 ## 5. Misión y Objetivos
 
 Sección dedicada a presentar la misión y los objetivos del proyecto dentro de la interfaz.
 
-![Captura de la misión](https://raw.githubusercontent.com/GRUPO-31/TP1/4491d865e96d1df154fe223b274859cc693656ea/img/mision.png)
+![Captura de la misión](img/mision.png)
 
 ## 6. Enlaces del Proyecto
 
 Sección donde se presentan los enlaces relacionados con el proyecto y el repositorio.
 
-![Captura de los enlaces](https://raw.githubusercontent.com/GRUPO-31/TP1/4491d865e96d1df154fe223b274859cc693656ea/img/github%20link.png)
+![Captura de los enlaces](img/github%20link.png)
 
 ## 7. Diseño Adaptativo y Responsive
 
 El sitio se adapta de forma fluida a diferentes dispositivos, garantizando el funcionamiento en los breakpoints de 400 px, 900 px y 1200 px.
 
-![Vista en dispositivos móviles](https://raw.githubusercontent.com/GRUPO-31/TP1/4491d865e96d1df154fe223b274859cc693656ea/img/Vista%20en%20Dispositivos%20M%C3%B3viles.png)
+![Vista en dispositivos móviles](img/Vista%20en%20Dispositivos%20M%C3%B3viles.png)
 
 # 🤖 Uso de Asistencia de Inteligencia Artificial y Autoría
 
