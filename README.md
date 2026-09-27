@@ -160,6 +160,13 @@ Las fotografías de los integrantes del equipo utilizadas en las tarjetas de pre
 
 Ningún fragmento de código fue incorporado de manera automática. Todo resultado o sugerencia generada por la IA fue analizado, probado, modificado e integrado manualmente por nosotros para asegurarnos de que respondiera de manera coherente a la arquitectura y diseño general del proyecto.
 
+## 🚀 Evolución del Proyecto
+
+Para las siguientes etapas de la materia, el equipo tiene planificadas las siguientes mejoras técnicas:
+
+* **Carga Dinámica de Datos:** Migrar la información de los perfiles (habilidades, favoritos) y los registros de la bitácora a archivos JSON externos, utilizando la API `fetch` de JavaScript para renderizarlos dinámicamente en el HTML.
+* **Validación de Formularios:** Implementar un formulario en la sección de contacto con validación de campos obligatorios en tiempo real mediante JavaScript.
+
 # 🧬 SINTAXIA
 
 **SINTAXIA** representa una interfaz experimental que combina **desarrollo web, interacción dinámica y estética cyberpunk** para construir una experiencia digital inmersiva.
