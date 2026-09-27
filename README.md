@@ -24,7 +24,7 @@ https://github.com/GRUPO-31/TP1
 
 GitHub: https://github.com/diegojrodriguez
 
-### Brian
+### Brian Lavandera
 
 GitHub: https://github.com/brianlavandera3
 
