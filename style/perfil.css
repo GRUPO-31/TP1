@@ -1,9 +1,4 @@
-/* =====================================================
-   ESTILOS ESPECÍFICOS DE PERFIL - DEVSQUAD CYBERPUNK
-   Complementa style.css sin modificar archivos existentes
-   ===================================================== */
-
-/* Layout general del perfil */
+/* Estructura principal en dos columnas */
 .profile-layout {
     display: grid;
     grid-template-columns: 320px 1fr;
@@ -11,7 +6,7 @@
     align-items: start;
 }
 
-/* Columna lateral: Avatar y Datos Básicos */
+/* Barra lateral con la informacion basica */
 .profile-sidebar {
     background: var(--bg-card, rgba(4, 18, 12, 0.92));
     border: 1px solid var(--border-dim, rgba(0, 255, 102, 0.25));
@@ -34,6 +29,7 @@
     background: linear-gradient(90deg, transparent, var(--green, #00ff66), transparent);
 }
 
+/* Marco y efectos de la foto de perfil */
 .avatar-frame {
     position: relative;
     width: 170px;
@@ -59,6 +55,7 @@
     transform: scale(1.05);
 }
 
+/* Textos y tipografias de la informacion personal */
 .profile-basic h2 {
     font-family: var(--font-code, "JetBrains Mono", monospace);
     color: #ffffff;
@@ -92,6 +89,7 @@
     margin-bottom: 20px;
 }
 
+/* Caja de la frase destacada */
 .quote-box {
     width: 100%;
     background: rgba(0, 255, 102, 0.04);
@@ -103,13 +101,14 @@
     text-align: left;
 }
 
-/* Columna derecha: Detalles, Habilidades, Listas */
+/* Contenedor de la columna derecha */
 .profile-details {
     display: flex;
     flex-direction: column;
     gap: 25px;
 }
 
+/* Tarjetas de contenido con linea decorativa */
 .detail-card {
     background: var(--bg-card, rgba(4, 18, 12, 0.92));
     border: 1px solid var(--border-dim, rgba(0, 255, 102, 0.25));
@@ -136,7 +135,7 @@
     margin-bottom: 18px;
 }
 
-/* Lista de Habilidades (Skills) */
+/* Lista y barras de progreso de las habilidades */
 .skills-list {
     display: flex;
     flex-direction: column;
@@ -171,13 +170,14 @@
     transition: width 0.6s ease;
 }
 
-/* Grilla de 2 columnas para Películas y Música */
+/* Contenedor dividido en dos para listas pequeñas */
 .details-grid-2 {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 25px;
 }
 
+/* Estilos de las listas de peliculas y musica */
 .detail-card ul {
     list-style: none;
     display: flex;
@@ -202,7 +202,7 @@
     font-weight: 700;
 }
 
-/* Zona interactiva */
+/* Consola de comandos del perfil */
 .interactive-zone p {
     font-size: 0.85rem;
     color: var(--text-muted, #6b937b);
@@ -220,7 +220,7 @@
     word-break: break-word;
 }
 
-/* Botones de navegación entre perfiles */
+/* Contenedor de los botones */
 .profile-nav-buttons {
     display: flex;
     justify-content: space-between;
@@ -228,7 +228,7 @@
     margin-top: 10px;
 }
 
-/* Botones Base */
+/* Diseño de los botones generales */
 .btn {
     display: inline-flex;
     align-items: center;
@@ -264,10 +264,7 @@
     box-shadow: 0 0 10px var(--green-glow, rgba(0, 255, 102, 0.3));
 }
 
-/* =====================================================
-   BREAKPOINTS OBLIGATORIOS (1200px, 900px, 400px)
-   ===================================================== */
-
+/* Media queries para adaptar a diferentes pantallas */
 @media (min-width: 1200px) {
     .profile-layout {
         max-width: 1150px;
@@ -315,9 +312,7 @@
     }
 }
 
-/* =====================================================
-   BADGES SOCIALES - PERFILES
-   ===================================================== */
+/* Enlaces a redes y github */
 .profile-badges-container {
     display: flex;
     gap: 8px;

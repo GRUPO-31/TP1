@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
 
-    // PREVENCIÓN: Forzar que el inicio (Hero) nunca desaparezca
+    /* Evita que la seccion principal parpadee o quede oculta por error al cargar */
     const heroSection = document.getElementById("hero") || document.querySelector(".hero");
     if (heroSection) {
         heroSection.style.opacity = "1";
@@ -8,6 +8,7 @@ document.addEventListener("DOMContentLoaded", () => {
         heroSection.style.filter = "none";
     }
 
+    /* Configuracion del fondo animado estilo Matrix con canvas */
     const canvas = document.getElementById("matrix-canvas");
     if (canvas) {
         const ctx = canvas.getContext("2d");
@@ -18,6 +19,7 @@ document.addEventListener("DOMContentLoaded", () => {
         let columns = Math.floor(width / fontSize);
         let drops = Array(columns).fill(1);
 
+        /* Bucle para dibujar las letras cayendo */
         function drawMatrix() {
             ctx.fillStyle = "rgba(3, 8, 6, 0.08)";
             ctx.fillRect(0, 0, width, height);
@@ -35,7 +37,7 @@ document.addEventListener("DOMContentLoaded", () => {
         }
         setInterval(drawMatrix, 40);
         
-        // CORREGIDO: Redimensionamiento y zoom adaptativo sin romper el Matrix
+        /* Ajusta el tamaño del canvas si cambian la resolucion de la pantalla */
         window.addEventListener("resize", () => {
             width = canvas.width = window.innerWidth;
             height = canvas.height = window.innerHeight;
@@ -44,6 +46,7 @@ document.addEventListener("DOMContentLoaded", () => {
         }, { passive: true });
     }
 
+    /* Barra superior que indica cuanto bajaste en la pagina */
     const progressBar = document.getElementById("scroll-progress");
     window.addEventListener("scroll", () => {
         if (!progressBar) return;
@@ -52,6 +55,7 @@ document.addEventListener("DOMContentLoaded", () => {
         progressBar.style.width = `${progress}%`;
     }, { passive: true });
 
+    /* Efecto de maquina de escribir para los botones de la seccion Mision */
     const nodeBtns = document.querySelectorAll(".node-btn");
     const holoTitle = document.getElementById("holo-title");
     const holoDesc = document.getElementById("holo-desc");
@@ -94,6 +98,7 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 
+    /* Efecto de texto desencriptandose al pasar el mouse por los nombres */
     const letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789<>_";
     document.querySelectorAll(".op-name").forEach(element => {
         element.addEventListener("mouseover", event => {
@@ -116,6 +121,7 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     });
 
+    /* Abre y cierra el menu de navegacion en celulares */
     const menuToggle = document.getElementById("menu-toggle");
     const mainNav = document.getElementById("main-nav");
     if (menuToggle && mainNav) {
@@ -124,6 +130,7 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 
+    /* Animacion de onda verde al hacer clic en cualquier parte de la pagina */
     document.addEventListener("click", (e) => {
         const ripple = document.createElement("div");
         ripple.className = "click-ripple";
@@ -133,10 +140,12 @@ document.addEventListener("DOMContentLoaded", () => {
         setTimeout(() => { ripple.remove(); }, 500);
     });
 
+    /* Detecta si la pagina se esta abriendo dentro de una ventana modal (iframe) */
     if (window.self !== window.top) {
         document.documentElement.classList.add('in-iframe');
     }
 
+    /* Logica para abrir los perfiles en ventanas flotantes sin salir del inicio */
     const modal = document.getElementById("profile-modal");
     const modalFrame = document.getElementById("modal-frame");
     const closeModalBtn = document.getElementById("close-modal");
@@ -158,6 +167,7 @@ document.addEventListener("DOMContentLoaded", () => {
             });
         });
         
+        /* Funcion para cerrar la ventana flotante */
         const closeModal = () => {
             modal.classList.add("closing"); 
             
@@ -175,6 +185,7 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 
+    /* Simulacion de arranque de sistema en la terminal de la portada */
     const terminalBody = document.getElementById("terminal-body");
     if (terminalBody) {
         terminalBody.innerHTML = ""; 
@@ -215,6 +226,7 @@ document.addEventListener("DOMContentLoaded", () => {
         setTimeout(typeTerminalLine, 400);
     }
 
+    /* Efecto de interferencia (glitch) en el titulo principal */
     const mainTitle = document.getElementById("sintaxia-title");
     if (mainTitle) {
         const targetText = "SINTAXIA";
@@ -234,6 +246,7 @@ document.addEventListener("DOMContentLoaded", () => {
         mainTitle.addEventListener("mouseover", runGlitchEffect);
     }
 
+    /* Oculta las secciones al principio para prepararlas para la animacion */
     const revealElements = document.querySelectorAll('.section, .contact-section');
     revealElements.forEach(el => {
         if(el.id !== 'hero') { 
@@ -241,6 +254,7 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     });
 
+    /* Configura y ejecuta la animacion al hacer scroll hacia abajo */
     const revealOptions = {
         threshold: 0.15, 
         rootMargin: "0px 0px -50px 0px" 
@@ -261,6 +275,7 @@ document.addEventListener("DOMContentLoaded", () => {
         if(el.id !== 'hero') { revealOnScroll.observe(el); }
     });
 
+    /* Cambia el fondo del header y oculta la flecha indicadora al bajar */
     const header = document.querySelector(".site-header");
     const scrollIndicator = document.getElementById("scroll-indicator");
     let indicatorHidden = false;
@@ -297,12 +312,14 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     }, { passive: true });
 
+    /* Hace que la flechita del inicio te lleve a la seccion Mision suavemente */
     if (scrollIndicator) {
         scrollIndicator.addEventListener("click", () => {
             document.querySelector("#mision").scrollIntoView({ behavior: "smooth" });
         });
     }
 
+    /* Cierra el menu desplegable de celulares cuando tocas un enlace */
     document.querySelectorAll('.site-header nav a').forEach(anchor => {
         anchor.addEventListener('click', () => {
             const mainNav = document.getElementById("main-nav");
@@ -310,9 +327,7 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     });
 
-    // ==========================================
-    // CONSOLAS INTERACTIVAS DE PERFILES (CENTRALIZADO)
-    // ==========================================
+    /* Consolas interactivas para los perfiles de Cristian y Brian */
     const btnStatus = document.getElementById("btn-status");
     const statusOutput = document.getElementById("status-output");
     if (btnStatus && statusOutput) {
@@ -330,6 +345,7 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 
+    /* Pruebas de sistema animadas para los perfiles de Diego y Sergio */
     const btnQa = document.getElementById("btn-qa");
     const qaOutput = document.getElementById("qa-output");
     if (btnQa && qaOutput) {
