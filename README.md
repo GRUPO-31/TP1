@@ -1,174 +1,120 @@
-# 🧬 SINTAXIA
+# SINTAXIA · TP2
 
-Plataforma web de alta densidad visual e interfaces inmersivas, desarrollada como trabajo práctico para la materia **Desarrollo de Sistemas Web Front-End** del **IFTS N.º 29**.
+Aplicación React del Grupo 31 para Desarrollo de Sistemas Web Front-End del **IFTS N.º 29**. Continúa SINTAXIA, el proyecto del TP1: un laboratorio digital con identidad cyberpunk que conecta la portada, cuatro perfiles, recursos de desarrollo, información pública de GitHub, árbol de componentes y bitácora.
 
-El proyecto emula un sistema operativo futurista mediante **HTML, CSS y JavaScript interactivo**, combinando animaciones, efectos visuales, terminales, Canvas e interfaces inspiradas en sistemas HUD.
+## Publicación
 
----
+- **Repositorio público independiente de TP2:** pendiente de creación y verificación.
+- **Deploy de TP2 en Vercel:** pendiente de publicación y verificación.
+- Antecedentes TP1: [repositorio](https://github.com/GRUPO-31/TP1) y [deploy](https://tp-1-self.vercel.app/). Estos enlaces corresponden al TP1 y no sustituyen los del TP2.
 
-## 🔗 Enlaces del Proyecto
+La aplicación está en `React-Proyect/`. No se modificó el remoto del TP1. Antes de entregar, reemplazar los pendientes con los enlaces reales de TP2 y comprobarlos sin iniciar sesión.
 
-### 🚀 Despliegue en Producción
+## Integrantes
 
-https://tp-1-self.vercel.app/
+| Integrante | Perfil de GitHub |
+| --- | --- |
+| Diego Rodriguez | [diegojrodriguez](https://github.com/diegojrodriguez) |
+| Brian Lavandera | [brianlavandera3](https://github.com/brianlavandera3) |
+| Sergio Vargas | [SergioVargas101](https://github.com/SergioVargas101) |
+| Cristian Villagra | [Crrisst](https://github.com/Crrisst) |
 
-### 📦 Repositorio del Grupo
+El acceso al nuevo repositorio debe verificarse en GitHub: invitar a los integrantes con permiso de escritura y comprobar que aceptaron. La persona que lo crea ya cuenta con acceso. Los perfiles públicos no prueban permisos de colaboración.
 
-https://github.com/GRUPO-31/TP1
+## Ejecución local
 
----
+Requiere Node.js 22.12 o superior compatible con Vite 8.
 
-## 👥 Integrantes del Equipo
-
-### Diego Rodriguez
-
-GitHub: https://github.com/diegojrodriguez
-
-### Brian Lavandera
-
-GitHub: https://github.com/brianlavandera3
-
-### Sergio Vargas
-
-GitHub: https://github.com/SergioVargas101
-
-### Cristian Villagra
-
-GitHub: https://github.com/Crrisst
-
----
-
-## 🛠️ Tecnologías Utilizadas
-
-* **HTML5 Semántico:** estructuración del contenido, modales y accesibilidad.
-* **CSS3 Modular:** variables nativas, Flexbox/Grid, animaciones mediante `@keyframes` y diseño responsive.
-* **JavaScript ES6+:** manipulación del DOM, lógica de terminales, Canvas API y `Intersection Observer`.
-* **Vercel:** despliegue y alojamiento del proyecto en la nube.
-
----
-
-## 📂 Estructura de Archivos y Carpetas
-
-```text
-TP1/
-├── img/                 # Imágenes, avatares modificados y capturas de pantalla.
-├── java/
-│   └── java.js          # Lógica interactiva global y por perfil.
-├── style/
-│   ├── perfil.css       # Estilos específicos de los perfiles.
-│   └── style.css        # Estilos globales, portada y animaciones.
-├── index.html           # Portada principal y manifiesto.
-├── bitacora.html        # Registro cronológico del desarrollo técnico.
-├── perfil-brian.html    # Perfil individual de Brian.
-├── perfil-cristian.html # Perfil individual de Cristian.
-├── perfil-diego.html    # Perfil individual de Diego.
-├── perfil-sergio.html   # Perfil individual de Sergio.
-└── README.md            # Documentación del proyecto.
+```bash
+cd React-Proyect
+npm ci
+npm run dev
 ```
 
-## 🎨 Guía de Estilos
+```bash
+npm run build
+npm run preview
+npm run lint
+```
 
-### Paleta de Colores
+El build se genera en `React-Proyect/dist`. Se incluye `package-lock.json` para instalaciones reproducibles.
 
-* **Fondo principal:** `#030806`
-* **Contenedores y tarjetas:** `rgba(4, 18, 12, 0.92)`
-* **Verde neón primario:** `#00ff66`
-* **Cian secundario:** `#00e5ff`
-* **Texto general:** `#e0ffee`
-* **Texto atenuado:** `#6b937b`
+## Secciones y arquitectura
 
-### Tipografías
+| Ruta | Contenido |
+| --- | --- |
+| `/` | Presentación propia del equipo, manifiesto y tarjetas |
+| `/equipo` | Los cuatro integrantes |
+| `/equipo/:id` | Perfil interno: biografía, habilidades, películas, música y GitHub |
+| `/recursos` | 24 registros JSON, búsqueda y filtro por categoría |
+| `/actividad` | Repositorios públicos de GRUPO-31 desde GitHub |
+| `/arbol` | Árbol de componentes correspondiente al código |
+| `/bitacora` | Historia del TP1 y registro de migración a React |
+| Otras rutas | Pantalla de ruta no encontrada con enlace a portada |
 
-* **Inter:** utilizada para bloques de texto y lectura general.
-* **JetBrains Mono:** tipografía monoespaciada utilizada para emular código, terminales, botones y datos numéricos.
+`App` configura React Router; `Layout` comparte `Sidebar`, encabezado, contenido y pie. `Outlet` presenta la página activa. Las tarjetas se reutilizan en las páginas y los perfiles se resuelven desde los datos del equipo. La sidebar marca la sección activa también al entrar en un perfil. Cada perfil permite volver al equipo y continuar al siguiente.
 
-### Iconografía
+```text
+React-Proyect/
+├── src/
+│   ├── App.jsx
+│   ├── components/    # Layout, Sidebar y tarjetas
+│   ├── pages/         # Portada, equipo, perfiles, recursos, API y documentación
+│   └── data/          # team.json, resources.json (24 registros), log.json
+├── public/img/        # Avatares conservados del TP1
+├── vercel.json        # Reescritura de rutas para la SPA
+└── package.json
+```
 
-La interfaz prescinde de librerías externas de iconos. En su lugar, se utilizan caracteres tipográficos formateados mediante CSS para simular interfaces HUD.
+## Datos y API pública
 
-* `#` para botones y enlaces web.
-* `>` para emular líneas de comandos en las terminales.
+El catálogo importa `src/data/resources.json`. La búsqueda considera nombre, descripción y categoría, sin distinguir mayúsculas ni acentos. Búsqueda y filtro se combinan, muestran el total y permiten limpiar la selección. Hay un estado sin coincidencias.
 
-# ⚡ Funciones JavaScript y Capturas
+La sección Actividad usa `https://api.github.com/orgs/GRUPO-31/repos?type=public&sort=updated&per_page=100`. Muestra nombre, descripción, lenguaje, estrellas, fecha y enlace de cada repositorio. Incluye carga, respuesta vacía, error HTTP/de red, límite público, tiempo máximo de 15 segundos y reintento. Cancela consultas al abandonar la página. No contiene tokens ni claves privadas. [Documentación oficial de GitHub](https://docs.github.com/en/rest/repos/repos#list-organization-repositories).
 
-> **Nota sobre las capturas:** Las imágenes se encuentran guardadas dentro de la carpeta `img/` del repositorio para visualizarse correctamente en GitHub.
+## Identidad visual y accesibilidad
 
-## 1. Portada: Fondo Matrix y Terminal de Inicio
+Fondo negro verdoso, acento verde lima y tipografías Inter y JetBrains Mono, con alternativas locales si Google Fonts no carga. La portada usa una ilustración orbital construida con CSS. Los avatares, biografías, habilidades y gustos provienen del TP1. Las tarjetas y la sidebar se adaptan a pantallas pequeñas. Se incluyen etiquetas de controles, textos alternativos, foco visible, enlace para saltar al contenido y respeto por movimiento reducido.
 
-Al cargar la web, se ejecuta un efecto visual de caracteres cayendo en cascada mediante la API `<canvas>` y una consola simula el arranque dinámicamente.
+## Declaración de uso de IA
 
-![Captura de la portada](img/inicio.png)
+Se diferencia la **aplicación** de acceso del **modelo** que genera las respuestas.
 
-## 2. Sección del Equipo y Modales Flotantes
+| Etapa | Aplicación | Modelo | Tareas |
+| --- | --- | --- | --- |
+| TP1, según documentación previa del equipo | Google Gemini, plan gratuito | No registrado en el TP1; el equipo debe confirmar la versión | Consultas sobre Canvas, temporizadores, depuración, estilos y modificación de avatares |
+| Migración TP2, esta sesión | OpenAI Codex | GPT-6, según identificación del agente en la sesión | Componentes React, navegación, CSS, migración de datos, API, documentación y comprobación de build/lint |
 
-Las tarjetas del equipo permiten abrir los perfiles individuales mediante un `<iframe>` contenido en una ventana modal con transiciones *glitch*.
+No se atribuyen herramientas o aportes individuales que no estén registrados. Antes de entregar, cada integrante debe confirmar qué aplicación/modelo utilizó y para qué tarea, y completar la versión de Gemini si puede recuperarla. No se generaron nuevos avatares en esta migración. La documentación histórica se conserva en `README-TP1.md`.
 
-![Captura de los modales](img/equipo.png)
+## Publicar en GitHub y Vercel
 
-## 3. Tarjetas Personales
+1. Crear un repositorio **público e independiente** llamado TP2 y subir este proyecto con su README de raíz. Mantener el repositorio TP1 separado.
+2. Incorporar a Diego, Brian, Sergio y Cristian. Comprobar permisos efectivos y aceptación de las invitaciones.
+3. Importar TP2 en Vercel. Seleccionar **Root Directory: `React-Proyect`**, preset **Vite**, instalación `npm ci`, build `npm run build` y salida `dist`.
+4. La configuración `React-Proyect/vercel.json` permite cargar o recargar rutas internas directamente.
+5. Registrar los enlaces reales arriba y probar repositorio/deploy en una ventana sin sesión. Abrir directamente `/equipo/cristian`, `/recursos` y `/actividad` para comprobar la navegación y reescritura.
 
-Vista detallada de los perfiles interactivos accesibles desde la portada del sistema.
+No hay conexión autenticada a GitHub ni Vercel disponible en esta sesión para completar esas operaciones externas.
 
-![Captura de los perfiles](img/tarjetas%20personales.png)
+## Recorrido de los 15 criterios
 
-## 4. Bitácora del Sistema
+| N.º | Criterio | Estado y comprobación |
+| --- | --- | --- |
+| 1 | Repositorio público y Vercel | Pendiente: crear, publicar y comprobar ambos enlaces sin sesión |
+| 2 | README raíz | Descripción e integrantes completos; falta URL real del deploy TP2 |
+| 3 | Acceso de integrantes | Pendiente: invitaciones aceptadas y permisos efectivos en TP2 |
+| 4 | React y React Router | Implementados en `React-Proyect/src/App.jsx` |
+| 5 | Sidebar compartida | Identidad, seis secciones y sección activa |
+| 6 | Navegación completa | Sidebar en todas las rutas, volver/siguiente en perfiles y recuperación 404 |
+| 7 | Portada propia | Presentación, ilustración CSS, métricas, equipo y manifiesto |
+| 8 | Perfiles React | Cuatro perfiles internos con contenido migrado del TP1 |
+| 9 | Propuesta estética | Identidad SINTAXIA, paleta, tipografías y avatares personalizados |
+| 10 | JSON local ≥20 | 24 recursos renderizados dinámicamente |
+| 11 | Búsqueda y filtro | Texto + categoría combinados, contador y estado vacío |
+| 12 | API y estados | GitHub pública, carga/error/vacío y reintento |
+| 13 | Árbol de renderizado | Sección `/arbol` vinculada con componentes reales |
+| 14 | Bitácora | Registros del TP1 y evolución hacia React |
+| 15 | Declaración IA | Aplicación/modelo diferenciados; pendiente confirmar modelo histórico de Gemini y usos individuales |
 
-Registro cronológico detallado de las decisiones técnicas e incidencias resueltas durante el desarrollo.
-
-![Captura de la bitácora](img/bitacora.png)
-
-## 5. Misión y Objetivos
-
-Sección dedicada a presentar la misión y los objetivos del proyecto dentro de la interfaz.
-
-![Captura de la misión](img/mision.png)
-
-## 6. Enlaces del Proyecto
-
-Sección donde se presentan los enlaces relacionados con el proyecto y el repositorio.
-
-![Captura de los enlaces](img/github%20link.png)
-
-## 7. Diseño Adaptativo y Responsive
-
-El sitio se adapta de forma fluida a diferentes dispositivos, garantizando el funcionamiento en los breakpoints de 400 px, 900 px y 1200 px.
-
-![Vista en dispositivos móviles](img/Vista%20en%20Dispositivos%20M%C3%B3viles.png)
-
-# 🤖 Uso de Asistencia de Inteligencia Artificial y Autoría
-
-Durante el desarrollo de este trabajo práctico, integramos la inteligencia artificial como una herramienta de apoyo técnico y consulta para resolver desafíos puntuales de código y optimización.
-
-### Herramientas, Modelos y Experiencia
-
-Trabajamos principalmente con **Google Gemini (plan gratuito)** como asistente de desarrollo. Como equipo, nos estamos formando como desarrolladores de software en el **IFTS N.º 29**, por lo que contamos con una base técnica académica en maquetación y estructura web que nos permitió guiar, interpretar y adaptar las sugerencias de la IA de forma crítica.
-
-### Aporte de la Inteligencia Artificial
-
-Utilizamos el asistente de manera complementaria en tareas específicas como:
-
-* Consultas sobre la lógica matemática y renderizado del efecto Canvas en bucle.
-* Estructuración de temporizadores (`setTimeout` / `setInterval`) para la secuencia de arranque de la terminal.
-* Depuración de errores en el comportamiento del `Intersection Observer`.
-* Resolución de pequeños conflictos de sintaxis en JavaScript y organización modular de las hojas de estilo CSS.
-
-### Criterio sobre los Recursos Visuales y Fotografías
-
-Las fotografías de los integrantes del equipo utilizadas en las tarjetas de presentación fueron **modificadas y estilizadas digitalmente mediante herramientas de inteligencia artificial** para integrarlas con la estética cyberpunk del sitio, aplicando posteriormente filtros manuales de escala de grises y contraste en CSS.
-
-### Criterio de Autoría
-
-Ningún fragmento de código fue incorporado de manera automática. Todo resultado o sugerencia generada por la IA fue analizado, probado, modificado e integrado manualmente por nosotros para asegurarnos de que respondiera de manera coherente a la arquitectura y diseño general del proyecto.
-
-## 🚀 Evolución del Proyecto
-
-Para las siguientes etapas de la materia, el equipo tiene planificadas las siguientes mejoras técnicas:
-
-* **Carga Dinámica de Datos:** Migrar la información de los perfiles (habilidades, favoritos) y los registros de la bitácora a archivos JSON externos, utilizando la API `fetch` de JavaScript para renderizarlos dinámicamente en el HTML.
-* **Validación de Formularios:** Implementar un formulario en la sección de contacto con validación de campos obligatorios en tiempo real mediante JavaScript.
-
-# 🧬 SINTAXIA
-
-**SINTAXIA** representa una interfaz experimental que combina **desarrollo web, interacción dinámica y estética cyberpunk** para construir una experiencia digital inmersiva.
-
-El proyecto integra los conocimientos adquiridos en **HTML5, CSS3 y JavaScript**, aplicándolos en una interfaz que busca combinar funcionalidad, interacción e identidad visual.
+Comprobaciones locales: build de producción y ESLint completados. La revisión visual/interactiva en navegador, los enlaces externos del catálogo y la comprobación de producción deben realizarse antes de la entrega. Para la API, probar conexión normal, conexión bloqueada y reintento; para recursos, combinar texto y categoría, buscar un término sin resultados y limpiar filtros; para móvil, revisar 375 px, 768 px y escritorio.
